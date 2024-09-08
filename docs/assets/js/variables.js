@@ -1,2 +1,2 @@
 var page_url = "/assets/js/variables.js";
-var site_baseurl = "/php-mysql";
+var site_baseurl = "/projets";
