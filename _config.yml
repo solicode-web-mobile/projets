@@ -1,0 +1,117 @@
+# Titre et description
+destination: docs
+title: Développement Web et Mobile - Perfectionnement
+description: Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad
+locale: fr_FR
+environment: production
+# URL
+baseurl: "/projets"
+url: "" 
+
+# Formation
+
+# Table of content
+toc:
+  enabled: false
+  h_min: 1
+  h_max: 3
+  
+
+# Collections
+collections:
+  resources:
+    output: true
+    permalink: /resources/:title/
+  resource_category:
+    output: false
+  tutorials:
+    output: true
+    permalink: /tutorials/:path/
+  modules:
+    output: true
+    permalink: /modules/:title
+  units:
+    output: true
+    permalink: /units/:title
+  parts:
+    output: true
+    permalink: /parts/:title
+  chapters:
+    output: true
+    permalink: /:title.html
+  self_learnings:
+    output: true
+    permalink: /self_learnings/:title/
+  concepts:
+    output: true
+    permalink: /:title/
+  concept_categories:
+    output: false
+
+
+# Authors
+authors:
+  essarraj:
+    name: ESSARRAJ
+    display_name: ESSARRAJ Fouad
+    gravatar: e56154546cf4be74e393c62d1ae9f9d4
+    email: essarraj.fouad@gmail.com
+    web: https://www.essarrajfouad.com
+    description: "J'aide les étudiants, élèves ingénieur et stagiaires à développer leurs compétences en développement d’application."
+
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+
+# Pagination 
+# paginate: 6
+# paginate_path: /page:num/
+
+# Archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#   layout: archive
+#   permalinks:
+#     category: '/category/:name/'
+
+
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+
+exclude:
+  by_front_matter: !exclude
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - PowerPointFiles/
+  - Template.json
+  - template.potx
+  - EspaceTravail/
+  - docs
+  - README.md
+
+

@@ -1,0 +1,36 @@
+{% if page.concept_reference != '' and page.concept_reference != nil %}
+            {% assign concept = site.concepts | where: "reference",page.concept_reference | first %}
+            {% assign topics_size =  concept.topics | size %}
+            <h1>{{concept.title}}</h1>
+            <h2> 
+                {% if topics_size > 1 %}
+                Concepts à apprendre
+                {% else %}
+                Concept à apprendre
+                {% endif %}
+            </h2>
+            <p>
+                {{concept.description}}
+            </p>
+            <ul>
+                {% for sujet in concept.topics %}
+                    <li>{{sujet}}</li>
+                {% endfor %}
+            </ul>
+            <h2>Tutoriel</h2>
+            {% assign tutorials = concept.tutorials  %}
+            <ul>
+            {% for tutorial_reference in tutorials  %}
+                <li>
+                    {% assign tutorial = site.tutorials | where: "reference", tutorial_reference | first   %}
+                    {% assign tutoriel_title = tutorial.title  %}
+                    <div>
+                        <a href="{{tutorial.link}}" target="_blank">{{ tutoriel_title }}</a>
+                        <p>Langue : {{tutorial.language}} </p>
+                        <p>{{tutorial.description}}</p>
+                    </div>  
+                </li>
+            {% endfor %}
+            </ul>
+                <p>{{concept.content | markdownify}}</p>
+{% endif %}

@@ -1,0 +1,26 @@
+---
+layout : chapters
+---
+
+<style>
+    a {
+        color: black !important;
+    }
+</style>
+
+<h1>Plan de formation</h1>
+{%- assign parts = site.parts | sort: "order" -%}
+<ol>
+    {% for part in parts  %}
+    <li> <a href="#{{part.title}}">{{part.title}}</a> </li>
+    {% endfor %}
+</ol>
+
+
+
+
+{% for part in parts %}
+<h2 id="{{part.title}}">{{part.title}}</h2>
+<q>{{part.description}}</q>
+<p>{{part.content}}</p>
+{% endfor %}

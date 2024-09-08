@@ -1,0 +1,35 @@
+
+
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+    <div class="sidebar-scrollbox">
+        
+    <a href="/" >
+        <img width="100%" src="{{site.baseurl}}/images/logo/logo-codeur-academy.png" alt="Codeur Academy">
+    </a> 
+    
+
+    <ol class="chapter">
+
+        {% for part in site.data["part_items"] %}
+
+        {%- assign chapters = part["chapter_items"]  -%}
+       
+        <li class="chapter-item expanded affix"></li>
+        <li class="part-title {{part['nature']}}"> {{part["title"]}}</li>
+            {% for chapter in chapters %}
+            <li class="chapter-item expanded">
+                <a href="{{site.baseurl}}{{chapter.url}}" class="{%- if page.url == post.url -%} active {%- endif -%} ">
+                    <strong aria-hidden="true"></strong>  
+                    {%- if chapter.title_in_part -%}
+                    {{ chapter.title_in_part | escape }}
+                    {%- else -%}
+                    {{ chapter.title | escape }}
+                    {%- endif -%}
+                </a>
+            </li>  
+            {%- endfor -%}
+        {%- endfor -%}
+    </ol>
+    </div>
+       <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+</nav>
