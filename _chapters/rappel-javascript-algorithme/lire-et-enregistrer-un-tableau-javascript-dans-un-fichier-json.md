@@ -6,7 +6,7 @@ part_reference: rappel-javascript-algorithme
 concept_reference: lire-et-enregistrer-un-tableau-javascript-dans-un-fichier-json
 title: Lire et enregistrer un tableau JavaScript dans un fichier JSON
 description: ''
-order: 4
+order: 5
 global_order: '30'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/lire-et-enregistrer-un-tableau-javascript-dans-un-fichier-json
