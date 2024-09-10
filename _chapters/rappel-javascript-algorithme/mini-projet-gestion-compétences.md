@@ -7,7 +7,7 @@ concept_reference: ''
 title: 'Mini-projet : Gestion compétences'
 description: ''
 order: 2
-global_order: '28'
+global_order: '2'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/mini-projet-gestion-compétences
 layout: chapters

@@ -7,7 +7,7 @@ concept_reference: ''
 title: Apprentissage
 description: ''
 order: 3
-global_order: '29'
+global_order: '3'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/apprentissage
 layout: chapters

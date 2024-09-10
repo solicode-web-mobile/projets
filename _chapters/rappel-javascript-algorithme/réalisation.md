@@ -7,7 +7,7 @@ concept_reference: ''
 title: Réalisation
 description: ''
 order: 10
-global_order: '33'
+global_order: '10'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/réalisation
 layout: chapters

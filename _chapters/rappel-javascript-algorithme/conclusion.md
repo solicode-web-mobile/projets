@@ -7,7 +7,7 @@ concept_reference: ''
 title: Conclusion
 description: ''
 order: 11
-global_order: '34'
+global_order: '11'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/conclusion
 layout: chapters

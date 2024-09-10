@@ -7,7 +7,7 @@ concept_reference: ''
 title: Introduction
 description: ''
 order: 1
-global_order: '27'
+global_order: '1'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/introduction
 layout: chapters

@@ -7,7 +7,7 @@ concept_reference: algorithmes-de-base
 title: Algorithmes de Base à Maîtriser pour Débuter en Programmation
 description: ''
 order: 6
-global_order: '30'
+global_order: '6'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/algorithmes-de-base
 layout: chapter_with_concept

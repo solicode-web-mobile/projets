@@ -7,7 +7,7 @@ concept_reference: ''
 title: Exercices algorithme
 description: ''
 order: 8
-global_order: '32'
+global_order: '8'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/exercices-algorithme
 layout: chapters

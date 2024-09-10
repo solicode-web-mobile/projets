@@ -7,7 +7,7 @@ concept_reference: ''
 title: Conception
 description: ''
 order: 9
-global_order: '32'
+global_order: '9'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/conception
 layout: chapters
