@@ -9,7 +9,7 @@ description: ''
 order: 8
 global_order: '32'
 directory: rappel-javascript-algorithme
-permalink: rappel-javascript-algorithme/exercices-algorithme
+permalink: rappel-javascript-algorithme/exercices-algorithme-débogage
 layout: chapters
 ---
 

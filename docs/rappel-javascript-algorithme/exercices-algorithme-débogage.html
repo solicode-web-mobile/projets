@@ -1,0 +1,689 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="fr_FR" class="sidebar-visible no-js codeur">
+    <head>
+        <meta name="author" content="ESSARRAJ Fouad" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exercices débogage en Javascript |  - Développement Web et Mobile - Perfectionnement</title>
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Exercices débogage en Javascript" />
+<meta property="og:locale" content="fr_FR" />
+<meta name="description" content="Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad" />
+<meta property="og:description" content="Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad" />
+<link rel="canonical" href="/projets/rappel-javascript-algorithme/exercices-algorithme-d%C3%A9bogage" />
+<meta property="og:url" content="/projets/rappel-javascript-algorithme/exercices-algorithme-d%C3%A9bogage" />
+<meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-10T10:31:23+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Exercices débogage en Javascript" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-10T10:31:23+01:00","datePublished":"2024-09-10T10:31:23+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Exercices débogage en Javascript","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/rappel-javascript-algorithme/exercices-algorithme-d%C3%A9bogage"},"url":"/projets/rappel-javascript-algorithme/exercices-algorithme-d%C3%A9bogage"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <link rel="shortcut icon" href="/projets/favicon.png">
+        <link rel="stylesheet" href="/projets/assets/css/variables.css">
+        <link rel="stylesheet" href="/projets/assets/css/general.css">
+        <link rel="stylesheet" href="/projets/assets/css/chrome.css">
+        <link rel="stylesheet" href="/projets/assets/css/print.css" media="print">
+        <link rel="stylesheet" href="/projets/vendor/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="/projets/vendor/fonts/fonts.css">
+        <!-- <link rel="stylesheet" href="/projets/vendor/highlight1/highlight.css">
+        <link rel="stylesheet" href="/projets/vendor/highlight1/tomorrow-night.css">
+        <link rel="stylesheet" href="/projets/vendor/highlight1/ayu-highlight.css"> -->
+        <!-- <link rel="stylesheet" href="/projets/vendor/pygments-css/pygments.css"> -->
+        <link rel="stylesheet" href="/projets/vendor/pygments-css/nimbus-pygments.css">
+        <link rel="stylesheet" href="/projets/vendor/pygments-css/code-format.scss">
+       
+        <link rel="stylesheet" href="/projets/assets/css/custom.css">
+        <script type="text/javascript" src="/projets/assets/js/theme-config.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR3NFZ86T4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CR3NFZ86T4');
+        </script></head>
+    <body>
+        
+
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+    <div class="sidebar-scrollbox">
+        
+
+    <ol class="chapter">
+
+        <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Introduction</li>
+            
+            <li class="chapter-item expanded">
+                <a href="/projets/index.html" class="">
+                    <strong aria-hidden="true"></strong>Introduction</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/plan-formation.html" class="">
+                    <strong aria-hidden="true"></strong>Modules</a>
+            </li><li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Rappel Javascript et Algorithme</li>
+            
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/introduction" class="">
+                    <strong aria-hidden="true"></strong>Introduction</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/mini-projet-gestion-compétences" class="">
+                    <strong aria-hidden="true"></strong>Mini-projet : Gestion compétences</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/apprentissage" class="">
+                    <strong aria-hidden="true"></strong>Apprentissage</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/créer-une-application-console-avec-nodejs" class="">
+                    <strong aria-hidden="true"></strong>Créer une application console avec Node.js</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/lire-et-enregistrer-un-tableau-javascript-dans-un-fichier-json" class="">
+                    <strong aria-hidden="true"></strong>Lire et enregistrer un tableau JavaScript dans un fichier JSON</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/algorithmes-de-base" class="">
+                    <strong aria-hidden="true"></strong>Algorithmes de Base à Maîtriser pour Débuter en Programmation</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/algorithmes-essentiels-en-javascript" class="">
+                    <strong aria-hidden="true"></strong>Les Algorithmes Essentiels en JavaScript</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/exercices-algorithme-débogage" class="">
+                    <strong aria-hidden="true"></strong>Exercices débogage en Javascript</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/exercices-algorithme" class="">
+                    <strong aria-hidden="true"></strong>Exercices algorithme</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/conception" class="">
+                    <strong aria-hidden="true"></strong>Conception</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/réalisation" class="">
+                    <strong aria-hidden="true"></strong>Réalisation</a>
+            </li>
+            <li class="chapter-item expanded">
+                <a href="/projets/rappel-javascript-algorithme/conclusion" class="">
+                    <strong aria-hidden="true"></strong>Conclusion</a>
+            </li><li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrisez la POO en PHP !
+
+
+
+</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Application de bibliothèque </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Lancement des projets fils rouges </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Bienvenue dans le monde de Kotlin et d'Android ! </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise des fondamentaux de Kotlin et d'Android !</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Bienvenue dans l'univers de Laravel </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise d'Eloquent ORM </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Analyse et conception</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise des concepts avancés de Kotlin </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Créer des applications Android époustouflantes </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title ">  Maîtrise du routage et des contrôleurs Laravel </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise d'Eloquent ORM avancé </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Conception - Projet file rouge </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title ">  Maîtrise de la navigation et de l'adaptation dans Jetpack Compose </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise de la récupération de données en ligne </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title ">  Maîtrise de la validation et de la sécurité </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Création d'une boutique en ligne fonctionnelle </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Développement du Backend</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise de SQL et de Room </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise de DataStore </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise des tests unitaires </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Validation personnalisée et de Laravel Mix</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Développement du Frontend</li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Maîtrise de Laravel Passport et de l'OAuth2 </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Déploiement réussi en production </li>
+            <li class="chapter-item expanded affix"></li>
+        <li class="part-title "> Intégration et Tests</li>
+            </ol>
+    </div>
+       <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+</nav>
+        <div id="page-wrapper" class="page-wrapper">
+            
+
+
+
+<div class="page">       
+    <div id="menu-bar-hover-placeholder"></div>
+    <div id="menu-bar" class="menu-bar sticky bordered">
+        <div class="left-buttons">
+            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                <i class="fa fa-bars"></i>
+            </button>
+            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                <i class="fa fa-paint-brush"></i>
+            </button>
+            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                <li role="none"><button role="menuitem" class="theme" id="codeur">Codeur (default)</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+            </ul>
+            
+            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                <i class="fa fa-search"></i>
+            </button>
+            
+        </div>
+        <span class="menu-title">Développement Web et Mobile - Perfectionnement</span>
+        <div class="right-buttons">
+            <!-- <a href="print.html" title="Print this book" aria-label="Print this book">
+                <i id="print-button" class="fa fa-print"></i>
+            </a> -->
+        </div>
+    </div> 
+    <div id="search-wrapper" class="hidden">
+        <form id="searchbar-outer" class="searchbar-outer">
+            <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Rechercher dans ce livre ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+        </form>
+        <div id="searchresults-outer" class="searchresults-outer hidden">
+            <div id="searchresults-header" class="searchresults-header"></div>
+            <ul id="searchresults">
+            </ul>
+        </div>
+    </div>
+   
+
+    <div id="content"
+     class="content">
+        <main>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                   
+                    <li class="breadcrumb-item"> <a href="/"><i class="fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item"> <a href="/projets/">Web-Mobile</a></li>
+                    <li class="breadcrumb-item"><a href="/projets/rappel-javascript-algorithme/introduction">Rappel Javascript et Algorithme</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Exercices débogage en Javascript</li>
+                </ol>
+            </nav>
+            <h1 id="exercices-débogage-en-javascript">Exercices débogage en Javascript</h1>
+
+<p>Pour chaque exercice :</p>
+<ul>
+  <li>Définir l’objectif de l’algorithme.</li>
+  <li>Valider l’algorithme avec des exemples.</li>
+  <li>Corriger les éventuelles erreurs.
+    <h3 id="structures-de-contrôle"><strong>Structures de contrôle</strong></h3>
+  </li>
+</ul>
+
+<p><strong>1.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction1</span><span class="p">(</span><span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">somme</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="nx">somme</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">somme</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nf">fonction1</span><span class="p">(</span><span class="nx">N</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>2. :</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction2</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">nombre</span><span class="p">}</span><span class="s2"> x </span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2"> = </span><span class="p">${</span><span class="nx">nombre</span> <span class="o">*</span> <span class="nx">i</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">nombre</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="nf">fonction2</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>3. :</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction3</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">nombre</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>4.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>5.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction5</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">nombre</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">nombre</span> <span class="o">*</span> <span class="nf">fonction5</span><span class="p">(</span><span class="nx">nombre</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">nombre</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nf">fonction5</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="tableaux"><strong>Tableaux</strong></h3>
+
+<p><strong>7.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction7</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nombre</span> <span class="o">=</span> <span class="nf">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Entrez un nombre (0 pour arrêter) : </span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">nombre</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">nombres</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span>
+    <span class="nx">s</span> <span class="o">+=</span> <span class="nx">nombre</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">La solution est :</span><span class="dl">"</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">fonction7</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>8.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction8</span><span class="p">(</span><span class="nx">tableau</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">a</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">b</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">fonction8</span><span class="p">(</span><span class="nx">nombres</span><span class="p">);</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>9. :</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction9</span><span class="p">(</span><span class="nx">tableau</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="nx">tableau</span><span class="p">[</span><span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">tableau</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">fonction9</span><span class="p">(</span><span class="nx">nombres</span><span class="p">));</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>10. :</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction10</span><span class="p">(</span><span class="nx">tableau</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if </span><span class="p">(</span><span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="nx">tableau</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">tableau</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">fonction10</span><span class="p">(</span><span class="nx">nombres</span><span class="p">));</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>11. :</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction11</span><span class="p">(</span><span class="nx">tableau</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">tableau</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="chaînes-de-caractères"><strong>Chaînes de caractères</strong></h3>
+
+<p><strong>12.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction12</span><span class="p">(</span><span class="nx">chaine</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">longueur</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">longueur</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">longueur</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>13.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction13</span><span class="p">(</span><span class="nx">chaine</span><span class="p">,</span> <span class="nx">caractere</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">compte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">chaine</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">caractere</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">compte</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">compte</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>14.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction14</span><span class="p">(</span><span class="nx">chaine1</span><span class="p">,</span> <span class="nx">chaine2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">chaineResultat</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">chaineResultat</span> <span class="o">+=</span> <span class="nx">chaine1</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine2</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">chaineResultat</span> <span class="o">+=</span> <span class="nx">chaine2</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">chaineResultat</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>15.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction15</span><span class="p">(</span><span class="nx">chaine</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">chaine</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">chaine</span><span class="p">[</span><span class="nx">chaine</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="conditions"><strong>Conditions</strong></h3>
+
+<p><strong>17. Trier trois nombres dans l’ordre croissant:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction17</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">];</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">b</span> <span class="o">&lt;</span> <span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">];</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">c</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="boucles"><strong>Boucles</strong></h3>
+
+<p><strong>19. Afficher les nombres de 1 à N avec un pas de 2:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction19</span><span class="p">(</span><span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>20.:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">fonction20</span><span class="p">(</span><span class="nx">chaine</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">chaine</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">chaine</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+        </main>
+
+        
+        
+        <nav class="nav-wrapper" aria-label="Page navigation">
+
+            <!-- Mobile navigation buttons --><a rel="prev" href="/projets/rappel-javascript-algorithme/algorithmes-essentiels-en-javascript" class="mobile-nav-chapters previous" title="Les Algorithmes Essentiels en JavaScript" aria-label="Les Algorithmes Essentiels en JavaScript" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a><a rel="next" href="/projets/rappel-javascript-algorithme/exercices-algorithme" class="mobile-nav-chapters next" title="Exercices algorithme" aria-label="Exercices algorithme" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a><div style="clear: both"></div>
+        </nav>
+    </div>
+</div>
+
+
+<!-- <a 
+style="text-align: center;
+display: inline-block;
+width: 100%;"
+href="https://www.udemy.com/course/apprendre-html5-et-css3-par-projets/?referralCode=153108D8498B1B8B3458" target="_blank" class="button button-3d button-large button-rounded button-yellow button-light">
+
+<img style="padding: 10px;
+width: 50%;"  src="/projets/images/formation-en-video-banner.png" alt="devenir-developpeur-web">
+</a> -->
+
+
+<nav class="nav-wide-wrapper" aria-label="Page navigation"><a rel="prev" href="/projets/rappel-javascript-algorithme/algorithmes-essentiels-en-javascript" class="nav-chapters previous" title="Les Algorithmes Essentiels en JavaScript" aria-label="Les Algorithmes Essentiels en JavaScript" aria-keyshortcuts="Left">
+    <i class="fa fa-angle-left"></i>
+</a><a rel="next" href="/projets/rappel-javascript-algorithme/exercices-algorithme" class="nav-chapters next" title="Exercices algorithme" aria-label="Exercices algorithme" aria-keyshortcuts="Right">
+    <i class="fa fa-angle-right"></i>
+</a></nav>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/projets/vendor/lunrjs/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/projets/vendor/mark/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/projets/vendor/mark/jquery.mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/projets/assets/js/variables.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/projets/assets/js/search2.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/projets/vendor/clipboard/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="/projets/vendor/highlight/highlight1.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="/projets/assets/js/book.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="/projets/assets/js/custom.js"></script>
+    </body>
+</html>
