@@ -12,3 +12,5 @@ directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/relations-entre-objets
 layout: chapter_with_concept
 ---
+
+

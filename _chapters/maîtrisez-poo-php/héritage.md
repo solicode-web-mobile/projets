@@ -12,3 +12,4 @@ directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/héritage
 layout: chapter_with_concept
 ---
+

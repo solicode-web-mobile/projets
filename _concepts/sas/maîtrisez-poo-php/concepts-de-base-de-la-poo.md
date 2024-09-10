@@ -73,24 +73,6 @@ La POO offre de nombreux avantages :
 * **Extensibilité** : Il est facile d'ajouter de nouvelles fonctionnalités à une application.
 * **Fiabilité** : La POO permet de réduire les erreurs de programmation.
 
-### Ressources supplémentaires
-
-* **OpenClassrooms** : [URL non valide supprimée]
-* **Grafikart** : [https://grafikart.fr/formations/programmation-objet-php](https://grafikart.fr/formations/programmation-objet-php)
-* **Manuel officiel de PHP** : [https://www.php.net/manual/fr/language.oop5.php](https://www.php.net/manual/fr/language.oop5.php)
-
 **En conclusion**, la POO est un outil puissant pour tout développeur PHP. En maîtrisant les concepts fondamentaux, vous serez en mesure de créer des applications plus robustes, plus maintenables et plus évolutives.
 
-**Note:** Cet article est une introduction à la POO en PHP. Il existe de nombreux autres concepts et nuances à explorer. N'hésitez pas à consulter les ressources supplémentaires pour approfondir vos connaissances.
 
-**Avez-vous d'autres questions sur la POO en PHP ?** 
-
-**Je peux vous aider avec des sujets plus spécifiques comme :**
-
-* Les interfaces et l'abstraction
-* Les traits
-* Les espaces de noms
-* Les design patterns
-* Des exemples de code plus complexes
-
-N'hésitez pas à me solliciter !
