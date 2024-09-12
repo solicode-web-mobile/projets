@@ -7,10 +7,10 @@ unit_reference: sas-rappel-javascript-algorithme
 part: rappel-javascript-algorithme
 concept_categories: ''
 title: JavaScript Asynchrone
-topics:
-- lab-nodejs-introduction-au-javascript-asynchrone
+topics: ''
 description: ''
-tutorials: ''
+tutorials:
+- lab-nodejs-introduction-au-javascript-asynchrone
 Todo: ''
 directory: sas/rappel-javascript-algorithme
 permalink: sas/javascript-asynchrone
