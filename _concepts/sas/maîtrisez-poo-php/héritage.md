@@ -1,7 +1,7 @@
 ---
 reference: héritage
 slug: héritage
-order: 7
+order: 8
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

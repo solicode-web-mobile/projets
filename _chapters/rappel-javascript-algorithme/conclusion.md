@@ -6,7 +6,7 @@ part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 11
+order: 12
 global_order: '11'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/conclusion

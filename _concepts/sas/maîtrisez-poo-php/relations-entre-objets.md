@@ -1,7 +1,7 @@
 ---
 reference: relations-entre-objets
 slug: relations-entre-objets
-order: 9
+order: 10
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

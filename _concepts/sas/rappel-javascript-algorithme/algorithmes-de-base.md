@@ -1,7 +1,7 @@
 ---
 reference: algorithmes-de-base
 slug: algorithmes-de-base
-order: 3
+order: 4
 module_reference: sas
 unit_reference: sas-rappel-javascript-algorithme
 part: rappel-javascript-algorithme

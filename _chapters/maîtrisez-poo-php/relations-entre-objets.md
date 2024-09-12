@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: relations-entre-objets
 title: "Relations entre objets \n"
 description: ''
-order: 19
+order: 20
 global_order: '19'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/relations-entre-objets

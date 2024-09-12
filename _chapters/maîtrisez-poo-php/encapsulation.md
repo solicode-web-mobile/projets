@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: encapsulation
 title: Encapsulation
 description: ''
-order: 16
+order: 17
 global_order: '16'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/encapsulation

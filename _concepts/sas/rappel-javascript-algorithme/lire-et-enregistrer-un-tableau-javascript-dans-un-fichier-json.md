@@ -1,7 +1,7 @@
 ---
 reference: lire-et-enregistrer-un-tableau-javascript-dans-un-fichier-json
 slug: lire-et-enregistrer-un-tableau-javascript-dans-un-fichier-json
-order: 2
+order: 3
 module_reference: sas
 unit_reference: sas-rappel-javascript-algorithme
 part: rappel-javascript-algorithme

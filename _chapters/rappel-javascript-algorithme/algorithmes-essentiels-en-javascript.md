@@ -6,7 +6,7 @@ part_reference: rappel-javascript-algorithme
 concept_reference: algorithmes-essentiels-en-javascript
 title: Les Algorithmes Essentiels en JavaScript
 description: ''
-order: 7
+order: 8
 global_order: '7'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/algorithmes-essentiels-en-javascript

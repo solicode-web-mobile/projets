@@ -1,7 +1,7 @@
 ---
 reference: application-console-en-php
 slug: application-console-en-php
-order: 10
+order: 11
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

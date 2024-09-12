@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: sérialisation-php
 title: 'Sérialisation PHP '
 description: ''
-order: 21
+order: 22
 global_order: '21'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/sérialisation-php

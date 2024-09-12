@@ -1,7 +1,7 @@
 ---
 reference: encapsulation
 slug: encapsulation
-order: 6
+order: 7
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

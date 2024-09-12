@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 13
+order: 14
 global_order: '13'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/apprentissage

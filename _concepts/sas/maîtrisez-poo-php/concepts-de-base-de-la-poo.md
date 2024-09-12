@@ -1,7 +1,7 @@
 ---
 reference: concepts-de-base-de-la-poo
 slug: concepts-de-base-de-la-poo
-order: 5
+order: 6
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

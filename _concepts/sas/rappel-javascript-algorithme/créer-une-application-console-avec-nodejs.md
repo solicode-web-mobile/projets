@@ -1,7 +1,7 @@
 ---
 reference: créer-une-application-console-avec-nodejs
 slug: créer-une-application-console-avec-nodejs
-order: 1
+order: 2
 module_reference: sas
 unit_reference: sas-rappel-javascript-algorithme
 part: rappel-javascript-algorithme
@@ -98,6 +98,53 @@ rl.question('Entrez le premier nombre : ', (num1) => {
   });
 });
 ```
+
+
+### Solution 
+
+
+````js
+
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+const askQuestion = (query) => {
+  return new Promise((resolve) => rl.question(query, resolve));
+};
+
+const gestion_apprenants = async () => {
+
+  var choix = ""
+
+  while (choix != "q"){
+    choix = await askQuestion("Menu :  \n \t a : Ajouter \n \t s: Supprimer \n \t q: Quitter \n");
+
+    switch (choix) {
+      case 'a':
+        first_name = await askQuestion("Donner le nom: ");
+        last_name = await askQuestion("Donnez le prénom: ");
+        console.log("Ajouter");
+        break;
+      case 's':
+        id = await askQuestion("Donner l'identifiant: ");
+        console.log("Supprimer");
+        break;
+      case 'q':
+        break;
+      default:
+        break;
+    }
+  }
+
+  rl.close();
+};
+
+gestion_apprenants();
+
+````
 
 ### Conclusion
 Ce tutoriel vous a donné une introduction à la création d'applications console avec Node.js. Vous pouvez aller beaucoup plus loin en utilisant des modules supplémentaires, en créant des interfaces utilisateur plus complexes, ou en intégrant votre application avec d'autres systèmes.

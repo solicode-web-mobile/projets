@@ -1,7 +1,7 @@
 ---
 reference: polymorphisme
 slug: polymorphisme
-order: 8
+order: 9
 module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php

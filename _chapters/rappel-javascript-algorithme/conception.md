@@ -6,7 +6,7 @@ part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: Conception
 description: ''
-order: 9
+order: 10
 global_order: '9'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/conception

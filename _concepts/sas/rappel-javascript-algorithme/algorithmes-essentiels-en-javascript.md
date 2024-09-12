@@ -1,7 +1,7 @@
 ---
 reference: algorithmes-essentiels-en-javascript
 slug: algorithmes-essentiels-en-javascript
-order: 4
+order: 5
 module_reference: sas
 unit_reference: sas-rappel-javascript-algorithme
 part: rappel-javascript-algorithme
