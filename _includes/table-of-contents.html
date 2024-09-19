@@ -1,5 +1,3 @@
-
-
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
     <div class="sidebar-scrollbox">
         
@@ -11,9 +9,10 @@
         {%- assign chapters = part["chapter_items"]  -%}
        
         <li class="chapter-item expanded affix"></li>
-        <li class="part-title {{part['nature']}}"> {{part["title"]}}</li>
-            {% for chapter in chapters %}
-            <li class="chapter-item expanded">
+        <li data-bs-toggle="collapse" data-bs-target="#{{part['reference']}}" class="part-title {{part['nature']}}"> {{part["title"]}}</li>
+        <div id="{{part['reference']}}" class="collapse">
+        {% for chapter in chapters %}
+            <li  class="chapter-item expanded" id="{{part['reference']}}-{{chapter.slug}}">
                 <a href="{{site.baseurl}}{{chapter.url}}" class="{%- if page.url == post.url -%} active {%- endif -%} ">
                     <strong aria-hidden="true"></strong>  
                     {%- if chapter.title_in_part -%}
@@ -23,8 +22,10 @@
                     {%- endif -%}
                 </a>
             </li>  
-            {%- endfor -%}
         {%- endfor -%}
+        </div> 
+        {%- endfor -%}
+        
     </ol>
     </div>
        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>

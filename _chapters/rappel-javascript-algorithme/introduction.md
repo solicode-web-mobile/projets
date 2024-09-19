@@ -1,7 +1,7 @@
 ---
 reference: rappel-javascript-algorithme-introduction
 slug: introduction
-module_reference: sas-rappel-javascript-algorithme
+module_reference: sas
 part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: Introduction

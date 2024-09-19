@@ -1,7 +1,7 @@
 ---
 reference: rappel-javascript-algorithme-javascript-asynchrone
 slug: javascript-asynchrone
-module_reference: sas-rappel-javascript-algorithme
+module_reference: sas
 part_reference: rappel-javascript-algorithme
 concept_reference: javascript-asynchrone
 title: JavaScript Asynchrone

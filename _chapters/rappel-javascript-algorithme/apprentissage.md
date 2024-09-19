@@ -1,7 +1,7 @@
 ---
 reference: rappel-javascript-algorithme-apprentissage
 slug: apprentissage
-module_reference: sas-rappel-javascript-algorithme
+module_reference: sas
 part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: Apprentissage

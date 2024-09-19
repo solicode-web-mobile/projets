@@ -1,13 +1,13 @@
 ---
 reference: maîtrisez-poo-php-apprentissage
 slug: apprentissage
-module_reference: sas-maîtrisez-poo-php
+module_reference: sas
 part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: Apprentissage
 description: ''
 order: 14
-global_order: '13'
+global_order: '14'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/apprentissage
 layout: chapters

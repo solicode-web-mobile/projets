@@ -83,3 +83,29 @@ $(document).ready(function(){
 
 
 
+// aide menu 
+
+$(document).ready(function() {
+    var currentURL = window.location.href;
+    currentURL = decodeURIComponent(currentURL)
+    var urlParts = currentURL.split("/");
+    var partReference = urlParts[urlParts.length - 2]; // Get the second-to-last part
+    var chapitre_reference = partReference + "-" + urlParts[urlParts.length - 1];
+   
+     
+    // Check if the part reference is valid and matches a collapse element ID
+    if (partReference && $("#" + partReference).length > 0) {
+        $("#" + partReference).collapse("show");
+    } else {
+        // Handle invalid part reference or missing collapse element
+        console.error("Invalid part reference or collapse element not found:", partReference);
+    }
+
+    // Check if the part chapitre_reference is valid and matches a collapse element ID
+    if (chapitre_reference && $("#" + chapitre_reference).length > 0) {
+        $("#" + chapitre_reference).addClass("active")
+    } else {
+        // Handle invalid part reference or missing collapse element
+        console.error("Invalid part reference or collapse element not found:", partReference);
+    }
+});

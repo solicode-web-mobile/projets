@@ -1,7 +1,7 @@
 ---
 reference: rappel-javascript-algorithme-mini-projet-gestion-compétences
 slug: mini-projet-gestion-compétences
-module_reference: sas-rappel-javascript-algorithme
+module_reference: sas
 part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: 'Mini-projet : Gestion compétences'

@@ -1,13 +1,13 @@
 ---
 reference: maîtrisez-poo-php-introduction
 slug: introduction
-module_reference: sas-maîtrisez-poo-php
+module_reference: sas
 part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: Introduction
 description: ''
 order: 13
-global_order: '12'
+global_order: '13'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/introduction
 layout: chapters

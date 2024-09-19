@@ -1,13 +1,13 @@
 ---
 reference: rappel-javascript-algorithme-exercices-algorithme
 slug: exercices-algorithme
-module_reference: sas-rappel-javascript-algorithme
+module_reference: sas
 part_reference: rappel-javascript-algorithme
 concept_reference: ''
 title: Exercices algorithme
 description: ''
 order: 9
-global_order: '8'
+global_order: '9'
 directory: rappel-javascript-algorithme
 permalink: rappel-javascript-algorithme/exercices-algorithme
 layout: chapters

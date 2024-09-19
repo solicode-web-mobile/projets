@@ -99,3 +99,14 @@ h1{
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+
+/* aide menu */
+
+.sidebar .part-title{
+    cursor: pointer;
+}
+
+.sidebar .active a {
+    color: var(--links);
+}
