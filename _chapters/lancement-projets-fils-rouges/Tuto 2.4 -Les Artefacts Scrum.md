@@ -11,15 +11,15 @@ directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/artefacts-scrum
 layout: chapters
 ---
-## Tuto 2.4 -Les Artefacts Scrum : Piliers d'un Projet Agile Réussi
+# Tuto 2.4 -Les Artefacts Scrum : Piliers d'un Projet Agile Réussi
 
 Les artefacts Scrum sont des éléments clés qui permettent à une équipe de Scrum de visualiser, de gérer et d'améliorer continuellement le produit développé. Ce sont des outils de communication essentiels qui assurent la transparence et la collaboration au sein de l'équipe.
 
-### Qu'est-ce qu'un Artefact Scrum ?
+## Qu'est-ce qu'un Artefact Scrum ?
 
 Un artefact Scrum est un élément tangible qui représente le travail effectué par l'équipe. Il peut être physique ou numérique et sert de référence tout au long du projet. Les artefacts Scrum sont conçus pour être transparents, inspectables et adaptables, ce qui est en ligne avec les trois piliers de Scrum.
 
-### Les Trois Artefacts Scrum Principaux
+## Les Trois Artefacts Scrum Principaux
 
 1. **Le Product Backlog:**
    * **Définition:** C'est une liste ordonnée de toutes les fonctionnalités, améliorations et corrections de bugs à implémenter dans le produit. Chaque élément du Product Backlog est appelé un "item" ou une "user story".
@@ -43,7 +43,7 @@ Un artefact Scrum est un élément tangible qui représente le travail effectué
      * **Fonctionnel:** L'incrément doit être fonctionnel et apporter de la valeur ajoutée au produit.
      * **Incrémental:** Chaque incrément s'appuie sur les précédents et contribue à la création du produit final.
 
-### Le Rôle des Artefacts Scrum
+## Le Rôle des Artefacts Scrum
 
 Les artefacts Scrum jouent un rôle crucial dans la réussite d'un projet Agile :
 
@@ -52,15 +52,7 @@ Les artefacts Scrum jouent un rôle crucial dans la réussite d'un projet Agile 
 * **Adaptation:** Ils facilitent l'adaptation aux changements et permettent à l'équipe de réagir rapidement aux nouvelles informations.
 * **Collaboration:** Ils favorisent la collaboration entre les membres de l'équipe et les parties prenantes.
 
-### En Conclusion
+## En Conclusion
 
 Les artefacts Scrum sont des outils essentiels pour mettre en œuvre une approche Agile réussie. En utilisant le Product Backlog, le Sprint Backlog et l'Incrément, les équipes Scrum peuvent améliorer leur productivité, la qualité de leur produit et la satisfaction de leurs clients.
 
-**Pour aller plus loin, vous pouvez approfondir les sujets suivants :**
-
-* **Les techniques de raffinement du Product Backlog**
-* **La gestion des priorités dans le Product Backlog**
-* **Les meilleures pratiques pour créer un Sprint Backlog efficace**
-* **L'importance de la démonstration de l'incrément à la fin de chaque sprint**
-
-**Avez-vous d'autres questions sur les artefacts Scrum ?**

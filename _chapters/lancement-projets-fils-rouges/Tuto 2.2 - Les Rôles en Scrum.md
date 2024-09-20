@@ -16,7 +16,7 @@ layout: chapters
 
 Scrum, une méthode agile de gestion de projet, repose sur trois rôles clés : le Product Owner, le Scrum Master et l'équipe de développement. Chacun de ces rôles joue un rôle crucial dans la réussite d'un projet Scrum. 
 
-### Le Product Owner : Le Garant de la Vision
+## Le Product Owner : Le Garant de la Vision
 
 Le Product Owner est l'interface entre l'équipe de développement et les clients ou les parties prenantes. Il est responsable de :
 
@@ -27,7 +27,7 @@ Le Product Owner est l'interface entre l'équipe de développement et les client
 
 **En résumé, le Product Owner est le champion du produit.**
 
-### Le Scrum Master : Le Facilitateur du Processus
+## Le Scrum Master : Le Facilitateur du Processus
 
 Le Scrum Master est un facilitateur qui aide l'équipe à adopter et à mettre en œuvre Scrum. Ses principales responsabilités sont :
 
@@ -38,7 +38,7 @@ Le Scrum Master est un facilitateur qui aide l'équipe à adopter et à mettre e
 
 **En résumé, le Scrum Master est le coach de l'équipe.**
 
-### L'Équipe de Développement : Les Créateurs
+## L'Équipe de Développement : Les Créateurs
 
 L'équipe de développement est composée de professionnels qui travaillent ensemble pour créer le produit incrémental à chaque sprint. Ses membres sont responsables de :
 
@@ -48,7 +48,7 @@ L'équipe de développement est composée de professionnels qui travaillent ense
 
 **En résumé, l'équipe de développement est le cœur du processus Scrum.**
 
-### Les Interactions entre les Rôles
+## Les Interactions entre les Rôles
 
 Les trois rôles de Scrum sont interdépendants et travaillent ensemble pour atteindre un objectif commun : la création d'un produit de qualité répondant aux besoins des clients.
 
@@ -56,15 +56,7 @@ Les trois rôles de Scrum sont interdépendants et travaillent ensemble pour att
 * **Le Scrum Master et l'équipe de développement:** Le Scrum Master aide l'équipe à travailler efficacement et à résoudre les problèmes.
 * **Le Product Owner et le Scrum Master:** Le Product Owner et le Scrum Master travaillent ensemble pour s'assurer que le produit est développé de manière efficace et que les besoins des clients sont satisfaits.
 
-### En Conclusion
+## En Conclusion
 
 Les rôles en Scrum sont essentiels pour assurer la réussite d'un projet. En comprenant les responsabilités de chaque rôle et en travaillant en étroite collaboration, les équipes Scrum peuvent livrer des produits de haute qualité dans les délais impartis.
 
-**Pour aller plus loin, je vous invite à explorer les sujets suivants:**
-
-* Les responsabilités spécifiques de chaque rôle dans différentes situations.
-* Les compétences requises pour chaque rôle.
-* Comment les rôles évoluent au cours d'un projet.
-* Les défis courants rencontrés par les équipes Scrum et les solutions possibles.
-
-**Avez-vous d'autres questions sur les rôles en Scrum ?**

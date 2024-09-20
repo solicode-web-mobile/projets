@@ -12,11 +12,11 @@ permalink: lancement-projets-fils-rouges/valeurs-scrum
 layout: chapters
 ---
 
-## Tuto 2.5 -Les Valeurs Scrum : Le Cœur de la Méthodologie Agile
+# Tuto 2.5 -Les Valeurs Scrum : Le Cœur de la Méthodologie Agile
 
 Les valeurs Scrum sont bien plus qu'un simple ensemble de mots ; elles constituent le fondement sur lequel repose cette méthodologie agile. Elles guident les comportements et les interactions au sein des équipes Scrum, favorisant ainsi la collaboration, l'engagement et la réussite des projets.
 
-### Les 5 Valeurs Fondamentales de Scrum
+## Les 5 Valeurs Fondamentales de Scrum
 
 1. **Engagement:**
    * Les membres de l'équipe s'engagent à atteindre les objectifs du sprint.
@@ -43,7 +43,7 @@ Les valeurs Scrum sont bien plus qu'un simple ensemble de mots ; elles constitue
    * Ils reconnaissent la valeur des contributions de chacun et travaillent ensemble vers un objectif commun.
    * Le respect est essentiel pour créer un environnement de travail positif et productif.
 
-### L'Importance des Valeurs Scrum
+## L'Importance des Valeurs Scrum
 
 Les valeurs Scrum jouent un rôle crucial dans la réussite d'un projet Agile :
 
@@ -52,16 +52,7 @@ Les valeurs Scrum jouent un rôle crucial dans la réussite d'un projet Agile :
 * **Adaptabilité:** Elles permettent à l'équipe de s'adapter rapidement aux changements et aux nouvelles exigences.
 * **Satisfaction client:** Elles contribuent à la satisfaction du client en mettant l'accent sur la livraison de valeur ajoutée.
 
-### En résumé
+## En résumé
 
 Les valeurs Scrum sont le ciment qui lie ensemble les différents éléments de la méthodologie. En adoptant ces valeurs, les équipes Scrum peuvent atteindre leurs objectifs, améliorer leur performance et créer des produits de qualité.
 
-**Pour approfondir le sujet, vous pouvez vous intéresser à:**
-
-* **La mise en pratique des valeurs Scrum au quotidien**
-* **Le rôle du Scrum Master dans la promotion des valeurs Scrum**
-* **L'impact des valeurs Scrum sur la culture d'entreprise**
-
-**Avez-vous d'autres questions sur les valeurs Scrum ?** 
-
-Je peux également vous fournir des exemples concrets de la manière dont ces valeurs peuvent être appliquées dans différents contextes.

@@ -16,7 +16,7 @@ layout: chapters
 
 La gestion de projet est une discipline qui consiste à organiser et coordonner les ressources (humaines, financières, matérielles) nécessaires à la réalisation d'un objectif spécifique dans un délai défini. C'est un processus qui implique de nombreuses étapes, de la conception initiale à la livraison finale du projet.
 
-### Les Phases d'un Projet
+## Les Phases d'un Projet
 
 Un projet se déroule généralement en plusieurs phases :
 
@@ -26,14 +26,14 @@ Un projet se déroule généralement en plusieurs phases :
 4. **Suivi et contrôle:** Mesure de l'avancement par rapport au plan, identification des écarts, mise en œuvre des actions correctives.
 5. **Clôture:** Livraison du projet, évaluation des résultats, archivage.
 
-### Les Méthodologies de Gestion de Projet
+## Les Méthodologies de Gestion de Projet
 
 Il existe de nombreuses méthodologies de gestion de projet, chacune avec ses propres avantages et inconvénients. Les plus connues sont :
 
 * **La méthode traditionnelle (en V):** Cette méthode séquentielle suit les phases suivantes : conception, développement, tests, déploiement.
 * **Les méthodes agiles:** Elles privilégient une approche itérative et incrémentale, avec une grande flexibilité et une adaptation constante aux changements. Les principales méthodes agiles sont Scrum, Kanban, et XP (eXtreme Programming).
 
-### Les Outils de Gestion de Projet
+## Les Outils de Gestion de Projet
 
 De nombreux outils sont disponibles pour aider à la gestion de projets, tels que :
 
@@ -42,7 +42,7 @@ De nombreux outils sont disponibles pour aider à la gestion de projets, tels qu
 * **Les outils de suivi de temps:** Toggl, Harvest
 * **Les outils de gestion de versions:** Git, SVN
 
-### Les Enjeux de la Gestion de Projet
+## Les Enjeux de la Gestion de Projet
 
 * **Respect des délais:** Livrer le projet dans les délais impartis est essentiel pour satisfaire les clients et les parties prenantes.
 * **Respect du budget:** Il est important de gérer les coûts de manière efficace pour éviter les dépassements.
@@ -50,7 +50,7 @@ De nombreux outils sont disponibles pour aider à la gestion de projets, tels qu
 * **Communication:** Une communication efficace entre tous les acteurs du projet est indispensable.
 * **Gestion des risques:** Il faut anticiper et gérer les risques potentiels pour éviter les surprises.
 
-### Les Compétences du Chef de Projet
+## Les Compétences du Chef de Projet
 
 Un bon chef de projet doit posséder de nombreuses compétences, notamment :
 
@@ -58,15 +58,7 @@ Un bon chef de projet doit posséder de nombreuses compétences, notamment :
 * **Des compétences relationnelles:** Capacité à communiquer, à motiver les équipes, à gérer les conflits.
 * **Des compétences organisationnelles:** Sens de l'organisation, rigueur, capacité à planifier et à suivre l'avancement du projet.
 
-### En Conclusion
+## En Conclusion
 
 La gestion de projet est une discipline complexe qui nécessite une approche méthodique et une adaptation constante aux changements. En maîtrisant les différentes phases d'un projet, les méthodologies existantes et les outils disponibles, vous serez en mesure de mener à bien vos projets avec succès.
 
-**Pour aller plus loin, vous pouvez vous intéresser à:**
-
-* **Les différentes méthodes agiles**
-* **La gestion des risques en projet**
-* **La gestion des conflits en équipe**
-* **Les certifications en gestion de projet (PMP, PRINCE2)**
-
-**Avez-vous des questions spécifiques sur la gestion de projet ?** Je peux vous fournir des informations plus détaillées sur un sujet particulier.

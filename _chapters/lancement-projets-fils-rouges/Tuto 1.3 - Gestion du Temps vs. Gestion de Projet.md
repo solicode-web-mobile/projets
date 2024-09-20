@@ -16,7 +16,7 @@ layout: chapters
 
 La gestion du temps et la gestion de projet sont souvent confondues, pourtant elles répondent à des besoins distincts, bien qu'interdépendants. Comprendre ces différences est essentiel pour optimiser son efficacité et mener à bien ses projets.
 
-### Gestion du Temps : Une Question d'Organisation Individuelle
+## Gestion du Temps : Une Question d'Organisation Individuelle
 
 La **gestion du temps** se concentre sur l'organisation personnelle des tâches et des activités. Elle vise à optimiser l'utilisation de son temps pour atteindre ses objectifs, qu'ils soient personnels ou professionnels. Les techniques de gestion du temps permettent de :
 
@@ -30,7 +30,7 @@ La **gestion du temps** se concentre sur l'organisation personnelle des tâches 
 * La matrice d'Eisenhower
 * La technique ABCDE
 
-### Gestion de Projet : Une Approche Globale et Structurée
+## Gestion de Projet : Une Approche Globale et Structurée
 
 La **gestion de projet** est une discipline qui s'applique à des initiatives plus larges et complexes. Elle vise à planifier, organiser, et contrôler toutes les activités nécessaires à la réalisation d'un objectif spécifique, dans le respect des contraintes de temps, de budget et de qualité. La gestion de projet implique :
 
@@ -43,7 +43,7 @@ La **gestion de projet** est une discipline qui s'applique à des initiatives pl
 * La méthode traditionnelle (en V)
 * Les méthodes agiles (Scrum, Kanban)
 
-### Le Lien entre Gestion du Temps et Gestion de Projet
+## Le Lien entre Gestion du Temps et Gestion de Projet
 
 La gestion du temps est un élément clé de la gestion de projet. Un chef de projet doit être capable de :
 

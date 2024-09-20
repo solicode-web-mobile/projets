@@ -11,11 +11,11 @@ directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/cérémonies-scrum
 layout: chapters
 ---
-## Tuto 2.3 -Les Cérémonies Scrum : Les Rituels d'une Équipes Agile
+# Tuto 2.3 -Les Cérémonies Scrum : Les Rituels d'une Équipes Agile
 
 Les cérémonies Scrum, souvent appelées rituels, sont des événements récurrents qui rythment le travail d'une équipe Scrum. Ces réunions courtes et fréquentes permettent à l'équipe de se synchroniser, de s'adapter et d'améliorer continuellement son processus de développement.
 
-### Les 4 Cérémonies Essentielles de Scrum
+## Les 4 Cérémonies Essentielles de Scrum
 
 1. **Le Sprint Planning:**
    * **Objectif:** Planifier le travail à réaliser lors du prochain sprint.
@@ -40,7 +40,7 @@ Les cérémonies Scrum, souvent appelées rituels, sont des événements récurr
    * **Déroulement:** L'équipe réfléchit à ce qui a bien fonctionné, ce qui n'a pas fonctionné et ce qu'il faudrait changer pour le prochain sprint.
    * **Durée:** Généralement de la moitié de la durée du sprint.
 
-### Le But des Cérémonies Scrum
+## Le But des Cérémonies Scrum
 
 * **Transparence:** Les cérémonies assurent une visibilité sur l'avancement du projet pour tous les membres de l'équipe.
 * **Inspection:** L'équipe inspecte régulièrement son travail et le produit développé.
@@ -48,7 +48,7 @@ Les cérémonies Scrum, souvent appelées rituels, sont des événements récurr
 * **Collaboration:** Les cérémonies favorisent la communication et la collaboration entre les membres de l'équipe.
 * **Amélioration continue:** La rétrospective permet à l'équipe d'apprendre de ses erreurs et d'améliorer ses pratiques.
 
-### Quelques Conseils pour des Cérémonies Efficace
+## Quelques Conseils pour des Cérémonies Efficace
 
 * **Préparer les cérémonies:** Préparer un ordre du jour et des questions à l'avance peut aider à gagner du temps.
 * **Respecter la durée:** Il est important de respecter la durée prévue pour chaque cérémonie afin de maintenir un rythme soutenu.
@@ -58,4 +58,3 @@ Les cérémonies Scrum, souvent appelées rituels, sont des événements récurr
 
 **En résumé, les cérémonies Scrum sont des moments clés pour une équipe agile. Elles permettent de maintenir une cadence régulière, de s'adapter aux changements et de livrer un produit de qualité.**
 
-**Souhaitez-vous approfondir un aspect particulier des cérémonies Scrum ?** Par exemple, nous pourrions discuter de l'importance de la rétrospective, des techniques pour faciliter les discussions ou des outils qui peuvent être utilisés pour animer les cérémonies.

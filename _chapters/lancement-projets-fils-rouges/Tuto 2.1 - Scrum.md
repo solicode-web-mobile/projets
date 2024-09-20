@@ -12,13 +12,13 @@ permalink: lancement-projets-fils-rouges/scrum
 layout: chapters
 ---
 
-## Tuto 2.1 - Scrum : Une Méthode Agile pour des Projets Réussis
+# Tuto 2.1 - Scrum : Une Méthode Agile pour des Projets Réussis
 
-### Introduction
+## Introduction
 
 Scrum est une approche de gestion de projet itérative et incrémentale, particulièrement adaptée aux projets complexes et évolutifs. Elle favorise la collaboration, la flexibilité et la livraison continue de produits de valeur. En mettant l'accent sur l'adaptation aux changements et la satisfaction du client, Scrum permet aux équipes de développer des logiciels de haute qualité dans des délais réduits.
 
-### Les Piliers de Scrum
+## Les Piliers de Scrum
 
 Scrum repose sur trois piliers fondamentaux :
 
@@ -26,7 +26,7 @@ Scrum repose sur trois piliers fondamentaux :
 * **Inspection:** L'équipe inspecte régulièrement son travail et le produit développé.
 * **Adaptation:** L'équipe s'adapte en continu aux changements et aux nouvelles informations.
 
-### Les Rôles en Scrum
+## Les Rôles en Scrum
 
 Chaque membre d'une équipe Scrum joue un rôle spécifique :
 
@@ -34,7 +34,7 @@ Chaque membre d'une équipe Scrum joue un rôle spécifique :
 * **Scrum Master:** Facilitateur du processus Scrum, il élimine les obstacles et assure que l'équipe suit les principes de Scrum.
 * **Équipe de développement:** Responsable de la création du produit incrémental à chaque sprint.
 
-### Les Cérémonies Scrum
+## Les Cérémonies Scrum
 
 Les cérémonies Scrum sont des événements réguliers qui permettent à l'équipe de se synchroniser et d'adapter le projet :
 
@@ -43,7 +43,7 @@ Les cérémonies Scrum sont des événements réguliers qui permettent à l'équ
 * **Sprint Review:** Démonstration du produit incrémental aux parties prenantes et collecte de feedback.
 * **Sprint Retrospective:** Moment d'introspection pour améliorer le processus Scrum au sein de l'équipe.
 
-### Les Artefacts Scrum
+## Les Artefacts Scrum
 
 Les artefacts Scrum sont des éléments tangibles qui représentent le travail de l'équipe :
 
@@ -51,7 +51,7 @@ Les artefacts Scrum sont des éléments tangibles qui représentent le travail d
 * **Sprint Backlog:** Sous-ensemble du Product Backlog sélectionné pour être réalisé pendant un sprint.
 * **Incrément:** Résultat concret et utilisable produit à la fin de chaque sprint.
 
-### Les Valeurs Scrum
+## Les Valeurs Scrum
 
 Les valeurs de Scrum guident le comportement des membres de l'équipe :
 
@@ -61,25 +61,16 @@ Les valeurs de Scrum guident le comportement des membres de l'équipe :
 * **Respect:** Les membres se respectent mutuellement et font confiance à leurs coéquipiers.
 * **Courage:** Les membres ont le courage de prendre des décisions difficiles et d'admettre leurs erreurs.
 
-### Le Principe d'Auto-Organisation
+## Le Principe d'Auto-Organisation
 
 En Scrum, l'équipe est auto-organisée. Cela signifie que les développeurs décident eux-mêmes de la meilleure façon de réaliser le travail, en fonction de leurs compétences et de leurs connaissances.
 
-### Les Avantages de Scrum
+## Les Avantages de Scrum
 
 * **Flexibilité:** Scrum s'adapte facilement aux changements.
 * **Collaboration:** Les équipes sont plus collaboratives et motivées.
 * **Livraison continue:** Les clients reçoivent régulièrement des fonctionnalités.
 * **Amélioration continue:** Le processus est constamment amélioré.
-
-### En Conclusion
-
-Scrum est une méthodologie puissante qui permet aux équipes de développer des produits de haute qualité de manière efficace et flexible. En adoptant les principes de Scrum, les organisations peuvent améliorer leur productivité, leur capacité d'innovation et la satisfaction de leurs clients. 
-
-
-**Mots-clés:** Scrum, Agile, gestion de projet, développement logiciel, Product Owner, Scrum Master, sprint, Product Backlog, Sprint Backlog, Incrément, valeurs Scrum, auto-organisation
-
-**Note:** Cet article peut être complété par des images, des diagrammes et des exemples pratiques pour une meilleure compréhension.
 
 
 ## Exemple d'application 
@@ -97,7 +88,7 @@ Absolument ! Prenons l'exemple d'une application mobile pour une bibliothèque u
 * **Scrum Master:** Un développeur expérimenté qui facilite les cérémonies Scrum, résout les problèmes et maintient l'équipe concentrée sur les objectifs.
 * **Équipe de développement:** Une équipe composée de développeurs mobile (iOS et Android), de designers UX/UI et de développeurs back-end pour gérer la base de données des livres et des utilisateurs.
 
-### **Mise en œuvre de Scrum**
+## **Mise en œuvre de Scrum**
 
 **1. Création du Product Backlog:**
 * Le Product Owner crée une liste détaillée des fonctionnalités :
@@ -143,4 +134,13 @@ Absolument ! Prenons l'exemple d'une application mobile pour une bibliothèque u
 
 **En conclusion,** Scrum offre un cadre idéal pour développer une application de gestion de bibliothèque moderne et efficace. En permettant une collaboration étroite entre les différentes parties prenantes et en favorisant une livraison continue, Scrum garantit que l'application répond aux besoins des utilisateurs et s'adapte aux évolutions technologiques.
 
-**Souhaiteriez-vous approfondir un aspect particulier de cet exemple ?** Par exemple, nous pourrions discuter des défis spécifiques liés au développement d'une application mobile pour une bibliothèque, ou encore des outils et technologies utilisés dans ce type de projet.
+
+## En Conclusion
+
+Scrum est une méthodologie puissante qui permet aux équipes de développer des produits de haute qualité de manière efficace et flexible. En adoptant les principes de Scrum, les organisations peuvent améliorer leur productivité, leur capacité d'innovation et la satisfaction de leurs clients. 
+
+
+**Mots-clés:** Scrum, Agile, gestion de projet, développement logiciel, Product Owner, Scrum Master, sprint, Product Backlog, Sprint Backlog, Incrément, valeurs Scrum, auto-organisation
+
+**Note:** Cet article peut être complété par des images, des diagrammes et des exemples pratiques pour une meilleure compréhension.
+
