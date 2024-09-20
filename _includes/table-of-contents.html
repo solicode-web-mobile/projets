@@ -1,16 +1,14 @@
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
     <div class="sidebar-scrollbox">
         
-
     <ol class="chapter">
 
         {% for part in site.data["part_items"] %}
 
         {%- assign chapters = part["chapter_items"]  -%}
        
-        <li class="chapter-item expanded affix"></li>
         <li data-bs-toggle="collapse" data-bs-target="#{{part['reference']}}" class="part-title {{part['nature']}}"> {{part["title"]}}</li>
-        <div id="{{part['reference']}}" class="collapse">
+        <div id="{{part['reference']}}" class="collapse ">
         {% for chapter in chapters %}
             <li  class="chapter-item expanded" id="{{part['reference']}}-{{chapter.slug}}">
                 <a href="{{site.baseurl}}{{chapter.url}}" class="{%- if page.url == post.url -%} active {%- endif -%} ">
