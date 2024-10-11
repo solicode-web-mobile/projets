@@ -1,15 +1,14 @@
 ---
-reference: fondamentaux-kotlin-mini-projet
+reference: bienvenue-kotlin-android-mini-projet
 slug: mini-projet
 module_reference: mobile
-part_reference: fondamentaux-kotlin
+part_reference: bienvenue-kotlin-android
 concept_reference: ''
 title: Mini projet
 description: ''
-order: 41
-global_order: '40'
-directory: fondamentaux-kotlin
-permalink: fondamentaux-kotlin/mini-projet
+order: 26
+directory: bienvenue-kotlin-android
+permalink: bienvenue-kotlin-android/mini-projet
 layout: chapters
 ---
 
