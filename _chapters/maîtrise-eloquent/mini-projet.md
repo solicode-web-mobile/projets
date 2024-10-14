@@ -12,8 +12,6 @@ permalink: maîtrise-eloquent/mini-projet
 layout: chapters
 ---
 
-
-
 # Mini-projet : Création d'une Base de Données pour un Blog
 
 ## Objectif
@@ -47,6 +45,9 @@ Un blog est une plateforme en ligne permettant de publier du contenu textuel, g�
      * Insérer des articles avec leurs relations respectives.
 
 ## Livrables
+
+* Diagramme de cas d'utilisation
+* Diagramme de classe
 * Un projet Laravel fonctionnel avec :
   * Les modèles Eloquent définis.
   * Les migrations créées et exécutées.
@@ -54,6 +55,7 @@ Un blog est une plateforme en ligne permettant de publier du contenu textuel, g�
   * Une base de données peuplée avec des données de test.
 
 ## Contraintes
+
 * **Pas de contrôleurs ni de routes:** Se concentrer uniquement sur la structure de la base de données.
 * **Relations simples:** Utiliser les relations de base fournies par Eloquent (one-to-one, one-to-many, many-to-many).
 * **Validation:** Mettre en place une validation simple pour les données entrées dans les seeders.
@@ -64,7 +66,4 @@ Un blog est une plateforme en ligne permettant de publier du contenu textuel, g�
 **Conseils:**
 * Utilisez des noms de tables et de colonnes significatifs.
 * Commentez votre code pour faciliter la compréhension.
-* Tirez parti des fonctionnalités avancées d'Eloquent pour optimiser vos requêtes.
 * Suivez les conventions de nommage de Laravel.
-
-En suivant ces guidelines, vous pourrez créer une base de données solide pour votre blog et poser les fondations d'une application web plus complexe.

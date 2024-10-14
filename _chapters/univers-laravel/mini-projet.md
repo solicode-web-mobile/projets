@@ -16,6 +16,7 @@ layout: chapters
 # Mini-Projet : Création d'un Site Web Simpliste pour une Agence Immobilière Marocaine (Laravel sans Base de Données)
 
 ## Objectif
+
 Développer un site web de base pour une agence immobilière fictive située au Maroc, en utilisant le framework Laravel. Ce projet vise à mettre en pratique les concepts fondamentaux de Laravel tout en créant une application web fonctionnelle sans recourir à une base de données.
 
 ## Fonctionnalités

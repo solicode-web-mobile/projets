@@ -14,7 +14,6 @@ layout: chapters
 
 # Analyse technique
 
-
 ## Apprentissage 
 
 ### Introduction à Eloquent ORM

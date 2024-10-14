@@ -13,7 +13,7 @@ permalink: maîtrise-eloquent/introduction-eloquent
 layout: chapters
 ---
 
-### **Introduction à Eloquent ORM : Modélisez vos données avec élégance**
+# **Introduction à Eloquent ORM : Modélisez vos données avec élégance**
 
 Eloquent ORM est un outil puissant fourni par Laravel pour interagir avec votre base de données de manière intuitive et orientée objet. Au lieu d'écrire des requêtes SQL complexes, vous définissez des modèles qui correspondent à vos tables de base de données et vous utilisez des méthodes fluides pour effectuer des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer).
 
@@ -22,7 +22,7 @@ Eloquent ORM est un outil puissant fourni par Laravel pour interagir avec votre 
 * **Table `posts`:** id, title, body, category_id
 * **Table `categories`:** id, name
 
-#### **Configuration de la base de données**
+## **Configuration de la base de données**
 Avant de commencer, assurez-vous d'avoir configuré correctement votre base de données dans le fichier `.env` de votre application Laravel. Les informations à renseigner sont généralement :
 
 * **DB_CONNECTION:** Le pilote de votre base de données (mysql, postgres, etc.)
@@ -31,7 +31,7 @@ Avant de commencer, assurez-vous d'avoir configuré correctement votre base de d
 * **DB_USERNAME:** Le nom d'utilisateur de votre base de données
 * **DB_PASSWORD:** Le mot de passe de votre base de données
 
-#### **Migrations**
+## **Migrations**
 
 Les migrations sont des fichiers qui contiennent les instructions pour créer et mettre à jour votre base de données. Chaque migration représente un changement spécifique à apporter à votre schéma.
 
@@ -73,7 +73,7 @@ Les migrations sont des fichiers qui contiennent les instructions pour créer et
   php artisan migrate
   ```
 
-#### **Modèles**
+## **Modèles**
 
 ```php
 // App/Models/Post.php
@@ -107,13 +107,15 @@ class Category extends Model
 }
 ```
 
-#### **Relations**
+## **Relations**
+
 * **Un post appartient à une catégorie (one-to-many):**
   * `category()` dans le modèle `Post` définit la relation.
 * **Une catégorie peut avoir plusieurs posts (one-to-many):**
   * `posts()` dans le modèle `Category` définit la relation inverse.
 
-#### **Requêtes Eloquent**
+## **Requêtes Eloquent**
+
 * **Récupérer tous les posts d'une catégorie:**
   ```php
   $category = Category::find(1);
@@ -130,11 +132,12 @@ class Category extends Model
   $post->save();
   ```
 
-#### **Tester vos modèles avec Tinker**
+## **Tester vos modèles avec Tinker**
 
 Tinker est un REPL (Read-Eval-Print Loop) interactif fourni par Laravel qui vous permet d'exécuter du code PHP directement dans votre terminal. C'est un outil très utile pour tester rapidement vos modèles et vos requêtes Eloquent.
 
 Pour lancer Tinker :
+
 ```bash
 php artisan tinker
 ```
@@ -170,11 +173,6 @@ foreach ($posts as $post) {
 * **Débogage:** Identifiez les erreurs dans votre code plus facilement.
 * **Apprentissage:** Familiarisez-vous avec Eloquent en exécutant du code directement.
 
-**Conseils pour utiliser Tinker:**
-* **Utilisez les complétions de code:** Votre IDE peut vous aider à autocompléter les noms de classes, de méthodes et de propriétés.
-* **Explorez les méthodes disponibles:** Utilisez la méthode `getMethods()` pour voir les méthodes disponibles sur un objet.
-* **Utilisez les expressions lambda:** Pour des requêtes plus complexes.
-
 
 * **Autres requêtes:**
   * **Trouver un enregistrement par son ID:** `$post = Post::find(1);`
@@ -182,7 +180,7 @@ foreach ($posts as $post) {
   * **Supprimer un enregistrement:** `$post->delete();`
   * **Et bien d'autres encore...**
 
-#### **Avantages d'Eloquent**
+## **Avantages d'Eloquent**
 * **Syntaxe intuitive:** Les méthodes d'Eloquent sont faciles à comprendre et à utiliser.
 * **Productivité:** Eloquent vous permet de travailler avec votre base de données de manière plus rapide et efficace.
 * **Flexibilité:** Eloquent offre de nombreuses fonctionnalités pour gérer des relations complexes et des requêtes avancées.
