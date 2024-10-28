@@ -16,11 +16,11 @@
 <meta property="og:url" content="/projets/ma%C3%AEtrise-eloquent/migrations-seeders" />
 <meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-11T09:11:38+01:00" />
+<meta property="article:published_time" content="2024-10-28T08:47:01+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tuto5 - Migrations et Seeders" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-11T09:11:38+01:00","datePublished":"2024-10-11T09:11:38+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Tuto5 - Migrations et Seeders","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/ma%C3%AEtrise-eloquent/migrations-seeders"},"url":"/projets/ma%C3%AEtrise-eloquent/migrations-seeders"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-10-28T08:47:01+01:00","datePublished":"2024-10-28T08:47:01+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Tuto5 - Migrations et Seeders","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/ma%C3%AEtrise-eloquent/migrations-seeders"},"url":"/projets/ma%C3%AEtrise-eloquent/migrations-seeders"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -271,10 +271,6 @@
                 <a href="/projets/univers-laravel/introduction" class="">
                     <strong aria-hidden="true"></strong>Introduction</a>
             </li>
-            <li  class="chapter-item expanded" id="univers-laravel-apprentissage">
-                <a href="/projets/univers-laravel/apprentissage" class="">
-                    <strong aria-hidden="true"></strong>Apprentissage</a>
-            </li>
             <li  class="chapter-item expanded" id="univers-laravel-mini-projet">
                 <a href="/projets/univers-laravel/mini-projet" class="">
                     <strong aria-hidden="true"></strong>Mini-Projet</a>
@@ -282,6 +278,10 @@
             <li  class="chapter-item expanded" id="univers-laravel-installation-premiers-pas">
                 <a href="/projets/univers-laravel/installation-premiers-pas" class="">
                     <strong aria-hidden="true"></strong>Tuto1 - Installation de Laravel et premiers pas</a>
+            </li>
+            <li  class="chapter-item expanded" id="univers-laravel-apprentissage">
+                <a href="/projets/univers-laravel/apprentissage" class="">
+                    <strong aria-hidden="true"></strong>Apprentissage</a>
             </li>
             <li  class="chapter-item expanded" id="univers-laravel-moteur-templates-blade">
                 <a href="/projets/univers-laravel/moteur-templates-blade" class="">
@@ -301,13 +301,13 @@
                 <a href="/projets/maîtrise-eloquent/introduction" class="">
                     <strong aria-hidden="true"></strong>Introduction</a>
             </li>
-            <li  class="chapter-item expanded" id="maîtrise-eloquent-apprentissage">
-                <a href="/projets/maîtrise-eloquent/apprentissage" class="">
-                    <strong aria-hidden="true"></strong>Apprentissage</a>
-            </li>
             <li  class="chapter-item expanded" id="maîtrise-eloquent-mini-projet">
                 <a href="/projets/maîtrise-eloquent/mini-projet" class="">
                     <strong aria-hidden="true"></strong>Mini-Projet</a>
+            </li>
+            <li  class="chapter-item expanded" id="maîtrise-eloquent-apprentissage">
+                <a href="/projets/maîtrise-eloquent/apprentissage" class="">
+                    <strong aria-hidden="true"></strong>Apprentissage</a>
             </li>
             <li  class="chapter-item expanded" id="maîtrise-eloquent-introduction-eloquent">
                 <a href="/projets/maîtrise-eloquent/introduction-eloquent" class="">
@@ -422,31 +422,51 @@
                     <li class="breadcrumb-item active" aria-current="page">Tuto5 - Migrations et Seeders</li>
                 </ol>
             </nav>
-            <h1 id="les-seeders-en-laravel--préparez-votre-base-de-données-en-un-clin-dœil">Les Seeders en Laravel : Préparez votre base de données en un clin d’œil</h1>
+            <h1 id="les-seeders-en-laravel--préparez-votre-base-de-données-en-un-clin-dœil"><strong>Les Seeders en Laravel : Préparez votre base de données en un clin d’œil</strong></h1>
 
-<h2 id="quest-ce-quun-seeder-">Qu’est-ce qu’un Seeder ?</h2>
+<h2 id="introduction"><strong>Introduction</strong></h2>
 
-<p>Un Seeder en Laravel est un outil permettant de remplir votre base de données avec des données initiales. Ces données peuvent être utilisées pour :</p>
+<p>Les Seeders en Laravel sont des outils indispensables pour peupler rapidement votre base de données avec des données fictives ou réelles. Ils facilitent la mise en place d’environnements de développement, de tests et de production. Grâce aux Seeders, vous pouvez créer des jeux de données complexes et réalistes, ce qui est particulièrement utile pour :</p>
 
 <ul>
-  <li><strong>Les tests unitaires:</strong> Créer des environnements de test réalistes.</li>
-  <li><strong>Les démonstrations:</strong> Préremplir votre application avec du contenu pour des présentations.</li>
-  <li><strong>Les migrations de données:</strong> Migrer des données d’une ancienne base de données vers une nouvelle.</li>
+  <li><strong>Les démonstrations :</strong> Présenter les fonctionnalités de votre application avec des données concrètes (par exemple, des catégories de produits).</li>
+  <li><strong>Les tests unitaires :</strong> Créer des scénarios de test variés et reproductibles (par exemple, des tests sur les fonctionnalités liées aux catégories).</li>
+  <li><strong>Les migrations de données :</strong> Transférer des données d’une base de données existante vers une nouvelle (par exemple, migrer des catégories d’un ancien système).</li>
 </ul>
 
-<h2 id="création-dun-seeder">Création d’un Seeder</h2>
+<h2 id="création-et-structure-dun-seeder"><strong>Création et structure d’un Seeder</strong></h2>
 
 <p>Pour créer un nouveau Seeder, utilisez la commande Artisan suivante :</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>php artisan make:seeder PostsTableSeeder
+</pre></td><td class="rouge-code"><pre>php artisan make:seeder CategoriesTableSeeder
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>Cette commande va générer un nouveau fichier de Seeder dans le répertoire <code class="language-plaintext highlighter-rouge">database/seeders</code>.</p>
+<p>Cela générera un fichier PHP dans le répertoire <code class="language-plaintext highlighter-rouge">database/seeders</code>. Un Seeder est essentiellement une classe PHP qui contient une méthode <code class="language-plaintext highlighter-rouge">run()</code> où vous définissez les données à insérer.</p>
 
-<h2 id="le-contenu-du-seeder">Le contenu du Seeder</h2>
+<h2 id="exécution-des-seeders"><strong>Exécution des Seeders</strong></h2>
 
-<p>Un Seeder est une classe PHP simple qui contient une méthode <code class="language-plaintext highlighter-rouge">run()</code> où vous définissez les données à insérer.</p>
+<p>Pour exécuter tous les Seeders, utilisez la commande :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php artisan db:seed
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Pour exécuter un Seeder spécifique :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php artisan db:seed <span class="nt">--class</span><span class="o">=</span>CategoriesTableSeeder
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="les-factories--un-outil-puissant-pour-générer-des-données"><strong>Les Factories : Un outil puissant pour générer des données</strong></h2>
+
+<p>Les Factories en Laravel permettent de générer des instances de modèles avec des données aléatoires ou personnalisées. Elles sont souvent utilisées en combinaison avec les Seeders pour créer des jeux de données plus complexes.</p>
+
+<p><strong>Exemple : Création de catégories avec des Factories</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php artisan make:factory CategoryFactory
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -480,90 +500,123 @@
 30
 31
 32
-33
-34
-35
-</pre></td><td class="rouge-code"><pre><span class="kn">use</span> <span class="nc">Illuminate\Database\Seeder</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">App\Models\Post</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre>// database/factories/CategoryFactory.php
+<span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">Database\Factories</span><span class="p">;</span>
+
 <span class="kn">use</span> <span class="nc">App\Models\Category</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Eloquent\Factories\Factory</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">PostsTableSeeder</span> <span class="kd">extends</span> <span class="nc">Seeder</span>
+<span class="cd">/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory&lt;\App\Models\Category&gt;
+ */</span>
+<span class="kd">class</span> <span class="nc">CategoryFactory</span> <span class="kd">extends</span> <span class="nc">Factory</span>
 <span class="p">{</span>
-    <span class="cd">/**
-     * Run the database seeds.
-     *
-     * @return void
-     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
+    <span class="k">protected</span> <span class="nv">$model</span> <span class="o">=</span> <span class="nc">Category</span><span class="o">::</span><span class="n">class</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">definition</span><span class="p">():</span> <span class="kt">array</span>
     <span class="p">{</span>
-        <span class="c1">// Créer quelques catégories</span>
-        <span class="nv">$categories</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Technologie'</span><span class="p">],</span>
-            <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Sport'</span><span class="p">],</span>
-            <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Cuisine'</span><span class="p">],</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">faker</span><span class="o">-&gt;</span><span class="n">word</span><span class="p">,</span>
+            <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">faker</span><span class="o">-&gt;</span><span class="n">paragraph</span><span class="p">,</span>
         <span class="p">];</span>
+    <span class="p">}</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$categories</span> <span class="k">as</span> <span class="nv">$categoryData</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nc">Category</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="nv">$categoryData</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Créer quelques posts</span>
-        <span class="nv">$posts</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">[</span><span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'Mon premier post'</span><span class="p">,</span> <span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="s1">'Contenu du premier post'</span><span class="p">,</span> <span class="s1">'category_id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">],</span>
-            <span class="c1">// ... d'autres posts</span>
-        <span class="p">];</span>
-
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="nv">$postData</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nc">Post</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span><span class="nv">$postData</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">active</span><span class="p">():</span> <span class="kt">Factory</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">state</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="kt">array</span> <span class="nv">$attributes</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[</span>
+                <span class="s1">'is_active'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="p">];</span>
+        <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h2 id="exécution-des-seeders">Exécution des Seeders</h2>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>// database/seeders/CategorySeeder.php
+<span class="cp">&lt;?php</span>
 
-<p>Pour exécuter tous les Seeders, utilisez la commande :</p>
+<span class="kn">namespace</span> <span class="nn">Database\Seeders</span><span class="p">;</span>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>php artisan db:seed
+<span class="kn">use</span> <span class="nc">Illuminate\Database\Seeder</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">CategorySeeder</span> <span class="kd">extends</span> <span class="nc">Seeder</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">():</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="nc">\App\Models\Category</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+        <span class="nc">\App\Models\Category</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">active</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>Pour exécuter un Seeder spécifique :</p>
+<p>Le premier appel à la factory créera 10 catégories avec des données aléatoires, tandis que le second créera 5 catégories actives.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>php artisan db:seed <span class="nt">--class</span><span class="o">=</span>PostsTableSeeder
+<h2 id="charger-des-données-depuis-un-fichier-csv"><strong>Charger des données depuis un fichier CSV</strong></h2>
+
+<p>Pour importer des données depuis un fichier CSV, vous pouvez utiliser une bibliothèque comme <code class="language-plaintext highlighter-rouge">League/Csv</code> ou <code class="language-plaintext highlighter-rouge">Maatwebsite/Excel</code>. Voici un exemple avec <code class="language-plaintext highlighter-rouge">League/Csv</code> :</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="c1">// ... (code du Seeder)</span>
+
+<span class="kn">use</span> <span class="nc">League\Csv\Reader</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="nv">$csv</span> <span class="o">=</span> <span class="nc">Reader</span><span class="o">::</span><span class="nf">createFromPath</span><span class="p">(</span><span class="nf">database_path</span><span class="p">(</span><span class="s1">'seeds/categories.csv'</span><span class="p">));</span>
+<span class="nv">$csv</span><span class="o">-&gt;</span><span class="nf">setHeaderOffset</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$csv</span> <span class="k">as</span> <span class="nv">$record</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">Category</span><span class="o">::</span><span class="nf">create</span><span class="p">([</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$record</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+        <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="nv">$record</span><span class="p">[</span><span class="s1">'description'</span><span class="p">],</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h2 id="bonnes-pratiques">Bonnes pratiques</h2>
+<h2 id="bonnes-pratiques"><strong>Bonnes pratiques</strong></h2>
 
 <ul>
-  <li><strong>Structurez vos Seeders:</strong> Créez des Seeders séparés pour différentes tables ou ensembles de données.</li>
-  <li><strong>Utilisez des factories:</strong> Pour générer des données de manière plus flexible et reproductible.</li>
+  <li><strong>Structurer vos Seeders:</strong> Créez un Seeder par table ou par groupe de tables logiquement liées.</li>
   <li><strong>Gérer les dépendances:</strong> Si un Seeder dépend d’un autre, assurez-vous qu’il est exécuté en premier.</li>
+  <li><strong>Utiliser des commentaires:</strong> Expliquez le but de chaque partie de votre code.</li>
+  <li><strong>Tester vos Seeders:</strong> Écrivez des tests unitaires pour vérifier que vos Seeders fonctionnent correctement.</li>
 </ul>
 
-<h2 id="en-résumé">En résumé</h2>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
 
-<p>Les Seeders sont un outil essentiel pour préparer votre base de données de développement et de test. Ils vous permettent de gagner du temps et d’automatiser la création de données initiales. En suivant les bonnes pratiques, vous pouvez créer des Seeders efficaces et maintenables.</p>
+<p>Les Seeders sont un outil essentiel pour tout développeur Laravel. Ils permettent de gagner du temps et d’automatiser la création de données, ce qui est particulièrement utile pour les environnements de développement et de test. En maîtrisant les Seeders et les Factories, vous serez en mesure de créer des applications Laravel plus robustes et plus faciles à maintenir.</p>
 
-<p><strong>Points clés à retenir:</strong></p>
-
-<ul>
-  <li>Les Seeders permettent de remplir votre base de données avec des données initiales.</li>
-  <li>Ils sont utilisés pour les tests, les démonstrations et les migrations de données.</li>
-  <li>Vous pouvez créer des Seeders spécifiques pour chaque table ou ensemble de données.</li>
-  <li>Utilisez des factories pour générer des données de manière plus flexible.</li>
-</ul>
-
-<p><strong>Pour approfondir:</strong></p>
-
-<ul>
-  <li><strong>Documentation officielle Laravel:</strong> Consultez la documentation pour plus de détails sur les Seeders et les options disponibles.</li>
-  <li><strong>Factories:</strong> Découvrez comment utiliser les factories pour générer des données de manière plus efficace.</li>
-  <li><strong>Seeders et migrations:</strong> Comprenez comment les Seeders interagissent avec les migrations pour gérer la structure de votre base de données.</li>
-</ul>
-
-<p>En maîtrisant les Seeders, vous serez en mesure de préparer rapidement et efficacement votre environnement de développement Laravel.</p>
 
         </main>
 
