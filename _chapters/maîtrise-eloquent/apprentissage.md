@@ -6,7 +6,7 @@ part_reference: maîtrise-eloquent
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 61
+order: 62
 directory: maîtrise-eloquent
 permalink: maîtrise-eloquent/apprentissage
 layout: chapters

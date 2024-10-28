@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 52
+order: 51
 directory: univers-laravel
 permalink: univers-laravel/mini-projet
 layout: chapters
