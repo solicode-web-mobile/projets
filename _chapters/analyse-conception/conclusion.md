@@ -6,7 +6,7 @@ part_reference: analyse-conception
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 79
+order: 109
 directory: analyse-conception
 permalink: analyse-conception/conclusion
 layout: chapters
