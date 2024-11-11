@@ -12,7 +12,12 @@ permalink: analyse-conception/apprentissage
 layout: chapters
 ---
 
-# Analyse technique 
+# Apprentissage 
 
+## Modélisation orienté objet 
 
-- 
+## Désign thikning
+
+## ux
+
+## ModBoard

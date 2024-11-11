@@ -11,7 +11,7 @@
         <div id="{{part['reference']}}" class="collapse ">
         {% for chapter in chapters %}
             <li  class="chapter-item expanded" id="{{part['reference']}}-{{chapter.slug}}">
-                <a href="{{site.baseurl}}{{chapter.url}}" class="{%- if page.url == post.url -%} active {%- endif -%} ">
+                <a href="{{site.baseurl}}{{chapter.url}}.html" class="{%- if page.url == post.url -%} active {%- endif -%} ">
                     <strong aria-hidden="true"></strong>  
                     {%- if chapter.title_in_part -%}
                     {{ chapter.title_in_part | escape }}
