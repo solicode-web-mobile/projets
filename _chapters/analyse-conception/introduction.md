@@ -11,3 +11,15 @@ directory: analyse-conception
 permalink: analyse-conception/introduction
 layout: chapters
 ---
+
+# Analyse et Conception  d'une application pour la gestion des tâches 
+
+Dans cette semaine nous allons voir comment réaliser l'analyse et la conception d'une application en utilisant les méthodes 
+
+- Modélisation orienté objet
+- Design thinking
+- UX
+- SCRUM
+
+
+
