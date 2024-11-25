@@ -14,7 +14,7 @@ layout: chapters
 
 
 
-### **Conclusion**
+# **Conclusion**
 
 Félicitations pour avoir terminé cette session ! Vous avez maintenant acquis les compétences nécessaires pour créer des interfaces modernes et interactives en utilisant **Jetpack Compose** et **Material Design**. Vous avez appris à créer des listes dynamiques, à interagir avec les utilisateurs à travers des éléments cliquables, et à personnaliser l'apparence de vos applications avec les principes de Material Design.
 

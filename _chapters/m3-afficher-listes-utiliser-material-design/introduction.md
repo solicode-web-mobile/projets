@@ -12,7 +12,7 @@ permalink: m3-afficher-listes-utiliser-material-design/introduction
 layout: chapters
 ---
 
-### **Introduction**
+# **Introduction**
 
 Bienvenue dans cette nouvelle session dédiée à la création d'applications interactives et modernes avec Android et Kotlin ! Aujourd'hui, nous allons explorer comment afficher des listes dynamiques dans vos applications et comment utiliser **Material Design** pour rendre vos interfaces utilisateur attrayantes et intuitives.
 

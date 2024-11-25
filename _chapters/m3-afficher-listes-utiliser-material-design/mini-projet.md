@@ -13,7 +13,7 @@ layout: chapters
 ---
 
 
-### **Mini-projet**
+# **Mini-projet**
 
 Pour cette session, votre mini-projet consistera à créer une application simple mais complète qui met en œuvre toutes les notions que vous avez apprises.
 
