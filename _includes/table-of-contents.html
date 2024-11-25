@@ -7,8 +7,8 @@
 
         {%- assign chapters = part["chapter_items"]  -%}
        
-        <li data-bs-toggle="collapse" data-bs-target="#{{part['reference']}}" class="part-title {{part['nature']}}"> {{part["title"]}}</li>
-        <div id="{{part['reference']}}" class="collapse ">
+        <li data-bs-toggle="collapse" data-module="{{part['module_reference']}}" data-bs-target="#{{part['reference']}}" class="part-title {{part['nature']}}"> {{part["title"]}}</li>
+        <div id="{{part['reference']}}"  class="collapse ">
         {% for chapter in chapters %}
             <li  class="chapter-item expanded" id="{{part['reference']}}-{{chapter.slug}}">
                 <a href="{{site.baseurl}}{{chapter.url}}.html" class="{%- if page.url == post.url -%} active {%- endif -%} ">

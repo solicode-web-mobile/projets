@@ -1,15 +1,15 @@
 ---
-reference: fondamentaux-kotlin-introduction
+reference: m2-créer-interface-utilisateur-introduction
 slug: introduction
 module_reference: mobile
-part_reference: fondamentaux-kotlin
+part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
 title: Introduction
 description: ''
 order: 40
 global_order: '40'
-directory: fondamentaux-kotlin
-permalink: fondamentaux-kotlin/introduction
+directory: m2-créer-interface-utilisateur
+permalink: m2-créer-interface-utilisateur/introduction
 layout: chapters
 ---
 
