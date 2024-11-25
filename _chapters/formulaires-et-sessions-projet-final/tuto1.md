@@ -60,6 +60,7 @@ Cela crée un fichier `ArticleController.php` dans `app/Http/Controllers`.
 
 ### **B. Ajouter des méthodes au contrôleur**
 Ajoutez deux méthodes dans le fichier `ArticleController.php` :
+
 ```php
 namespace App\Http\Controllers;
 
@@ -107,6 +108,7 @@ Dans le dossier `resources/views`, créez un dossier `articles`.
 ### **B. Vue pour la liste des articles**
 Créez un fichier `index.blade.php` :
 ```php
+{% raw %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -126,11 +128,13 @@ Créez un fichier `index.blade.php` :
     </ul>
 </body>
 </html>
+{% endraw %}
 ```
 
 ### **C. Vue pour un article unique**
 Créez un fichier `show.blade.php` :
 ```php
+{% raw %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -143,6 +147,7 @@ Créez un fichier `show.blade.php` :
     <a href="{{ route('articles.index') }}">Retour à la liste</a>
 </body>
 </html>
+{% endraw %}
 ```
 
 ---
@@ -166,9 +171,11 @@ Créez un fichier `show.blade.php` :
 Les **routes nommées** permettent de simplifier les URL dynamiques dans les vues.  
 Exemple dans `index.blade.php` :
 ```php
+{% raw %}
 <a href="{{ route('articles.show', $article['id']) }}">
     {{ $article['title'] }}
 </a>
+{% endraw %}
 ```
 Cela génère automatiquement une URL correspondant à la route.
 

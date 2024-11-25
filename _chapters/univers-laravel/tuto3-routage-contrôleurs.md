@@ -42,6 +42,7 @@ Les contrôleurs sont des classes PHP qui contiennent la logique métier de votr
 
 2. **Création de la vue du formulaire:**
    ```html
+   {% raw %}
    <form method="POST" action="{{ route('contact.store') }}">
        @csrf
        <div>
@@ -58,6 +59,7 @@ Les contrôleurs sont des classes PHP qui contiennent la logique métier de votr
        </div>
        <button type="submit">Envoyer</button>
    </form>
+   {% endraw %}
    ```
 
 3. **Création du contrôleur :**

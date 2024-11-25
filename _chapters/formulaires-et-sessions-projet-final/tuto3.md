@@ -36,6 +36,7 @@ Un **layout** Blade vous permet de définir une structure commune (par exemple, 
 2. Ajoutez un fichier `app.blade.php` dans ce dossier :
 
 ```blade
+{% raw %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -62,12 +63,14 @@ Un **layout** Blade vous permet de définir une structure commune (par exemple, 
     </footer>
 </body>
 </html>
+{% endraw %}
 ```
 
 ### **C. Utiliser le layout dans une vue**
 Dans `resources/views/articles/index.blade.php` :
 
 ```blade
+{% raw %}
 @extends('layouts.app')
 
 @section('title', 'Liste des Articles')
@@ -82,6 +85,7 @@ Dans `resources/views/articles/index.blade.php` :
         @endforeach
     </ul>
 @endsection
+{% endraw %}
 ```
 
 ---
@@ -93,6 +97,7 @@ Vous pouvez ajouter des blocs dynamiques spécifiques à chaque vue avec `@secti
 1. Modifiez le layout `app.blade.php` :
    
 ```blade
+{% raw %}
 <main>
     <div class="content">
         @yield('content')
@@ -101,11 +106,13 @@ Vous pouvez ajouter des blocs dynamiques spécifiques à chaque vue avec `@secti
         @yield('sidebar')
     </aside>
 </main>
+{% endraw %}
 ```
 
 1. Dans une vue, ajoutez la section :
    
 ```blade
+{% raw %}
 @section('sidebar')
     <h3>Catégories</h3>
     <ul>
@@ -160,16 +167,19 @@ class ArticleCard extends Component
 1. Modifiez le fichier `article-card.blade.php` :
    
 ```blade
+{% raw %}
 <div class="article-card">
     <h3>{{ $article['title'] }}</h3>
     <p>{{ Str::limit($article['content'], 100) }}</p>
     <a href="{{ route('articles.show', $article['id']) }}">Lire la suite</a>
 </div>
+{% endraw %}
 ```
 
 1. Utilisez le composant dans une vue (`index.blade.php`) :
    
 ```blade
+{% raw %}
 @extends('layouts.app')
 
 @section('content')
@@ -178,6 +188,7 @@ class ArticleCard extends Component
         <x-article-card :article="$article" />
     @endforeach
 @endsection
+{% endraw %}
 ```
 
 ## **Étape 4 : Inclure des sous-vues**
@@ -189,17 +200,21 @@ class ArticleCard extends Component
 1. Créez un fichier `resources/views/partials/flash-message.blade.php` :
    
 ```blade
+{% raw %}
 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
+{% endraw %}
 ```
 
 1. Ajoutez l’inclusion dans une vue :
    
 ```blade
+{% raw %}
 @include('partials.flash-message')
+{% endraw %}
 ```
 
 
@@ -250,7 +265,9 @@ header, footer {
 1. Vérifiez que le fichier CSS est inclus dans le layout global :
    
 ```blade
+{% raw %}
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+{% endraw %}
 ```
 
 ---

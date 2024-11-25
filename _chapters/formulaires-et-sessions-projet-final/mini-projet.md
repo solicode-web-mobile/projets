@@ -64,6 +64,7 @@ Développer une application de blog minimaliste où les utilisateurs peuvent :
 
 #### **2. Définition des routes**
 Dans le fichier `web.php` :
+{% raw %}
 ```php
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
@@ -81,6 +82,9 @@ php artisan make:controller ArticleController
 ```
 
 Exemple d'implémentation de méthodes :
+
+
+{% raw %}
 ```php
 public function index() {
     $articles = Article::all();
@@ -91,15 +95,20 @@ public function show($id) {
     $article = Article::findOrFail($id);
     return view('articles.show', compact('article'));
 }
-```
 
-#### **4. Création des vues**
+```
+{% endraw %}
+
+
+#### **4
+. Création des vues**
 Dans le dossier `resources/views/articles` :
 - `index.blade.php` : pour la liste des articles.
 - `show.blade.php` : pour afficher un article spécifique.
 - `create.blade.php` et `edit.blade.php` : pour les formulaires.
 
 Utilisation de Blade pour les sections et les composants :
+{% raw %}
 ```php
 @extends('layouts.app')
 
@@ -109,6 +118,7 @@ Utilisation de Blade pour les sections et les composants :
     <a href="{{ route('articles.index') }}">Retour à la liste</a>
 @endsection
 ```
+{% endraw %}
 
 #### **5. Middleware simple (bonus)**
 Créer un middleware pour restreindre certaines actions (comme la suppression) à des utilisateurs authentifiés :
@@ -117,17 +127,23 @@ php artisan make:middleware AuthMiddleware
 ```
 
 Dans `handle` :
+{% raw %}
 ```php
 if (!auth()->check()) {
     return redirect('/login');
 }
 return $next($request);
 ```
+```
+{% endraw %}
 
 Appliquer le middleware à des routes spécifiques dans `web.php` :
+
+{% raw %}
 ```php
 Route::delete('/articles/{id}', [ArticleController::class, 'destroy'])->middleware('auth');
 ```
+{% endraw %}
 
 ## **Livrables :**
 1. Une base de données fonctionnelle.

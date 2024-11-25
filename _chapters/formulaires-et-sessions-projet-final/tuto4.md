@@ -278,6 +278,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
 1. **Vue de connexion** (`resources/views/auth/login.blade.php`) :
    ```html
+   {% raw %}
    <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -308,6 +309,7 @@ return Application::configure(basePath: dirname(__DIR__))
        </div>
    </body>
    </html>
+   {% endraw %}
    ```
 
 2. **Vue du tableau de bord** (`resources/views/admin/dashboard.blade.php`) :

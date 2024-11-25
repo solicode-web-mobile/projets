@@ -13,30 +13,13 @@ layout: chapters
 ---
 
 
-Maîtrise des concepts avancés de Kotlin 
+### Introduction
 
-Découvrez d'autres concepts de programmation en langage Kotlin qui vous permettront de créer des applications Android plus riches et ludiques.
+Bienvenue à la **Session 10 : Listes Material Design** !
 
-Maîtrise des concepts avancés de Kotlin ! Nous avons approfondi nos connaissances en Kotlin en explorant les génériques, les objets, les extensions et les collections. Ces concepts nous permettent de créer du code plus flexible, réutilisable et expressif.
+Cette semaine, nous allons explorer des concepts avancés pour enrichir vos applications Android. Vous allez découvrir l’utilisation des **listes** dans le cadre du **Material Design**, une approche qui vise à rendre vos interfaces utilisateur attrayantes, intuitives et modernes. À travers **Jetpack Compose**, vous apprendrez à créer des interfaces avec des listes dynamiques, à les personnaliser et à leur donner un aspect professionnel.
 
-## Autres principes de base de Kotlin
+Les **listes Material Design** sont un élément essentiel dans de nombreuses applications, car elles permettent d’afficher et d’organiser des données de manière claire et accessible. Cette session vous aidera à maîtriser la création de listes élégantes, en intégrant des images et des éléments textuels.
 
-Découvrez d'autres concepts de programmation en langage Kotlin qui vous permettront de créer des applications Android plus riches et ludiques.
+À la fin de cette session, vous serez capable de créer des interfaces riches en informations avec des éléments interactifs et des animations, tout en suivant les meilleures pratiques de conception. Nous aborderons également les bases des **génériques**, des **collections** et des **fonctions d’ordre supérieur** pour rendre votre code plus flexible et réutilisable.
 
-* Autres principes de base du Kotlin
-* Génériques, objets et extensions
-* Utiliser les collections en langage Kotlin
-* Fonctions d'ordre supérieur avec les collections
-
-Tuto : S'entraîner : classes et collections
-
-## Créer une liste déroulante
-
-Créez une application qui affiche une liste déroulante d'éléments textuels et d'images avec Compose.
-
-
-* Ajouter une liste déroulante
-* Modifier l'icône d'application
-
-Tuto : Présentation de l'application Affirmations
-S'entraîner : créer une grille

@@ -57,6 +57,7 @@ php artisan make:model Article
 ```
 
 Dans `app/Models/Article.php`, ajoutez les propriétés suivantes :
+
 ```php
 protected $fillable = ['title', 'content'];
 ```
@@ -169,6 +170,7 @@ public function destroy(Article $article) {
 
 ### **A. Vue pour afficher la liste des articles (`index.blade.php`)**
 ```blade
+{% raw %}
 @extends('layouts.app')
 
 @section('content')
@@ -188,10 +190,12 @@ public function destroy(Article $article) {
         @endforeach
     </ul>
 @endsection
+{% endraw %}
 ```
 
 ### **B. Vue pour créer/modifier un article (`create.blade.php` et `edit.blade.php`)**
 ```blade
+{% raw %}
 @extends('layouts.app')
 
 @section('content')
@@ -208,10 +212,12 @@ public function destroy(Article $article) {
         <button type="submit">{{ isset($article) ? 'Mettre à jour' : 'Créer' }}</button>
     </form>
 @endsection
+{% endraw %}
 ```
 
 ### **C. Vue pour afficher un article (`show.blade.php`)**
 ```blade
+{% raw %}
 @extends('layouts.app')
 
 @section('content')
@@ -219,6 +225,7 @@ public function destroy(Article $article) {
     <p>{{ $article->content }}</p>
     <a href="{{ route('articles.index') }}">Retour à la liste</a>
 @endsection
+{% endraw %}
 ```
 
 ---

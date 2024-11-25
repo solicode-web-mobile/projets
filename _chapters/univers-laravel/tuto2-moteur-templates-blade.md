@@ -22,7 +22,7 @@ Blade est le moteur de templates par défaut de Laravel. Il vous permet de crée
 ## Les bases de Blade
 * **Les fichiers Blade:** Les vues Blade sont stockées dans le répertoire `resources/views`. Elles utilisent l'extension `.blade.php`.
 * **Les directives Blade:** Blade introduit des directives qui commencent par `@` pour contrôler l'affichage, les boucles, les conditions, etc.
-* **Les expressions Blade:** Vous pouvez afficher des variables PHP directement dans vos vues en les entourant de doubles accolades : `{{ $variable }}`.
+* **Les expressions Blade:** Vous pouvez afficher des variables PHP directement dans vos vues en les entourant de doubles accolades : {% raw %} `{{ $variable }}`.{% endraw %}
 
 ## Création d'une page d'accueil
 1. **Création d'un layout:**
