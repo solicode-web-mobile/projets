@@ -34,6 +34,7 @@ Un **layout** Blade vous permet de définir une structure commune (par exemple, 
 ### **B. Création du layout principal**
 1. Dans le dossier `resources/views`, créez un sous-dossier `layouts`.
 2. Ajoutez un fichier `app.blade.php` dans ce dossier :
+
 ```blade
 <!DOCTYPE html>
 <html lang="fr">
@@ -65,6 +66,7 @@ Un **layout** Blade vous permet de définir une structure commune (par exemple, 
 
 ### **C. Utiliser le layout dans une vue**
 Dans `resources/views/articles/index.blade.php` :
+
 ```blade
 @extends('layouts.app')
 
@@ -89,6 +91,7 @@ Dans `resources/views/articles/index.blade.php` :
 ### **A. Ajouter une section personnalisée**
 Vous pouvez ajouter des blocs dynamiques spécifiques à chaque vue avec `@section` et `@yield`. Par exemple, pour ajouter une barre latérale :
 1. Modifiez le layout `app.blade.php` :
+   
 ```blade
 <main>
     <div class="content">
@@ -100,7 +103,8 @@ Vous pouvez ajouter des blocs dynamiques spécifiques à chaque vue avec `@secti
 </main>
 ```
 
-2. Dans une vue, ajoutez la section :
+1. Dans une vue, ajoutez la section :
+   
 ```blade
 @section('sidebar')
     <h3>Catégories</h3>
@@ -121,14 +125,17 @@ Les composants sont idéaux pour réutiliser des morceaux de code répétitifs, 
 
 ### **B. Création d’un composant Blade**
 1. Exécutez la commande suivante pour créer un composant :
+   
    ```bash
    php artisan make:component ArticleCard
    ```
+
 2. Cela génère deux fichiers :
    - `app/View/Components/ArticleCard.php`
    - `resources/views/components/article-card.blade.php`
 
 3. Modifiez le fichier `ArticleCard.php` :
+   
 ```php
 namespace App\View\Components;
 
@@ -150,7 +157,8 @@ class ArticleCard extends Component
 }
 ```
 
-4. Modifiez le fichier `article-card.blade.php` :
+1. Modifiez le fichier `article-card.blade.php` :
+   
 ```blade
 <div class="article-card">
     <h3>{{ $article['title'] }}</h3>
@@ -159,7 +167,8 @@ class ArticleCard extends Component
 </div>
 ```
 
-5. Utilisez le composant dans une vue (`index.blade.php`) :
+1. Utilisez le composant dans une vue (`index.blade.php`) :
+   
 ```blade
 @extends('layouts.app')
 
@@ -171,8 +180,6 @@ class ArticleCard extends Component
 @endsection
 ```
 
----
-
 ## **Étape 4 : Inclure des sous-vues**
 
 ### **A. Quand utiliser `@include` ?**
@@ -180,6 +187,7 @@ class ArticleCard extends Component
 
 ### **B. Exemple : Afficher un message de succès**
 1. Créez un fichier `resources/views/partials/flash-message.blade.php` :
+   
 ```blade
 @if (session('success'))
     <div class="alert alert-success">
@@ -188,16 +196,17 @@ class ArticleCard extends Component
 @endif
 ```
 
-2. Ajoutez l’inclusion dans une vue :
+1. Ajoutez l’inclusion dans une vue :
+   
 ```blade
 @include('partials.flash-message')
 ```
 
----
 
 ## **Étape 5 : Structuration des fichiers de vues**
 
 Pour maintenir un projet organisé, suivez cette structure :
+
 ```
 resources/views
 ├── articles
@@ -213,11 +222,11 @@ resources/views
     └── flash-message.blade.php
 ```
 
----
 
 ## **Étape 6 : Ajouter des styles personnalisés**
 
 1. Ajoutez un fichier CSS personnalisé dans `public/css/app.css` :
+   
 ```css
 body {
     font-family: Arial, sans-serif;
@@ -238,7 +247,8 @@ header, footer {
 }
 ```
 
-2. Vérifiez que le fichier CSS est inclus dans le layout global :
+1. Vérifiez que le fichier CSS est inclus dans le layout global :
+   
 ```blade
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 ```

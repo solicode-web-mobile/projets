@@ -6,7 +6,7 @@ module_reference: sas
 unit_reference: sas-maîtrisez-poo-php
 part: maîtrisez-poo-php
 concept_categories: ''
-title: "Relations entre objets \r\n"
+title: "Relations entre objets \n"
 topics: ''
 description: "Les relations entre objets en PHP : un guide complet avec exemples\r\n"
 tutorials: ''
