@@ -1,9 +1,9 @@
-# Session 5 : Première application Android
+# Session 5 : Module 1 - Votre première application Android
 
 Bienvenue dans le monde de Kotlin et d'Android !  
 Cette semaine, nous allons faire nos premiers pas dans le développement Android. Nous allons découvrir Kotlin, un langage moderne et expressif, et configurer notre environnement de développement avec Android Studio. Nous créerons notre première application Android en utilisant **Jetpack Compose** pour concevoir une interface utilisateur simple et intuitive.
 
----
+
 
 ## 1. Présentation de la programmation en Kotlin
 
@@ -16,7 +16,7 @@ Cette semaine, nous allons faire nos premiers pas dans le développement Android
 
 **Activité** : Appliquez les concepts de base du langage de programmation Kotlin pour résoudre des problèmes donnés.
 
----
+
 
 ## 2. Configurer Android Studio
 
@@ -29,7 +29,7 @@ Cette semaine, nous allons faire nos premiers pas dans le développement Android
 - Exécuter votre première application sur Android Emulator  
 - Connecter votre appareil Android  
 
----
+
 
 ## 3. Créer une mise en page de base
 
@@ -45,12 +45,12 @@ Cette semaine, nous allons faire nos premiers pas dans le développement Android
 
 
 
-# Session 6 : Créer l'interface utilisateur
+# Session 6 : Module 2 - Créer l'interface utilisateur d'une application
 
 **Objectif global** : Maîtriser les fondamentaux de Kotlin et d'Android !  
 Cette semaine, nous approfondissons nos connaissances en Kotlin : instructions conditionnelles, gestion des valeurs nulles, programmation orientée objet et lambdas. Ces concepts seront appliqués à la création d'une application Android simple.
 
----
+
 
 ## 1. Principes de base de Kotlin
 
@@ -65,7 +65,7 @@ Cette semaine, nous approfondissons nos connaissances en Kotlin : instructions c
 
 **Activité** : S'entraîner avec des exercices pratiques sur les principes de base de Kotlin.
 
----
+
 
 ## 2. Ajouter un bouton à une application
 
@@ -76,7 +76,7 @@ Cette semaine, nous approfondissons nos connaissances en Kotlin : instructions c
 
 **Exemple** : Présentation de l'application Dice Roller.  
 
----
+
 
 ## 3. Interagir avec l'interface utilisateur et l'état
 
@@ -94,16 +94,19 @@ Cette semaine, nous approfondissons nos connaissances en Kotlin : instructions c
 
 
 
-# Session 10 : Listes Material Design
+# Session 10 : Module 3 : Afficher des listes et utiliser Material Design
 
-**Objectif global** : Maîtriser les concepts avancés de Kotlin !  
-Cette semaine, nous approfondissons nos connaissances en Kotlin en explorant les génériques, les objets, les extensions et les collections. Ces concepts permettent de créer du code plus flexible, réutilisable et expressif.
+**Objectif global** :Créez des applications affichant une liste de données et découvrez comment les rendre plus attrayantes avec Material Design.
+Utilisez les classes, les fonctions et les collections de données en Kotlin.
+Créez une liste déroulante affichant à la fois du texte et des images dans une application.
+Ajoutez des écouteurs de clics pour interagir avec les éléments de la liste.
+Ajoutez une barre à l'application et modifiez son thème.
+Utilisez Material Design pour créer des interfaces utilisateur modernes et intuitives à l'aide de couleurs, de formes et d'une typographie spécifique.
 
----
 
 ## 1. Autres principes de base de Kotlin
 
-**Objectif** : Découvrez des concepts avancés de programmation en Kotlin qui enrichiront vos applications Android.
+**Objectif** : Découvrez d'autres concepts de programmation en langage Kotlin qui vous permettront de créer des applications Android plus intéressantes et ludiques.
 
 ### Contenu
 - Autres principes de base du Kotlin  
@@ -113,11 +116,10 @@ Cette semaine, nous approfondissons nos connaissances en Kotlin en explorant les
 
 **Activité** : S'entraîner avec des exercices pratiques sur les classes et les collections.
 
----
 
 ## 2. Créer une liste déroulante
 
-**Objectif** : Créez une application qui affiche une liste déroulante d'éléments textuels et d'images avec **Jetpack Compose**.
+**Objectif** : Créez une application qui affiche une liste déroulante d'éléments textuels et d'images avec Compose.
 
 ### Contenu
 - Ajouter une liste déroulante  
@@ -128,20 +130,9 @@ Cette semaine, nous approfondissons nos connaissances en Kotlin en explorant les
 **Activité** : S'entraîner à créer une grille avec Compose.
 
 
+## 3. Concevoir des applications attrayantes
 
-Voici une structuration en Markdown pour la **session 11** de la formation.
-
-
-# Session 11 : Listes Material Design - Concevoir des applications attrayantes
-
-**Objectif global** : Créez des applications Android époustouflantes !  
-Cette semaine, nous apprenons à concevoir des interfaces utilisateur attrayantes et intuitives à l'aide des principes du **Material Design** et des outils de **Jetpack Compose**. Nous explorons également les bases de l'architecture des applications Android pour créer des applications plus robustes et maintenables.
-
----
-
-## 1. Concevoir des applications attrayantes
-
-**Objectif** : Rendez vos applications plus attrayantes et intuitives en utilisant Material Design, des animations, et les bonnes pratiques en matière d'accessibilité.
+**Objectif** : Rendez vos applications plus attrayantes et intuitives à l'aide de Material Design, d'animations et des bonnes pratiques en matière d'accessibilité.
 
 ### Contenu
 - Présentation de Material Design avec Compose  
@@ -153,7 +144,16 @@ Cette semaine, nous apprenons à concevoir des interfaces utilisateur attrayante
 - S'entraîner : Créer une application sur les super-héros  
 - **Projet** : Concevoir une application utilisable sur 30 jours.  
 
----
+
+
+ 
+
+# Session 15 : Module 4 : Navigation et architecture des applications
+
+**Objectif global** : Maîtrisez la navigation et l'adaptation dans Jetpack Compose !  
+Cette semaine, nous apprenons à créer des applications Android plus complexes et flexibles en utilisant le composant **Navigation** de Jetpack Compose. Nous explorons également comment adapter nos applications à différentes tailles d'écran pour offrir une expérience utilisateur optimale.
+
+
 
 ## 2. Composants de l'architecture
 
@@ -169,19 +169,6 @@ Cette semaine, nous apprenons à concevoir des interfaces utilisateur attrayante
 **Exercice** : Ajouter un ViewModel à l'application DessertClicker.
 
 
-Cette organisation met en avant l'aspect créatif et technique de la conception d'applications Android attrayantes tout en introduisant des notions d'architecture logicielle.
-
-
-
-Voici une structuration en Markdown pour la **session 15** de la formation.
-
-
-# Session 15 : Navigation et architecture - Navigation dans Jetpack Compose
-
-**Objectif global** : Maîtrisez la navigation et l'adaptation dans Jetpack Compose !  
-Cette semaine, nous apprenons à créer des applications Android plus complexes et flexibles en utilisant le composant **Navigation** de Jetpack Compose. Nous explorons également comment adapter nos applications à différentes tailles d'écran pour offrir une expérience utilisateur optimale.
-
----
 
 ## 1. Navigation dans Jetpack Compose
 
@@ -193,7 +180,7 @@ Cette semaine, nous apprenons à créer des applications Android plus complexes 
 
 **Activité** : Mise en pratique : ajouter une navigation à votre application.
 
----
+
 
 ## 2. S'adapter à différentes tailles d'écran
 
@@ -209,12 +196,13 @@ Cette semaine, nous apprenons à créer des applications Android plus complexes 
 
 
 
-# Session 16 : Connecter Internet - Récupérer des données sur Internet
+# Session 16 : Module 5 : Se connecter à Internet
+
 
 **Objectif global** : Maîtrisez la récupération de données en ligne !  
 Cette semaine, nous explorons les requêtes HTTP et les coroutines pour apprendre à récupérer des données depuis Internet et à les afficher dans une application Android.
 
----
+
 
 ## 1. Récupérer des données sur Internet
 
@@ -228,7 +216,7 @@ Cette semaine, nous explorons les requêtes HTTP et les coroutines pour apprendr
 
 **Activité** : Mise en pratique des concepts avec des exercices guidés.
 
----
+
 
 ## 2. Charger et afficher des images
 
@@ -244,12 +232,16 @@ Cette semaine, nous explorons les requêtes HTTP et les coroutines pour apprendr
 **Évaluation** : Cette session correspond à **CC2 Mobile** (Contrôle Continu 2).
 
 
-# Session 20 : Persistance - Présentation de SQL
+# Session 20 : Module 6 : Persistance des données
+
 
 **Objectif global** : Maîtrisez SQL et Room !  
 Cette semaine, nous avons exploré les bases de données relationnelles et SQL. Nous avons appris à interagir avec une base de données, lire et écrire des données, et utiliser **Room**, une bibliothèque puissante pour la persistance dans les applications Android.
 
----
+**Objectif global** : Maîtrisez **DataStore** pour le stockage local dans vos applications Android !  
+Cette semaine, nous avons exploré le stockage de données dans les applications Android en utilisant **Preferences DataStore**. Nous avons appris à stocker et récupérer des données clé-valeur de manière simple, efficace et sécurisée.
+
+
 
 ## 1. Présentation de SQL
 
@@ -261,7 +253,6 @@ Cette semaine, nous avons exploré les bases de données relationnelles et SQL. 
 
 **Activité** : Présentation et exercices guidés pour manipuler des bases de données relationnelles avec SQL.
 
----
 
 ## 2. Utiliser Room pour la persistance
 
@@ -275,19 +266,6 @@ Cette semaine, nous avons exploré les bases de données relationnelles et SQL. 
 
 **Projet** : **Créer une application pour les horaires de bus**, intégrant une base de données locale pour gérer les horaires et informations des bus.
 
----
-
-Cette session vous prépare à gérer efficacement les données dans vos applications Android, avec un focus sur les bonnes pratiques pour utiliser SQL et Room.
-
-Voici une structuration en Markdown pour la **session 21** de la formation.
-
-
-# Session 21 : Persistance - Stocker des données et y accéder
-
-**Objectif global** : Maîtrisez **DataStore** pour le stockage local dans vos applications Android !  
-Cette semaine, nous avons exploré le stockage de données dans les applications Android en utilisant **Preferences DataStore**. Nous avons appris à stocker et récupérer des données clé-valeur de manière simple, efficace et sécurisée.
-
----
 
 ## 1. Stocker des données et y accéder
 
@@ -300,15 +278,9 @@ Cette semaine, nous avons exploré le stockage de données dans les applications
 
 **Activité** : Mise en pratique des concepts de DataStore avec des exercices guidés.
 
----
 
 ## 2. Projet : Créer une application de recherche de vols
 
 **Objectif** : Développer une application Android capable de sauvegarder et gérer des préférences utilisateur (par exemple, préférences de recherche ou données locales) en utilisant **Preferences DataStore**.
 
 **Évaluation** : Cette session est liée à **EFM Mobile** (Épreuve de Fin de Module).
-
----
-
-Avec cette session, vous serez en mesure d'intégrer efficacement DataStore dans vos applications Android pour une gestion performante des données locales.
-
