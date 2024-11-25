@@ -1,7 +1,7 @@
 ---
-reference: m1-bienvenue-kotlin-android
-slug: m1-bienvenue-kotlin-android
-unit_reference: mobile-m1-bienvenue-kotlin-android
+reference: m1-première-application-android
+slug: m1-première-application-android
+unit_reference: mobile-m1-première-application-android
 module_reference: mobile
 nature: ''
 title: Module 1 - Votre première application Android

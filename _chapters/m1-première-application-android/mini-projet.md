@@ -1,14 +1,14 @@
 ---
-reference: bienvenue-kotlin-android-mini-projet
+reference: m1-première-application-android-mini-projet
 slug: mini-projet
 module_reference: mobile
-part_reference: bienvenue-kotlin-android
+part_reference: m1-première-application-android
 concept_reference: ''
 title: Mini projet
 description: ''
 order: 26
-directory: bienvenue-kotlin-android
-permalink: bienvenue-kotlin-android/mini-projet
+directory: m1-première-application-android
+permalink: m1-première-application-android/mini-projet
 layout: chapters
 ---
 

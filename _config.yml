@@ -31,10 +31,10 @@ collections:
     output: true
     permalink: /modules/:title
   units:
-    output: true
+    output: false
     permalink: /units/:title
   parts:
-    output: true
+    output: false
     permalink: /parts/:title
   chapters:
     output: true

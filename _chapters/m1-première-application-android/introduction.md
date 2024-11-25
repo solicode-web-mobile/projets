@@ -1,15 +1,15 @@
 ---
-reference: m1-bienvenue-kotlin-android-introduction
+reference: m1-première-application-android-introduction
 slug: introduction
 module_reference: mobile
-part_reference: m1-bienvenue-kotlin-android
+part_reference: m1-première-application-android
 concept_reference: ''
 title: Introduction
 description: ''
 order: 24
 global_order: '39'
-directory: m1-bienvenue-kotlin-android
-permalink: m1-bienvenue-kotlin-android/introduction
+directory: m1-première-application-android
+permalink: m1-première-application-android/introduction
 layout: chapters
 ---
 

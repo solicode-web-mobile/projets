@@ -1,14 +1,14 @@
 ---
-reference: bienvenue-kotlin-android-apprentissage
+reference: m1-première-application-android-apprentissage
 slug: apprentissage
 module_reference: mobile
-part_reference: bienvenue-kotlin-android
+part_reference: m1-première-application-android
 concept_reference: ''
 title: Apprentissage
 description: ''
 order: 25
-directory: bienvenue-kotlin-android
-permalink: bienvenue-kotlin-android/apprentissage
+directory: m1-première-application-android
+permalink: m1-première-application-android/apprentissage
 layout: chapters
 ---
 
