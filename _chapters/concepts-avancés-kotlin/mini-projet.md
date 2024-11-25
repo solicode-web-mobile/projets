@@ -6,7 +6,7 @@ part_reference: concepts-avancés-kotlin
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 111
+order: 151
 directory: concepts-avancés-kotlin
 permalink: concepts-avancés-kotlin/mini-projet
 layout: chapters
