@@ -16,11 +16,11 @@
 <meta property="og:url" content="/projets/m3-afficher-listes-utiliser-material-design/mini-projet" />
 <meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-28T14:56:54+01:00" />
+<meta property="article:published_time" content="2024-11-28T14:58:43+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Mini-Projet" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-28T14:56:54+01:00","datePublished":"2024-11-28T14:56:54+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Mini-Projet","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/m3-afficher-listes-utiliser-material-design/mini-projet"},"url":"/projets/m3-afficher-listes-utiliser-material-design/mini-projet"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-28T14:58:43+01:00","datePublished":"2024-11-28T14:58:43+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Mini-Projet","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/m3-afficher-listes-utiliser-material-design/mini-projet"},"url":"/projets/m3-afficher-listes-utiliser-material-design/mini-projet"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -442,10 +442,6 @@
                 <a href="/projets/m3-afficher-listes-utiliser-material-design/apprentissage.html" class="">
                     <strong aria-hidden="true"></strong>Apprentissage</a>
             </li>
-            <li  class="chapter-item expanded" id="m3-afficher-listes-utiliser-material-design-mini-projet-3">
-                <a href="/projets/m3-afficher-listes-utiliser-material-design/mini-projet-3.html" class="">
-                    <strong aria-hidden="true"></strong>mini-projet-3</a>
-            </li>
             <li  class="chapter-item expanded" id="m3-afficher-listes-utiliser-material-design-tuto7">
                 <a href="/projets/m3-afficher-listes-utiliser-material-design/tuto7.html" class="">
                     <strong aria-hidden="true"></strong>Tuto7 - Concepts avancés de Kotlin</a>
@@ -605,23 +601,192 @@
                     <li class="breadcrumb-item active" aria-current="page">Mini-Projet</li>
                 </ol>
             </nav>
-            <h1 id="mini-projet"><strong>Mini-projet</strong></h1>
+            <h3 id="mini-projet--application-de-liste-daffirmations"><strong>Mini-projet : Application de liste d’affirmations</strong></h3>
 
-<p>Pour cette session, votre mini-projet consistera à créer une application simple mais complète qui met en œuvre toutes les notions que vous avez apprises.</p>
+<hr />
 
-<p><strong>Projet :</strong><br />
-Créez une application qui affiche une liste dynamique d’éléments textuels et d’images, tout en utilisant les principes de <strong>Material Design</strong> pour la personnalisation de l’interface. Vous devrez intégrer des éléments interactifs tels que des boutons et des images cliquables, et vous assurer que l’application réagit correctement lorsque l’utilisateur interagit avec la liste.</p>
+<h4 id="description-"><strong>Description :</strong></h4>
+<p>Dans ce mini-projet, vous allez développer une application Android avec <strong>Jetpack Compose</strong> qui affiche une liste de citations inspirantes (affirmations positives). Chaque citation sera présentée dans une <strong>carte Material Design</strong>. L’application devra utiliser un thème personnalisé pour garantir une apparence moderne et cohérente.</p>
 
-<p><strong>Exigences :</strong></p>
+<hr />
+
+<h3 id="objectifs-pédagogiques-"><strong>Objectifs pédagogiques :</strong></h3>
 <ul>
-  <li>Utiliser <strong>Jetpack Compose</strong> pour la mise en page</li>
-  <li>Intégrer une liste déroulante qui affiche des éléments textuels et visuels</li>
-  <li>Appliquer les principes de <strong>Material Design</strong> pour personnaliser l’apparence de l’application</li>
-  <li>Ajouter des animations simples pour rendre l’interface plus dynamique</li>
-  <li>Tester l’accessibilité de l’application</li>
+  <li>Pratiquer la création et l’affichage de listes avec <strong>Jetpack Compose</strong>.</li>
+  <li>Appliquer un thème <strong>Material Design</strong> personnalisé.</li>
+  <li>Gérer les clics sur les éléments de la liste.</li>
+  <li>Comprendre l’organisation des composants Material (texte, cartes, boutons).</li>
 </ul>
 
-<p>Ce projet vous aidera à consolider vos compétences en Kotlin et Jetpack Compose tout en vous permettant de créer une interface moderne et fonctionnelle.</p>
+<hr />
+
+<h3 id="concepts-abordés-"><strong>Concepts abordés :</strong></h3>
+<ul>
+  <li><strong>Listes déroulantes</strong> avec Jetpack Compose.</li>
+  <li>Utilisation de <strong>LazyColumn</strong> pour des listes optimisées.</li>
+  <li>Implémentation de <strong>thèmes Material</strong>.</li>
+  <li>Interaction avec les éléments de la liste (gestion des clics).</li>
+</ul>
+
+<hr />
+
+<h3 id="lien-avec-le-projet-final-to-do-list-"><strong>Lien avec le projet final (To-Do List) :</strong></h3>
+<p>Ce mini-projet permet aux apprenants de se familiariser avec les concepts clés qu’ils utiliseront dans l’application To-Do List finale :</p>
+<ol>
+  <li><strong>Création de listes</strong> : afficher et gérer dynamiquement des éléments.</li>
+  <li><strong>Thèmes personnalisés</strong> : appliquer un thème global cohérent.</li>
+  <li><strong>Interaction utilisateur</strong> : gérer les événements de clic sur chaque élément de la liste.</li>
+</ol>
+
+<hr />
+
+<h3 id="étapes-de-réalisation-"><strong>Étapes de réalisation :</strong></h3>
+
+<h4 id="1-préparation-des-données"><strong>1. Préparation des données</strong></h4>
+<p>Créez une liste de citations inspirantes sous forme de données statiques.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">affirmations</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span>
+    <span class="s">"Crois en toi-même et en toutes tes capacités."</span><span class="p">,</span>
+    <span class="s">"Chaque jour est une nouvelle opportunité."</span><span class="p">,</span>
+    <span class="s">"Tu es plus fort que tu ne le penses."</span><span class="p">,</span>
+    <span class="s">"N'abandonne jamais, les miracles prennent du temps."</span><span class="p">,</span>
+    <span class="s">"Le succès commence par la volonté de l'atteindre."</span>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h4 id="2-mise-en-place-de-linterface-ui"><strong>2. Mise en place de l’interface (UI)</strong></h4>
+<p>Utilisez <strong>LazyColumn</strong> pour afficher les citations dans une liste déroulante.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">AffirmationList</span><span class="p">(</span><span class="n">affirmations</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="nc">LazyColumn</span><span class="p">(</span>
+        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nf">items</span><span class="p">(</span><span class="n">affirmations</span><span class="p">)</span> <span class="p">{</span> <span class="n">affirmation</span> <span class="p">-&gt;</span>
+            <span class="nc">AffirmationCard</span><span class="p">(</span><span class="n">affirmation</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h4 id="3-création-de-la-carte-material"><strong>3. Création de la carte Material</strong></h4>
+<p>Développez un composant <code class="language-plaintext highlighter-rouge">Card</code> pour chaque citation.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">AffirmationCard</span><span class="p">(</span><span class="n">affirmation</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">Card</span><span class="p">(</span>
+        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span>
+            <span class="p">.</span><span class="nf">fillMaxWidth</span><span class="p">()</span>
+            <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="p">=</span> <span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">),</span>
+        <span class="n">elevation</span> <span class="p">=</span> <span class="nc">CardDefaults</span><span class="p">.</span><span class="nf">cardElevation</span><span class="p">(</span><span class="n">defaultElevation</span> <span class="p">=</span> <span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">),</span>
+        <span class="n">colors</span> <span class="p">=</span> <span class="nc">CardDefaults</span><span class="p">.</span><span class="nf">cardColors</span><span class="p">(</span><span class="n">containerColor</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">surface</span><span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nc">Text</span><span class="p">(</span>
+            <span class="n">text</span> <span class="p">=</span> <span class="n">affirmation</span><span class="p">,</span>
+            <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">bodyLarge</span><span class="p">,</span>
+            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">),</span>
+            <span class="n">color</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">onSurface</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h4 id="4-application-du-thème-personnalisé"><strong>4. Application du thème personnalisé</strong></h4>
+<p>Appliquez un thème global à l’application.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">AffirmationApp</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nc">MaterialTheme</span><span class="p">(</span>
+        <span class="n">colorScheme</span> <span class="p">=</span> <span class="nf">lightColorScheme</span><span class="p">(</span>
+            <span class="n">primary</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">(</span><span class="mh">0xFF6200EE</span><span class="p">),</span>
+            <span class="n">onPrimary</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">White</span><span class="p">,</span>
+            <span class="n">background</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">(</span><span class="mh">0xFFF5F5F5</span><span class="p">),</span>
+            <span class="n">surface</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">White</span><span class="p">,</span>
+            <span class="n">onSurface</span> <span class="p">=</span> <span class="nc">Color</span><span class="p">.</span><span class="nc">Black</span>
+        <span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nc">Surface</span><span class="p">(</span>
+            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">(),</span>
+            <span class="n">color</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">background</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="nc">AffirmationList</span><span class="p">(</span><span class="n">affirmations</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h3 id="activité-pratique-"><strong>Activité pratique :</strong></h3>
+<ol>
+  <li><strong>Ajout dynamique</strong> : Permettre aux utilisateurs d’ajouter leurs propres affirmations via un champ de texte.</li>
+  <li><strong>Gestion des clics</strong> : Afficher un message <code class="language-plaintext highlighter-rouge">Toast</code> ou changer la couleur de fond d’une carte lorsqu’elle est cliquée.</li>
+  <li><strong>Personnalisation du thème</strong> : Modifier les couleurs et la typographie pour une meilleure lisibilité.</li>
+</ol>
+
+<hr />
+
+<h3 id="conclusion-"><strong>Conclusion :</strong></h3>
+<p>Ce mini-projet vous permettra de maîtriser les bases des listes avec Jetpack Compose et d’appliquer les principes de Material Design dans une application concrète. Ces compétences seront essentielles pour développer l’application <strong>To-Do List</strong> complète.</p>
 
         </main>
 
