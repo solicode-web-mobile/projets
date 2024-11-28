@@ -13,16 +13,16 @@ layout: chapters
 ---
 
 
-### **Tutoriel 9 : Introduction à Material Design**
+# **Tutoriel 9 : Introduction à Material Design**
 
 ---
 
-#### **Objectif pédagogique :**
+## **Objectif pédagogique :**
 Découvrir et appliquer les principes de **Material Design** dans une application Android utilisant **Jetpack Compose**. Les apprenants apprendront à concevoir une interface moderne et attrayante en intégrant des thèmes, des couleurs, des formes, des typographies, et des pratiques d'accessibilité.
 
 ---
 
-### **Concepts abordés :**
+## **Concepts abordés :**
 - Introduction à **Material Design**
 - Création et personnalisation des thèmes Material
 - Utilisation des composants Material (boutons, cartes, etc.)
@@ -31,21 +31,21 @@ Découvrir et appliquer les principes de **Material Design** dans une applicatio
 
 ---
 
-### **Tags :**
+## **Tags :**
 Material Design, UI/UX, Jetpack Compose, Accessibilité
 
 ---
 
-### **Résumé :**
+## **Résumé :**
 Apprenez à utiliser **Material Design** pour créer des interfaces utilisateur modernes et intuitives. Ce tutoriel vous guidera à travers les étapes pour appliquer un thème, personnaliser les composants visuels, et garantir une meilleure expérience utilisateur.
 
 ---
 
-### **Niveau 1 : Présentation de Material Design**
+## **Niveau 1 : Présentation de Material Design**
 
 **Material Design** est un ensemble de principes et de composants développé par Google pour créer des interfaces cohérentes et esthétiques. Il repose sur la lumière, la profondeur et le mouvement pour offrir une expérience utilisateur engageante.
 
-#### **Étapes :**
+## **Étapes :**
 1. **Comprendre les composants de base de Material Design :**
    - Boutons, cartes, barres d'applications, champs de texte.
    - Chaque composant possède des variantes spécifiques pour respecter l'esthétique Material.
@@ -55,11 +55,11 @@ Apprenez à utiliser **Material Design** pour créer des interfaces utilisateur 
 
 ---
 
-### **Niveau 2 : Création et personnalisation des thèmes Material**
+## **Niveau 2 : Création et personnalisation des thèmes Material**
 
 Les thèmes permettent de définir les couleurs, la typographie et les formes utilisées dans votre application.
 
-#### **Code Kotlin complet :**
+## **Code Kotlin complet :**
 
 ```kotlin
 import androidx.compose.foundation.layout.*
@@ -144,7 +144,7 @@ fun MyAppScreenPreview() {
 
 ---
 
-### **Explications du code :**
+## **Explications du code :**
 
 1. **Thème personnalisé :**
    - Utilise `MaterialTheme` pour définir un jeu de couleurs et une typographie spécifique.
@@ -159,7 +159,7 @@ fun MyAppScreenPreview() {
 
 ---
 
-### **Activité pratique :**
+## **Activité pratique :**
 **Objectif :** Modifier les couleurs et les composants pour créer une interface qui respecte le thème de votre application To-Do List.
 
 1. Créez un thème personnalisé avec vos propres couleurs.
@@ -168,5 +168,5 @@ fun MyAppScreenPreview() {
 
 ---
 
-### **Conclusion :**
+## **Conclusion :**
 Ce tutoriel vous a introduit aux fondamentaux de **Material Design** avec Jetpack Compose. Vous avez appris à créer un thème personnalisé, à utiliser des composants stylisés et à concevoir des interfaces modernes et accessibles.

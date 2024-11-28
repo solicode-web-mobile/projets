@@ -1,15 +1,14 @@
 ---
-reference: fondamentaux-kotlin-apprentissage
+reference: m2-créer-interface-utilisateur-apprentissage
 slug: apprentissage
 module_reference: mobile
-part_reference: fondamentaux-kotlin
+part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
-title: Apprentissage
+title: apprentissage
 description: ''
 order: 41
-global_order: '40'
-directory: fondamentaux-kotlin
-permalink: fondamentaux-kotlin/apprentissage
+directory: m2-créer-interface-utilisateur
+permalink: m2-créer-interface-utilisateur/apprentissage
 layout: chapters
 ---
 

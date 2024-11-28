@@ -12,11 +12,11 @@ permalink: m3-afficher-listes-utiliser-material-design/tuto8
 layout: chapters
 ---
 
-### **Tutoriel 8 : Création de listes avec Jetpack Compose**
+# **Tutoriel 8 : Création de listes avec Jetpack Compose**
 
 ---
 
-#### **Concepts abordés :**  
+## **Concepts abordés :**  
 - Affichage de listes déroulantes  
 - Recycler les vues efficacement  
 - Gestion des clics sur les éléments de la liste  
@@ -25,12 +25,12 @@ layout: chapters
 
 ---
 
-### **Objectif :**  
+## **Objectif :**  
 Créer une liste dynamique d'éléments en utilisant Jetpack Compose, afficher des images et du texte, et gérer les interactions utilisateur (clics sur les éléments).
 
 ---
 
-### **Code Kotlin complet :**  
+## **Code Kotlin complet :**  
 
 ```kotlin
 import android.os.Bundle
@@ -117,32 +117,32 @@ fun PreviewListScreen() {
 
 ---
 
-### **Explications du code :**
+## **Explications du code :**
 
-#### **1. Modèle de données (`ListItem`)** :
+## **1. Modèle de données (`ListItem`)** :
 - Représente chaque élément de la liste avec un titre et une ressource d'image.
   
-#### **2. Données factices (`sampleItems`)** :
+## **2. Données factices (`sampleItems`)** :
 - Une liste statique de `ListItem` servant d'exemple.
 
-#### **3. `MainActivity`** :
+## **3. `MainActivity`** :
 - Configure la mise en page principale en utilisant `setContent` pour afficher l'écran de liste.
 
-#### **4. `ListScreen` (Composant principal)** :
+## **4. `ListScreen` (Composant principal)** :
 - Utilise `LazyColumn` pour afficher une liste déroulante optimisée.
 - Chaque élément est rendu par la fonction `ListItemRow`.
 
-#### **5. `ListItemRow`** :
+## **5. `ListItemRow`** :
 - Définit l'apparence de chaque élément de la liste.
 - Utilise une `Row` pour aligner horizontalement l'image et le texte.
 - Ajoute un comportement de clic sur l'élément avec `clickable`.
 
-#### **6. Aperçu (`PreviewListScreen`)** :
+## **6. Aperçu (`PreviewListScreen`)** :
 - Permet d'afficher un aperçu de l'interface dans Android Studio.
 
 ---
 
-### **Lien avec le projet final :**  
+## **Lien avec le projet final :**  
 - Ce tutoriel introduit la création et l'affichage de listes, un élément essentiel pour la gestion des tâches dans une application To-Do List.
 - Les apprenants pourront réutiliser cette structure pour afficher une liste de tâches, ajouter des actions de clic pour modifier ou supprimer des tâches, et intégrer des icônes pour chaque état de tâche.
 
