@@ -4,7 +4,7 @@ slug: tuto9
 module_reference: mobile
 part_reference: m3-afficher-listes-utiliser-material-design
 concept_reference: ''
-title: Tuto9
+title: Tuto9 - Introduction à Material Design
 description: ''
 order: 113
 directory: m3-afficher-listes-utiliser-material-design

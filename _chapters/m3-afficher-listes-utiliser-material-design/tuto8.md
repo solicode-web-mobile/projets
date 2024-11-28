@@ -4,7 +4,7 @@ slug: tuto8
 module_reference: mobile
 part_reference: m3-afficher-listes-utiliser-material-design
 concept_reference: ''
-title: Tuto8
+title: Tuto8 -  Création de listes avec Jetpack Compose
 description: ''
 order: 113
 directory: m3-afficher-listes-utiliser-material-design
