@@ -7,7 +7,6 @@ concept_reference: ''
 title: Conclusion
 description: ''
 order: 38
-global_order: '40'
 directory: bienvenue-kotlin-android
 permalink: bienvenue-kotlin-android/conclusion
 layout: chapters

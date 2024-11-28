@@ -1,13 +1,14 @@
 ---
-reference: bienvenue-kotlin-android-introduction
-slug: introduction
+reference: bienvenue-kotlin-android-conclusion
+slug: conclusion
 module_reference: mobile
 part_reference: bienvenue-kotlin-android
 concept_reference: ''
-title: Introduction
+title: Conclusion
 description: ''
-order: 24
+order: 38
+global_order: '40'
 directory: bienvenue-kotlin-android
-permalink: bienvenue-kotlin-android/introduction
+permalink: bienvenue-kotlin-android/conclusion
 layout: chapters
 ---
