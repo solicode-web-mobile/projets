@@ -13,164 +13,149 @@ layout: chapters
 ---
 
 
-# **Tutoriel 7 : Concepts avancés de Kotlin (Collections et Génériques)**  
----
-
-## **Objectif pédagogique :**  
-Comprendre et manipuler les collections, génériques et extensions pour créer des applications Android plus robustes et modulaires.
+# 🚀 **Tutoriel 7 : Concepts avancés de Kotlin (Collections et Génériques)**  
 
 ---
 
-# **1. Collections en Kotlin**  
-
-Les collections sont des structures de données permettant de stocker et manipuler des groupes d'éléments. Kotlin propose des collections immuables (`List`, `Set`, `Map`) et des collections modifiables (`MutableList`, `MutableSet`, `MutableMap`).
+### **📚 Concepts abordés :**  
+- **Collections** : List, Set, Map, Mutable vs Immutable.  
+- **Génériques** : Utilisation des types génériques pour créer des classes, fonctions réutilisables et sûres.  
+- **Extensions** : Ajouter des fonctionnalités aux classes sans les modifier.  
+- **Fonctions d'ordre supérieur** : Utiliser des fonctions comme paramètres ou retours.  
 
 ---
 
-## **Exemple 1 : Utilisation de `List` et `MutableList`**  
+### **🏷️ Tags :**  
+- Collections, Génériques, Extensions, Kotlin avancé.  
 
+---
+
+### **📝 Résumé :**  
+Ce tutoriel approfondit l’utilisation des collections et des génériques en Kotlin, essentiels pour gérer efficacement les données. Vous découvrirez également les extensions et les fonctions d’ordre supérieur pour écrire un code plus concis, modulaire et lisible.  
+
+---
+
+## **🔍 Objectifs pédagogiques :**  
+- Maîtriser les collections Kotlin (List, Set, Map).  
+- Comprendre et utiliser les types génériques.  
+- Créer des extensions pour enrichir des classes existantes.  
+- Manipuler des fonctions d’ordre supérieur.  
+
+---
+
+## **📦 Collections en Kotlin :**  
+
+### **1. Les types de collections principales :**  
+- **List** : Ordonnée, peut contenir des doublons.  
+  ```kotlin
+  val list = listOf("Pomme", "Banane", "Cerise")  // Immutable
+  val mutableList = mutableListOf(1, 2, 3)  // Mutable
+  ```
+
+- **Set** : Unique, sans doublons.  
+  ```kotlin
+  val set = setOf(1, 2, 3, 3)  // Résultat : 1, 2, 3
+  ```
+
+- **Map** : Paires clé-valeur.  
+  ```kotlin
+  val map = mapOf("Clé1" to "Valeur1", "Clé2" to "Valeur2")
+  ```
+
+---
+
+### **2. Manipulation des collections :**  
+**Filtrer et transformer les données :**  
 ```kotlin
-fun main() {
-    // Liste immuable
-    val fruits = listOf("Pomme", "Banane", "Orange")
-    println("Liste des fruits : $fruits")
+val nombres = listOf(1, 2, 3, 4, 5)
+val pairs = nombres.filter { it % 2 == 0 }  // [2, 4]
+val carrés = nombres.map { it * it }        // [1, 4, 9, 16, 25]
+```
 
-    // Parcourir une liste
-    for (fruit in fruits) {
-        println(fruit)
+**Parcourir une collection :**  
+```kotlin
+nombres.forEach { println(it) }
+```
+
+---
+
+## **🧩 Les génériques :**  
+
+**Créer une fonction générique :**  
+```kotlin
+fun <T> afficherElement(element: T) {
+    println(element)
+}
+
+afficherElement(42)         // Fonctionne avec un Int
+afficherElement("Bonjour")  // Fonctionne avec un String
+```
+
+**Classe générique :**  
+```kotlin
+class Boîte<T>(val contenu: T) {
+    fun afficherContenu() {
+        println("Contenu : $contenu")
     }
-
-    // Liste mutable
-    val mutableFruits = mutableListOf("Pomme", "Banane")
-    mutableFruits.add("Kiwi") // Ajouter un élément
-    println("Liste mutable après ajout : $mutableFruits")
-
-    // Supprimer un élément
-    mutableFruits.remove("Banane")
-    println("Liste mutable après suppression : $mutableFruits")
 }
+
+val boîteInt = Boîte(123)
+val boîteString = Boîte("Hello")
+boîteInt.afficherContenu()     // Contenu : 123
+boîteString.afficherContenu()  // Contenu : Hello
 ```
 
-**Explication :**  
-- `listOf` crée une liste immuable, tandis que `mutableListOf` crée une liste modifiable.
-- Les opérations `add()` et `remove()` sont spécifiques aux collections modifiables.
-
 ---
 
-## **Exemple 2 : Utilisation de `Map` et `MutableMap`**  
+## **🚀 Extensions :**  
+Les extensions ajoutent des fonctionnalités aux classes existantes sans modifier leur code source.  
 
+**Exemple d’extension pour `String` :**  
 ```kotlin
-fun main() {
-    // Map immuable
-    val capitales = mapOf("France" to "Paris", "Espagne" to "Madrid", "Italie" to "Rome")
-    println("Capitales : $capitales")
-
-    // Accéder à une valeur
-    println("Capitale de la France : ${capitales["France"]}")
-
-    // Map mutable
-    val mutableCapitales = mutableMapOf("France" to "Paris", "Espagne" to "Madrid")
-    mutableCapitales["Italie"] = "Rome" // Ajouter une entrée
-    println("Capitales après ajout : $mutableCapitales")
-
-    // Modifier une valeur
-    mutableCapitales["Espagne"] = "Barcelone"
-    println("Capitales après modification : $mutableCapitales")
-}
-```
-
-**Explication :**  
-- `mapOf` crée une carte immuable. Les valeurs sont accédées via des clés.
-- `mutableMapOf` permet d'ajouter, modifier ou supprimer des entrées.
-
----
-
-# **2. Génériques en Kotlin**  
-
-Les génériques permettent de créer des classes, interfaces ou fonctions paramétrées par type. Cela rend le code réutilisable et sûr.
-
----
-
-## **Exemple 3 : Fonction générique**  
-
-```kotlin
-// Fonction générique qui retourne l'élément au milieu d'une liste
-fun <T> trouverMilieu(liste: List<T>): T? {
-    return if (liste.isNotEmpty()) liste[liste.size / 2] else null
-}
-
-fun main() {
-    val nombres = listOf(1, 2, 3, 4, 5)
-    println("Élément du milieu : ${trouverMilieu(nombres)}")
-
-    val mots = listOf("Kotlin", "Java", "Swift")
-    println("Élément du milieu : ${trouverMilieu(mots)}")
-}
-```
-
-**Explication :**  
-- `<T>` définit un paramètre de type générique.
-- Cette fonction peut accepter une liste de n'importe quel type (`Int`, `String`, etc.).
-
----
-
-# **3. Extensions en Kotlin**  
-
-Les extensions permettent d'ajouter de nouvelles fonctionnalités aux classes existantes sans les modifier.
-
----
-
-## **Exemple 4 : Fonction d'extension sur `List`**  
-
-```kotlin
-// Fonction d'extension pour inverser une liste
-fun <T> List<T>.inverser(): List<T> {
+fun String.inverser(): String {
     return this.reversed()
 }
 
-fun main() {
-    val nombres = listOf(1, 2, 3, 4, 5)
-    println("Liste inversée : ${nombres.inverser()}")
-
-    val mots = listOf("Kotlin", "Java", "Swift")
-    println("Liste inversée : ${mots.inverser()}")
-}
+println("Kotlin".inverser())  // Résultat : "niltok"
 ```
 
-**Explication :**  
-- `List<T>.inverser()` ajoute une nouvelle méthode `inverser` à toutes les listes de type `T`.
-- La fonction `reversed()` est une fonction standard de Kotlin pour inverser une liste.
-
 ---
 
-# **4. Fonctions d'ordre supérieur et lambdas**  
+## **🔧 Fonctions d’ordre supérieur :**  
+Une fonction qui prend une autre fonction en paramètre ou retourne une fonction.  
 
-Les fonctions d'ordre supérieur acceptent une ou plusieurs fonctions en paramètres, ou retournent une fonction.
-
----
-
-## **Exemple 5 : Utilisation de `filter` et `map` avec des lambdas**  
-
+**Exemple :**  
 ```kotlin
-fun main() {
-    val nombres = listOf(1, 2, 3, 4, 5, 6)
-
-    // Filtrer les nombres pairs
-    val pairs = nombres.filter { it % 2 == 0 }
-    println("Nombres pairs : $pairs")
-
-    // Transformer les nombres en leurs carrés
-    val carres = nombres.map { it * it }
-    println("Nombres au carré : $carres")
+fun appliquerOperation(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    return operation(a, b)
 }
-```
 
-**Explication :**  
-- `filter` retourne une liste filtrée selon la condition lambda (`it % 2 == 0`).
-- `map` applique une transformation à chaque élément de la liste.
+// Utilisation
+val somme = appliquerOperation(5, 3) { x, y -> x + y }   // 8
+val produit = appliquerOperation(5, 3) { x, y -> x * y } // 15
+```
 
 ---
 
-# **Conclusion**  
+## **🛠️ Exercices pratiques :**  
 
-Ce tutoriel vous a introduit aux concepts avancés de Kotlin, notamment les collections, les génériques, les extensions et les fonctions d'ordre supérieur. Ces compétences sont essentielles pour créer des applications Android performantes et modulaires.
+1. **Manipulation des collections :**  
+   - Créez une liste de nombres et filtrez ceux qui sont supérieurs à 10.  
+   - Transformez une liste de chaînes en majuscules.  
+
+2. **Fonctions génériques :**  
+   - Créez une fonction générique qui retourne le dernier élément d’une liste.  
+
+3. **Extension :**  
+   - Créez une extension pour les listes qui renvoie le deuxième élément.  
+
+---
+
+## **🎯 Lien avec le projet final (To-Do List) :**  
+- **Collections** : Vous utiliserez des listes pour stocker et manipuler les tâches.  
+- **Génériques** : Assurez-vous que les données manipulées sont de types sûrs.  
+- **Extensions** : Ajoutez des fonctionnalités spécifiques aux listes de tâches (ex. : tri, filtrage).  
+
+---
+
+### 🚀 **Prochain tutoriel : Gestion des événements et des listes dynamiques !**  

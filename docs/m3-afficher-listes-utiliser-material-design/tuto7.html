@@ -16,11 +16,11 @@
 <meta property="og:url" content="/projets/m3-afficher-listes-utiliser-material-design/tuto7" />
 <meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-28T13:46:12+01:00" />
+<meta property="article:published_time" content="2024-11-28T14:47:43+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tuto7" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-28T13:46:12+01:00","datePublished":"2024-11-28T13:46:12+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Tuto7","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/m3-afficher-listes-utiliser-material-design/tuto7"},"url":"/projets/m3-afficher-listes-utiliser-material-design/tuto7"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-28T14:47:43+01:00","datePublished":"2024-11-28T14:47:43+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"Tuto7","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/m3-afficher-listes-utiliser-material-design/tuto7"},"url":"/projets/m3-afficher-listes-utiliser-material-design/tuto7"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -446,6 +446,10 @@
                 <a href="/projets/m3-afficher-listes-utiliser-material-design/tuto7.html" class="">
                     <strong aria-hidden="true"></strong>Tuto7</a>
             </li>
+            <li  class="chapter-item expanded" id="m3-afficher-listes-utiliser-material-design-tuto8">
+                <a href="/projets/m3-afficher-listes-utiliser-material-design/tuto8.html" class="">
+                    <strong aria-hidden="true"></strong>tuto8</a>
+            </li>
             <li  class="chapter-item expanded" id="m3-afficher-listes-utiliser-material-design-conclusion">
                 <a href="/projets/m3-afficher-listes-utiliser-material-design/conclusion.html" class="">
                     <strong aria-hidden="true"></strong>Conclusion</a>
@@ -593,22 +597,102 @@
                     <li class="breadcrumb-item active" aria-current="page">Tuto7</li>
                 </ol>
             </nav>
-            <h1 id="tutoriel-7--concepts-avancés-de-kotlin-collections-et-génériques"><strong>Tutoriel 7 : Concepts avancés de Kotlin (Collections et Génériques)</strong></h1>
-<hr />
-
-<h2 id="objectif-pédagogique-"><strong>Objectif pédagogique :</strong></h2>
-<p>Comprendre et manipuler les collections, génériques et extensions pour créer des applications Android plus robustes et modulaires.</p>
+            <h1 id="-tutoriel-7--concepts-avancés-de-kotlin-collections-et-génériques">🚀 <strong>Tutoriel 7 : Concepts avancés de Kotlin (Collections et Génériques)</strong></h1>
 
 <hr />
 
-<h1 id="1-collections-en-kotlin"><strong>1. Collections en Kotlin</strong></h1>
-
-<p>Les collections sont des structures de données permettant de stocker et manipuler des groupes d’éléments. Kotlin propose des collections immuables (<code class="language-plaintext highlighter-rouge">List</code>, <code class="language-plaintext highlighter-rouge">Set</code>, <code class="language-plaintext highlighter-rouge">Map</code>) et des collections modifiables (<code class="language-plaintext highlighter-rouge">MutableList</code>, <code class="language-plaintext highlighter-rouge">MutableSet</code>, <code class="language-plaintext highlighter-rouge">MutableMap</code>).</p>
+<h3 id="-concepts-abordés-"><strong>📚 Concepts abordés :</strong></h3>
+<ul>
+  <li><strong>Collections</strong> : List, Set, Map, Mutable vs Immutable.</li>
+  <li><strong>Génériques</strong> : Utilisation des types génériques pour créer des classes, fonctions réutilisables et sûres.</li>
+  <li><strong>Extensions</strong> : Ajouter des fonctionnalités aux classes sans les modifier.</li>
+  <li><strong>Fonctions d’ordre supérieur</strong> : Utiliser des fonctions comme paramètres ou retours.</li>
+</ul>
 
 <hr />
 
-<h2 id="exemple-1--utilisation-de-list-et-mutablelist"><strong>Exemple 1 : Utilisation de <code class="language-plaintext highlighter-rouge">List</code> et <code class="language-plaintext highlighter-rouge">MutableList</code></strong></h2>
+<h3 id="️-tags-"><strong>🏷️ Tags :</strong></h3>
+<ul>
+  <li>Collections, Génériques, Extensions, Kotlin avancé.</li>
+</ul>
 
+<hr />
+
+<h3 id="-résumé-"><strong>📝 Résumé :</strong></h3>
+<p>Ce tutoriel approfondit l’utilisation des collections et des génériques en Kotlin, essentiels pour gérer efficacement les données. Vous découvrirez également les extensions et les fonctions d’ordre supérieur pour écrire un code plus concis, modulaire et lisible.</p>
+
+<hr />
+
+<h2 id="-objectifs-pédagogiques-"><strong>🔍 Objectifs pédagogiques :</strong></h2>
+<ul>
+  <li>Maîtriser les collections Kotlin (List, Set, Map).</li>
+  <li>Comprendre et utiliser les types génériques.</li>
+  <li>Créer des extensions pour enrichir des classes existantes.</li>
+  <li>Manipuler des fonctions d’ordre supérieur.</li>
+</ul>
+
+<hr />
+
+<h2 id="-collections-en-kotlin-"><strong>📦 Collections en Kotlin :</strong></h2>
+
+<h3 id="1-les-types-de-collections-principales-"><strong>1. Les types de collections principales :</strong></h3>
+<ul>
+  <li><strong>List</strong> : Ordonnée, peut contenir des doublons.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">list</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="s">"Pomme"</span><span class="p">,</span> <span class="s">"Banane"</span><span class="p">,</span> <span class="s">"Cerise"</span><span class="p">)</span>  <span class="c1">// Immutable</span>
+<span class="kd">val</span> <span class="py">mutableList</span> <span class="p">=</span> <span class="nf">mutableListOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1">// Mutable</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li><strong>Set</strong> : Unique, sans doublons.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">set</span> <span class="p">=</span> <span class="nf">setOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1">// Résultat : 1, 2, 3</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li><strong>Map</strong> : Paires clé-valeur.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">map</span> <span class="p">=</span> <span class="nf">mapOf</span><span class="p">(</span><span class="s">"Clé1"</span> <span class="n">to</span> <span class="s">"Valeur1"</span><span class="p">,</span> <span class="s">"Clé2"</span> <span class="n">to</span> <span class="s">"Valeur2"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="2-manipulation-des-collections-"><strong>2. Manipulation des collections :</strong></h3>
+<p><strong>Filtrer et transformer les données :</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">nombres</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="kd">val</span> <span class="py">pairs</span> <span class="p">=</span> <span class="n">nombres</span><span class="p">.</span><span class="nf">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">%</span> <span class="mi">2</span> <span class="p">==</span> <span class="mi">0</span> <span class="p">}</span>  <span class="c1">// [2, 4]</span>
+<span class="kd">val</span> <span class="py">carrés</span> <span class="p">=</span> <span class="n">nombres</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="n">it</span> <span class="p">*</span> <span class="n">it</span> <span class="p">}</span>        <span class="c1">// [1, 4, 9, 16, 25]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Parcourir une collection :</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">nombres</span><span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="nf">println</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+<h2 id="-les-génériques-"><strong>🧩 Les génériques :</strong></h2>
+
+<p><strong>Créer une fonction générique :</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="nf">afficherElement</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="nc">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">afficherElement</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>         <span class="c1">// Fonctionne avec un Int</span>
+<span class="nf">afficherElement</span><span class="p">(</span><span class="s">"Bonjour"</span><span class="p">)</span>  <span class="c1">// Fonctionne avec un String</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Classe générique :</strong></p>
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -619,182 +703,42 @@
 8
 9
 10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Liste immuable</span>
-    <span class="kd">val</span> <span class="py">fruits</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="s">"Pomme"</span><span class="p">,</span> <span class="s">"Banane"</span><span class="p">,</span> <span class="s">"Orange"</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Liste des fruits : $fruits"</span><span class="p">)</span>
-
-    <span class="c1">// Parcourir une liste</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">fruit</span> <span class="k">in</span> <span class="n">fruits</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">println</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Boîte</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;(</span><span class="kd">val</span> <span class="py">contenu</span><span class="p">:</span> <span class="nc">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">afficherContenu</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">println</span><span class="p">(</span><span class="s">"Contenu : $contenu"</span><span class="p">)</span>
     <span class="p">}</span>
-
-    <span class="c1">// Liste mutable</span>
-    <span class="kd">val</span> <span class="py">mutableFruits</span> <span class="p">=</span> <span class="nf">mutableListOf</span><span class="p">(</span><span class="s">"Pomme"</span><span class="p">,</span> <span class="s">"Banane"</span><span class="p">)</span>
-    <span class="n">mutableFruits</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s">"Kiwi"</span><span class="p">)</span> <span class="c1">// Ajouter un élément</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Liste mutable après ajout : $mutableFruits"</span><span class="p">)</span>
-
-    <span class="c1">// Supprimer un élément</span>
-    <span class="n">mutableFruits</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="s">"Banane"</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Liste mutable après suppression : $mutableFruits"</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Explication :</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">listOf</code> crée une liste immuable, tandis que <code class="language-plaintext highlighter-rouge">mutableListOf</code> crée une liste modifiable.</li>
-  <li>Les opérations <code class="language-plaintext highlighter-rouge">add()</code> et <code class="language-plaintext highlighter-rouge">remove()</code> sont spécifiques aux collections modifiables.</li>
-</ul>
+<span class="kd">val</span> <span class="py">boîteInt</span> <span class="p">=</span> <span class="nc">Boîte</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="kd">val</span> <span class="py">boîteString</span> <span class="p">=</span> <span class="nc">Boîte</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="n">boîteInt</span><span class="p">.</span><span class="nf">afficherContenu</span><span class="p">()</span>     <span class="c1">// Contenu : 123</span>
+<span class="n">boîteString</span><span class="p">.</span><span class="nf">afficherContenu</span><span class="p">()</span>  <span class="c1">// Contenu : Hello</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
-<h2 id="exemple-2--utilisation-de-map-et-mutablemap"><strong>Exemple 2 : Utilisation de <code class="language-plaintext highlighter-rouge">Map</code> et <code class="language-plaintext highlighter-rouge">MutableMap</code></strong></h2>
+<h2 id="-extensions-"><strong>🚀 Extensions :</strong></h2>
+<p>Les extensions ajoutent des fonctionnalités aux classes existantes sans modifier leur code source.</p>
 
+<p><strong>Exemple d’extension pour <code class="language-plaintext highlighter-rouge">String</code> :</strong></p>
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Map immuable</span>
-    <span class="kd">val</span> <span class="py">capitales</span> <span class="p">=</span> <span class="nf">mapOf</span><span class="p">(</span><span class="s">"France"</span> <span class="n">to</span> <span class="s">"Paris"</span><span class="p">,</span> <span class="s">"Espagne"</span> <span class="n">to</span> <span class="s">"Madrid"</span><span class="p">,</span> <span class="s">"Italie"</span> <span class="n">to</span> <span class="s">"Rome"</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Capitales : $capitales"</span><span class="p">)</span>
-
-    <span class="c1">// Accéder à une valeur</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Capitale de la France : ${capitales["</span><span class="nc">France</span><span class="s">"]}"</span><span class="p">)</span>
-
-    <span class="c1">// Map mutable</span>
-    <span class="kd">val</span> <span class="py">mutableCapitales</span> <span class="p">=</span> <span class="nf">mutableMapOf</span><span class="p">(</span><span class="s">"France"</span> <span class="n">to</span> <span class="s">"Paris"</span><span class="p">,</span> <span class="s">"Espagne"</span> <span class="n">to</span> <span class="s">"Madrid"</span><span class="p">)</span>
-    <span class="n">mutableCapitales</span><span class="p">[</span><span class="s">"Italie"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Rome"</span> <span class="c1">// Ajouter une entrée</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Capitales après ajout : $mutableCapitales"</span><span class="p">)</span>
-
-    <span class="c1">// Modifier une valeur</span>
-    <span class="n">mutableCapitales</span><span class="p">[</span><span class="s">"Espagne"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"Barcelone"</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Capitales après modification : $mutableCapitales"</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><strong>Explication :</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">mapOf</code> crée une carte immuable. Les valeurs sont accédées via des clés.</li>
-  <li><code class="language-plaintext highlighter-rouge">mutableMapOf</code> permet d’ajouter, modifier ou supprimer des entrées.</li>
-</ul>
-
-<hr />
-
-<h1 id="2-génériques-en-kotlin"><strong>2. Génériques en Kotlin</strong></h1>
-
-<p>Les génériques permettent de créer des classes, interfaces ou fonctions paramétrées par type. Cela rend le code réutilisable et sûr.</p>
-
-<hr />
-
-<h2 id="exemple-3--fonction-générique"><strong>Exemple 3 : Fonction générique</strong></h2>
-
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="c1">// Fonction générique qui retourne l'élément au milieu d'une liste</span>
-<span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="nf">trouverMilieu</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;):</span> <span class="nc">T</span><span class="p">?</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">if</span> <span class="p">(</span><span class="n">liste</span><span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">())</span> <span class="n">liste</span><span class="p">[</span><span class="n">liste</span><span class="p">.</span><span class="n">size</span> <span class="p">/</span> <span class="mi">2</span><span class="p">]</span> <span class="k">else</span> <span class="k">null</span>
-<span class="p">}</span>
-
-<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="py">nombres</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Élément du milieu : ${trouverMilieu(nombres)}"</span><span class="p">)</span>
-
-    <span class="kd">val</span> <span class="py">mots</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">,</span> <span class="s">"Java"</span><span class="p">,</span> <span class="s">"Swift"</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Élément du milieu : ${trouverMilieu(mots)}"</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><strong>Explication :</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;T&gt;</code> définit un paramètre de type générique.</li>
-  <li>Cette fonction peut accepter une liste de n’importe quel type (<code class="language-plaintext highlighter-rouge">Int</code>, <code class="language-plaintext highlighter-rouge">String</code>, etc.).</li>
-</ul>
-
-<hr />
-
-<h1 id="3-extensions-en-kotlin"><strong>3. Extensions en Kotlin</strong></h1>
-
-<p>Les extensions permettent d’ajouter de nouvelles fonctionnalités aux classes existantes sans les modifier.</p>
-
-<hr />
-
-<h2 id="exemple-4--fonction-dextension-sur-list"><strong>Exemple 4 : Fonction d’extension sur <code class="language-plaintext highlighter-rouge">List</code></strong></h2>
-
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="c1">// Fonction d'extension pour inverser une liste</span>
-<span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="nf">List</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;.</span><span class="nf">inverser</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="nc">String</span><span class="p">.</span><span class="nf">inverser</span><span class="p">():</span> <span class="nc">String</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nf">reversed</span><span class="p">()</span>
 <span class="p">}</span>
 
-<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="py">nombres</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Liste inversée : ${nombres.inverser()}"</span><span class="p">)</span>
-
-    <span class="kd">val</span> <span class="py">mots</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">,</span> <span class="s">"Java"</span><span class="p">,</span> <span class="s">"Swift"</span><span class="p">)</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Liste inversée : ${mots.inverser()}"</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"Kotlin"</span><span class="p">.</span><span class="nf">inverser</span><span class="p">())</span>  <span class="c1">// Résultat : "niltok"</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Explication :</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">List&lt;T&gt;.inverser()</code> ajoute une nouvelle méthode <code class="language-plaintext highlighter-rouge">inverser</code> à toutes les listes de type <code class="language-plaintext highlighter-rouge">T</code>.</li>
-  <li>La fonction <code class="language-plaintext highlighter-rouge">reversed()</code> est une fonction standard de Kotlin pour inverser une liste.</li>
-</ul>
-
 <hr />
 
-<h1 id="4-fonctions-dordre-supérieur-et-lambdas"><strong>4. Fonctions d’ordre supérieur et lambdas</strong></h1>
+<h2 id="-fonctions-dordre-supérieur-"><strong>🔧 Fonctions d’ordre supérieur :</strong></h2>
+<p>Une fonction qui prend une autre fonction en paramètre ou retourne une fonction.</p>
 
-<p>Les fonctions d’ordre supérieur acceptent une ou plusieurs fonctions en paramètres, ou retournent une fonction.</p>
-
-<hr />
-
-<h2 id="exemple-5--utilisation-de-filter-et-map-avec-des-lambdas"><strong>Exemple 5 : Utilisation de <code class="language-plaintext highlighter-rouge">filter</code> et <code class="language-plaintext highlighter-rouge">map</code> avec des lambdas</strong></h2>
-
+<p><strong>Exemple :</strong></p>
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -802,34 +746,50 @@
 5
 6
 7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="py">nombres</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-    <span class="c1">// Filtrer les nombres pairs</span>
-    <span class="kd">val</span> <span class="py">pairs</span> <span class="p">=</span> <span class="n">nombres</span><span class="p">.</span><span class="nf">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">%</span> <span class="mi">2</span> <span class="p">==</span> <span class="mi">0</span> <span class="p">}</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Nombres pairs : $pairs"</span><span class="p">)</span>
-
-    <span class="c1">// Transformer les nombres en leurs carrés</span>
-    <span class="kd">val</span> <span class="py">carres</span> <span class="p">=</span> <span class="n">nombres</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="n">it</span> <span class="p">*</span> <span class="n">it</span> <span class="p">}</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"Nombres au carré : $carres"</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">appliquerOperation</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="p">(</span><span class="nc">Int</span><span class="p">,</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">operation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="kd">val</span> <span class="py">somme</span> <span class="p">=</span> <span class="nf">appliquerOperation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="n">y</span> <span class="p">}</span>   <span class="c1">// 8</span>
+<span class="kd">val</span> <span class="py">produit</span> <span class="p">=</span> <span class="nf">appliquerOperation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">-&gt;</span> <span class="n">x</span> <span class="p">*</span> <span class="n">y</span> <span class="p">}</span> <span class="c1">// 15</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Explication :</strong></p>
+<hr />
+
+<h2 id="️-exercices-pratiques-"><strong>🛠️ Exercices pratiques :</strong></h2>
+
+<ol>
+  <li><strong>Manipulation des collections :</strong>
+    <ul>
+      <li>Créez une liste de nombres et filtrez ceux qui sont supérieurs à 10.</li>
+      <li>Transformez une liste de chaînes en majuscules.</li>
+    </ul>
+  </li>
+  <li><strong>Fonctions génériques :</strong>
+    <ul>
+      <li>Créez une fonction générique qui retourne le dernier élément d’une liste.</li>
+    </ul>
+  </li>
+  <li><strong>Extension :</strong>
+    <ul>
+      <li>Créez une extension pour les listes qui renvoie le deuxième élément.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="-lien-avec-le-projet-final-to-do-list-"><strong>🎯 Lien avec le projet final (To-Do List) :</strong></h2>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">filter</code> retourne une liste filtrée selon la condition lambda (<code class="language-plaintext highlighter-rouge">it % 2 == 0</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">map</code> applique une transformation à chaque élément de la liste.</li>
+  <li><strong>Collections</strong> : Vous utiliserez des listes pour stocker et manipuler les tâches.</li>
+  <li><strong>Génériques</strong> : Assurez-vous que les données manipulées sont de types sûrs.</li>
+  <li><strong>Extensions</strong> : Ajoutez des fonctionnalités spécifiques aux listes de tâches (ex. : tri, filtrage).</li>
 </ul>
 
 <hr />
 
-<h1 id="conclusion"><strong>Conclusion</strong></h1>
-
-<p>Ce tutoriel vous a introduit aux concepts avancés de Kotlin, notamment les collections, les génériques, les extensions et les fonctions d’ordre supérieur. Ces compétences sont essentielles pour créer des applications Android performantes et modulaires.</p>
+<h3 id="-prochain-tutoriel--gestion-des-événements-et-des-listes-dynamiques-">🚀 <strong>Prochain tutoriel : Gestion des événements et des listes dynamiques !</strong></h3>
 
         </main>
 
@@ -839,7 +799,7 @@
 
             <!-- Mobile navigation buttons --><a rel="prev" href="/projets/m3-afficher-listes-utiliser-material-design/apprentissage.html" class="mobile-nav-chapters previous" title="Apprentissage" aria-label="Apprentissage" aria-keyshortcuts="Left">
                     <i class="fa fa-angle-left"></i>
-                </a><a rel="next" href="/projets/m3-afficher-listes-utiliser-material-design/conclusion.html" class="mobile-nav-chapters next" title="Conclusion" aria-label="Conclusion" aria-keyshortcuts="Right">
+                </a><a rel="next" href="/projets/m3-afficher-listes-utiliser-material-design/tuto8.html" class="mobile-nav-chapters next" title="tuto8" aria-label="tuto8" aria-keyshortcuts="Right">
                     <i class="fa fa-angle-right"></i>
                 </a><div style="clear: both"></div>
         </nav>
@@ -860,7 +820,7 @@ width: 50%;"  src="/projets/images/formation-en-video-banner.png" alt="devenir-d
 
 <nav class="nav-wide-wrapper" aria-label="Page navigation"><a rel="prev" href="/projets/m3-afficher-listes-utiliser-material-design/apprentissage.html" class="nav-chapters previous" title="Apprentissage" aria-label="Apprentissage" aria-keyshortcuts="Left">
     <i class="fa fa-angle-left"></i>
-</a><a rel="next" href="/projets/m3-afficher-listes-utiliser-material-design/conclusion.html" class="nav-chapters next" title="Conclusion" aria-label="Conclusion" aria-keyshortcuts="Right">
+</a><a rel="next" href="/projets/m3-afficher-listes-utiliser-material-design/tuto8.html" class="nav-chapters next" title="tuto8" aria-label="tuto8" aria-keyshortcuts="Right">
     <i class="fa fa-angle-right"></i>
 </a></nav>
         </div>
