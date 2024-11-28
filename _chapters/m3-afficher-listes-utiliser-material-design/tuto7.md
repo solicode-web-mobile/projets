@@ -156,6 +156,4 @@ val produit = appliquerOperation(5, 3) { x, y -> x * y } // 15
 - **Génériques** : Assurez-vous que les données manipulées sont de types sûrs.  
 - **Extensions** : Ajoutez des fonctionnalités spécifiques aux listes de tâches (ex. : tri, filtrage).  
 
----
-
 ### 🚀 **Prochain tutoriel : Gestion des événements et des listes dynamiques !**  
