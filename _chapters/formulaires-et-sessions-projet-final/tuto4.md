@@ -12,217 +12,333 @@ permalink: formulaires-et-sessions-projet-final/tuto4
 layout: chapters
 ---
 
-# **Tutoriel 4 : Middleware et Gestion des Accès**
 
-Le middleware dans Laravel est une couche intermédiaire qui intercepte les requêtes HTTP pour appliquer des règles ou des transformations avant qu'elles atteignent le contrôleur. Ce tutoriel couvre l'utilisation du middleware pour restreindre l'accès à certaines parties de votre application, en se basant sur des rôles ou des conditions spécifiques.
+## Étape 1 : Installation d’un nouveau projet Laravel
 
-## **Objectifs**
-- Comprendre le rôle du middleware dans Laravel.
-- Créer et utiliser un middleware personnalisé.
-- Mettre en place une gestion des rôles pour sécuriser l’accès à certaines routes.
+1. **Créer un projet Laravel 11** :
+   ```bash
+   composer create-project laravel/laravel minimal-auth
+   cd minimal-auth
+   ```
 
----
-
-## **Étape 1 : Comprendre le middleware dans Laravel**
-
-Le middleware agit comme une "passoire" qui filtre les requêtes avant qu'elles atteignent les contrôleurs. Quelques exemples intégrés :  
-- **`auth`** : Vérifie si l'utilisateur est authentifié.  
-- **`verified`** : Vérifie si l'adresse e-mail de l'utilisateur est vérifiée.  
-- **`throttle`** : Limite le nombre de requêtes pour éviter les abus.
-
-### **A. Exemple simple d'utilisation**
-Appliquez le middleware `auth` à une route :
-```php
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-```
+2. **Lancer le serveur de développement** :
+   ```bash
+   php artisan serve
+   ```
+   Accédez à votre application sur [http://localhost:8000](http://localhost:8000).
 
 ---
 
-## **Étape 2 : Créer un middleware personnalisé**
+## Étape 2 : Configuration de la base de données
 
-### **A. Générer un middleware**
-Exécutez la commande suivante pour créer un middleware :
+1. Configurez votre fichier `.env` avec les informations de la base de données :
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=laravel_auth
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+2. **Migrate les tables par défaut** :
+   Laravel vient avec un système d'authentification par défaut (table `users`), nous allons l'utiliser :
+   ```bash
+   php artisan migrate
+   ```
+
+
+
+Utiliser un **seeder** est une manière propre et efficace d'insérer des données dans la base de données, particulièrement utile pendant le développement. Voici comment l'ajouter à notre projet Laravel.
+
+---
+
+## *2 : Utiliser un Seeder pour ajouter un utilisateur**
+
+### **1. Créer un Seeder**
+
+Exécutez la commande artisan pour générer un seeder :
+
 ```bash
-php artisan make:middleware CheckRole
+php artisan make:seeder UserSeeder
 ```
 
-Cela génère un fichier dans `app/Http/Middleware/CheckRole.php`.
+Cette commande crée un fichier dans `database/seeders/UserSeeder.php`.
 
-### **B. Implémentation du middleware**
-Modifiez le fichier pour restreindre l’accès en fonction d’un rôle :
+
+
+### **2. Configurer le Seeder**
+
+Modifiez le fichier `database/seeders/UserSeeder.php` pour ajouter un utilisateur :
+
 ```php
-namespace App\Http\Middleware;
+<?php
 
-use Closure;
-use Illuminate\Http\Request;
+namespace Database\Seeders;
 
-class CheckRole
+use Illuminate\Database\Seeder;
+use App\Models\User;
+
+class UserSeeder extends Seeder
 {
-    public function handle(Request $request, Closure $next, $role)
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
     {
-        if (!$request->user() || $request->user()->role !== $role) {
-            return redirect('home')->with('error', 'Accès non autorisé.');
-        }
-
-        return $next($request);
+        User::create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('password123'), // Hachage sécurisé du mot de passe
+        ]);
     }
 }
 ```
 
-### **C. Enregistrer le middleware**
-Ajoutez-le à la liste des middlewares dans `app/Http/Kernel.php` :
+
+### **3. Exécuter le Seeder**
+
+1. Enregistrez le seeder dans `DatabaseSeeder.php` pour qu’il soit exécuté :
+
+   Modifiez `database/seeders/DatabaseSeeder.php` :
+   ```php
+   <?php
+
+   namespace Database\Seeders;
+
+   use Illuminate\Database\Seeder;
+
+   class DatabaseSeeder extends Seeder
+   {
+       /**
+        * Seed the application's database.
+        *
+        * @return void
+        */
+       public function run()
+       {
+           $this->call(UserSeeder::class);
+       }
+   }
+   ```
+
+2. Exécutez le seeder pour insérer les données dans la base de données :
+   ```bash
+   php artisan db:seed
+   ```
+
+
+## Étape 3 : Création du Middleware Personnalisé
+
+1. **Créer un middleware** :
+   ```bash
+   php artisan make:middleware AuthMiddleware
+   ```
+
+2. **Configurer le middleware** :  
+   Modifiez `app/Http/Middleware/AuthMiddleware.php` :
+   ```php
+   <?php
+
+   namespace App\Http\Middleware;
+
+   use Closure;
+   use Illuminate\Http\Request;
+   use Illuminate\Support\Facades\Auth;
+
+   class AuthMiddleware
+   {
+       /**
+        * Handle an incoming request.
+        *
+        * @param  \Illuminate\Http\Request  $request
+        * @param  \Closure  $next
+        * @return mixed
+        */
+       public function handle(Request $request, Closure $next)
+       {
+           if (!Auth::check()) {
+               return redirect('/login');
+           }
+           return $next($request);
+       }
+   }
+   ```
+
+---
+
+## Étape 4 : Enregistrement de l'alias global dans `bootstrap/app.php`
+
+Puisque `Kernel.php` n'est plus utilisé dans Laravel 11, nous enregistrons le middleware directement dans `bootstrap/app.php`.
+
+1. **Modifier `bootstrap/app.php`** :
+   Ajoutez le middleware au tableau des middlewares globaux :
+
 ```php
-protected $routeMiddleware = [
-    // Autres middlewares
-    'role' => \App\Http\Middleware\CheckRole::class,
-];
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'auth.middleware' => App\Http\Middleware\AuthMiddleware::class
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions) {
+        //
+ })->create();
 ```
 
 ---
 
-## **Étape 3 : Appliquer le middleware à des routes**
+## Étape 5 : Création des routes
 
-### **A. Exemple avec un rôle spécifique**
-Appliquez le middleware `role` aux routes nécessitant un accès administrateur :
-```php
-Route::middleware(['role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
-    Route::resource('/admin/articles', AdminArticleController::class);
-});
-```
+1. **Définir les routes** :  
+   Modifiez `routes/web.php` :
+   ```php
+   use Illuminate\Support\Facades\Route;
 
----
+   Route::get('/login', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+   Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
 
-## **Étape 4 : Gestion des rôles dans la base de données**
-
-### **A. Ajouter une colonne `role` à la table `users`**
-Créez une migration pour ajouter le rôle :
-```bash
-php artisan make:migration add_role_to_users_table --table=users
-```
-
-Dans le fichier de migration généré, ajoutez :
-```php
-public function up()
-{
-    Schema::table('users', function (Blueprint $table) {
-        $table->string('role')->default('user'); // Rôle par défaut : utilisateur classique
-    });
-}
-```
-
-Appliquez la migration :
-```bash
-php artisan migrate
-```
-
-### **B. Modifier le modèle User**
-Ajoutez `role` au tableau `$fillable` dans `app/Models/User.php` :
-```php
-protected $fillable = [
-    'name',
-    'email',
-    'password',
-    'role',
-];
-```
+   Route::middleware('auth.middleware')->group(function () {
+       Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
+   });
+   ```
 
 ---
 
-## **Étape 5 : Ajouter des restrictions basées sur le middleware**
+## Étape 6 : Création des Contrôleurs
 
-### **A. Exemple : Limiter l'accès au panneau d'administration**
-Dans le contrôleur `AdminController`, vérifiez si l'utilisateur est administrateur :
-```php
-public function __construct()
-{
-    $this->middleware('role:admin');
-}
-```
+1. **Créer le contrôleur d'authentification** :
+   ```bash
+   php artisan make:controller AuthController
+   ```
 
----
+   Modifiez `app/Http/Controllers/AuthController.php` :
+   ```php
+   <?php
 
-## **Étape 6 : Tester avec des utilisateurs différents**
+   namespace App\Http\Controllers;
 
-### **A. Créez un utilisateur avec un rôle admin**
-Dans Tinker ou via un Seeder, ajoutez un administrateur :
-```bash
-php artisan tinker
-```
-```php
-\App\Models\User::create([
-    'name' => 'Admin User',
-    'email' => 'admin@example.com',
-    'password' => bcrypt('password'),
-    'role' => 'admin',
-]);
-```
+   use Illuminate\Http\Request;
+   use Illuminate\Support\Facades\Auth;
 
-### **B. Tester l'accès**
-1. Connectez-vous avec un utilisateur ayant le rôle `user`.
-2. Essayez d'accéder à une route protégée (`/admin/dashboard`). Vous serez redirigé vers `home` avec un message d'erreur.
-3. Connectez-vous avec un administrateur. Vous devriez avoir accès.
+      class AuthController extends Controller
+   {
+       public function showLoginForm()
+       {
+           return view('auth.login');
+       }
 
----
+       public function login(Request $request)
+       {
+           $credentials = $request->only('email', 'password');
 
-## **Étape 7 : Ajouter des messages d’erreur et des vues conviviales**
+           if (Auth::attempt($credentials)) {
+               return redirect()->route('dashboard');
+           }
 
-### **A. Gestion des messages**
-Dans `resources/views/layouts/app.blade.php`, affichez les erreurs de session :
-```blade
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
-```
+           return back()->withErrors(['email' => 'Invalid credentials.']);
+       }
+   }
+   ```
 
-### **B. Créer une page personnalisée pour accès refusé**
-Créez une vue `resources/views/errors/403.blade.php` :
-```blade
-@extends('layouts.app')
+2. **Créer le contrôleur d’administration** :
+   ```bash
+   php artisan make:controller AdminController
+   ```
 
-@section('content')
-    <h1>403 - Accès Refusé</h1>
-    <p>Vous n'avez pas la permission d'accéder à cette page.</p>
-@endsection
-```
+   Modifiez `app/Http/Controllers/AdminController.php` :
+   ```php
+   <?php
 
-Dans le middleware, remplacez la redirection par une réponse avec code 403 :
-```php
-return response()->view('errors.403', [], 403);
-```
+   namespace App\Http\Controllers;
+
+   class AdminController extends Controller
+   {
+       public function dashboard()
+       {
+           return view('admin.dashboard');
+       }
+   }
+   ```
 
 ---
 
-## **Étape 8 : Ajouter un middleware global pour un accès commun**
+## Étape 7 : Création des Vues
 
-Si vous souhaitez appliquer un middleware à toutes les routes, ajoutez-le à la propriété `$middleware` dans `app/Http/Kernel.php` :
-```php
-protected $middleware = [
-    \App\Http\Middleware\CheckRole::class,
-];
-```
+1. **Vue de connexion** (`resources/views/auth/login.blade.php`) :
+   ```html
+   {% raw %}
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Login</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   </head>
+   <body>
+       <div class="container mt-5">
+           <div class="row justify-content-center">
+               <div class="col-md-4">
+                   <h3 class="text-center mb-4">Login</h3>
+                   <form action="{{ route('login') }}" method="POST">
+                       @csrf
+                       <div class="mb-3">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="email" name="email" class="form-control" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="password" class="form-label">Password</label>
+                           <input type="password" name="password" class="form-control" required>
+                       </div>
+                       <button type="submit" class="btn btn-primary w-100">Login</button>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </body>
+   </html>
+   {% endraw %}
+   ```
+
+2. **Vue du tableau de bord** (`resources/views/admin/dashboard.blade.php`) :
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Dashboard</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   </head>
+   <body>
+       <div class="container mt-5">
+           <h1>Welcome to the Dashboard</h1>
+           <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+       </div>
+   </body>
+   </html>
+   ```
 
 ---
 
-## **Étape 9 : Protection des formulaires avec middleware**
+## Étape 8 : Tester l’application
 
-Vous pouvez aussi protéger les actions POST avec un middleware. Exemple : les routes pour créer ou modifier un article ne sont accessibles qu'aux administrateurs :
-```php
-Route::middleware('role:admin')->group(function () {
-    Route::post('/articles', [ArticleController::class, 'store']);
-    Route::put('/articles/{id}', [ArticleController::class, 'update']);
-});
-```
+1. Démarrez le serveur avec `php artisan serve`.
+2. Accédez à [http://localhost:8000/login](http://localhost:8000/login) pour tester la connexion.
+3. Si l'utilisateur est connecté, il sera redirigé vers `/dashboard`.
 
 ---
 
-## **Conclusion**
-
-Avec ce tutoriel, vous avez appris :  
-- À utiliser le middleware pour gérer les accès.  
-- À créer un middleware personnalisé pour des contrôles spécifiques.  
-- À intégrer un système de rôles dans une application Laravel.  
-
-Ce système peut être étendu pour inclure des rôles multiples ou une gestion plus fine des permissions via des packages comme **Spatie Laravel-Permission** pour des projets plus complexes. 🎉
+Et voilà ! Vous avez maintenant une application Laravel minimaliste avec un système d'authentification basé sur un middleware personnalisé.

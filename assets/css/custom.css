@@ -130,3 +130,16 @@ h1{
     text-decoration: none;
     color: #333;
   }
+
+  /* Affichage de menu : affichage des module par couleur */
+
+
+  /* Sélectionner le div avec data-module="mobile" et changer la couleur */
+li[data-module="mobile"]  {
+    color: #21643f !important;  ; /* Changer la couleur de fond */
+
+}
+
+li[data-module="back-end"]  {
+    color: #ba4b44 !important;  
+}
