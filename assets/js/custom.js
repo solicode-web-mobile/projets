@@ -26,8 +26,13 @@ Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
 
 $(document).ready(function () {
     // Récupérer l'URL actuelle et la décoder
-    var currentURL = decodeURIComponent(window.location.href).replace(".html", "");
+    var currentURL = decodeURIComponent(window.location.href);
+
     
+    
+    isChapitre = currentURL.endsWith(".html");
+    currentURL = currentURL.replace(".html", "");
+    if(!isChapitre) return;
     // Découper l'URL pour récupérer les segments
     var urlParts = currentURL.split("/");
 
@@ -36,6 +41,7 @@ $(document).ready(function () {
     var chapitreReference = `${partReference}-${urlParts[urlParts.length - 1]}`; // Combinaison des deux
 
     // Masquer tous les titres de parties
+
     $(".part-title").hide();
 
     // Afficher uniquement l'élément lié à la référence

@@ -1,11 +1,14 @@
-main hr{
+/* Style for hiding horizontal rules in the main element */
+main hr {
     display: none;
 }
 
-em{
-    /* color : #0557b3; */
+/* Emphasis style: Uncomment the color property to apply a specific color */
+em {
+    /* color: #0557b3; */
 }
 
+/* Fullscreen overlay style */
 .fullScreen {
     width: 100%;
     height: 100%;
@@ -15,131 +18,168 @@ em{
     z-index: 10000;
 }
 
-
+/* Button styling for code execution buttons */
 .codeur-btn {
-
-	border:1px solid #00a3ad;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
+    border: 1px solid #00a3ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
 }
+
+/* Hover effect for buttons */
 .codeur-btn:hover {
-
+    /* Add hover styles if needed */
 }
+
+/* Active state styling for buttons */
 .codeur-btn:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
-/* fix code color background*/
-
+/* Fix for highlighted code block background color */
 :not(pre):not(a) > .hljs {
     color: #dcdcdc !important;
     overflow-x: initial;
-} 
+}
 
- 
+/* Center images within content */
 .content img {
-   
-    /* max-height: 400px; */
+    /* max-height: 400px; Uncomment to restrict image height */
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
- 
 
- .video-container { 
-     position: relative; 
-     padding-bottom: 56.25%; 
-     padding-top: 0px; 
-     height: 0; 
-     overflow: hidden; 
+/* Responsive video container styling */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
 }
 
-.video-container iframe, .video-container object, .video-container embed 
-{ 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-
+/* Highlighted table styles */
 .highlight table {
-    margin: 0 0;
+    margin: 0;
     border-collapse: collapse;
 }
 
+/* Styling for code blocks with red scrollbar */
 .rouge-code pre {
     overflow-x: auto;
     width: 658px;
     padding-bottom: 3px;
-    scrollbar-color: red
+    scrollbar-color: red;
 }
 
 .rouge-code pre::-webkit-scrollbar {
     background: rgb(233, 232, 232);
- 
-    
 }
+
 .rouge-code pre::-webkit-scrollbar-thumb {
     background: rgb(202, 202, 202);
 }
- 
+
+/* Table cell alignment for rouge tables */
 .rouge-table td {
     vertical-align: top;
 }
 
-h1{
+/* Heading margins */
+h1 {
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-
-/* aide menu */
+/* Disable animations */
 .no-animation {
     transition: none;
 }
 
-
-.sidebar .part-title{
+/* Sidebar part title cursor styling */
+.sidebar .part-title {
     cursor: pointer;
 }
 
+/* Active sidebar link color */
 .sidebar .active a {
-    color: var(--links);
+    
+    font-weight: bold; /* Assure que le texte est en gras */
+    text-decoration: none; /* Supprime les soulignements, si existants */
+    background-color: transparent; /* Conserve le fond par défaut */
 }
 
-
-  .sidebar li {
+/* Sidebar list item styling */
+.sidebar li {
     padding: 3px;
     margin: 0px !important;
     border-bottom: 1px solid #ccc;
-  }
-  
-  .sidebar li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #333;
-  }
-
-  /* Affichage de menu : affichage des module par couleur */
-
-
-  /* Sélectionner le div avec data-module="mobile" et changer la couleur */
-li[data-module="mobile"]  {
-    color: #21643f !important;  ; /* Changer la couleur de fond */
-
 }
 
-li[data-module="back-end"]  {
-    color: #ba4b44 !important;  
+/* Sidebar list item hover effect */
+.sidebar li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Sidebar link styling */
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* Groupe 0 : Recrutement des apprenants */
+li[data-module="sas"] {
+    color: #a98a47 !important; /* Dynamique et accueillant pour le recrutement */
+}
+
+/* Groupe 1 : Développement Laravel */
+li[data-module="back-end"] {
+    color: #317AC1 !important; /* Technique et fiable pour le back-end */
+}
+li[data-module="db"] {
+    color: #5E9AD6 !important; /* Douceur et stabilité pour la gestion de la base de données */
+}
+li[data-module="deploiement"] {
+    color: #2C5F87 !important; /* Robuste pour la mise en production */
+}
+
+/* Groupe 2 : Développement Mobile */
+li[data-module="mobile"] {
+    color: #4B8EA1 !important; /* Innovation et adaptabilité pour le mobile */
+}
+
+/* Groupe 3 : Théorie */
+li[data-module="ux-ui"] {
+    color: #384454 !important; /* Modernité et clarté pour le design */
+}
+li[data-module="g-projet"] {
+    color: #505C69 !important; /* Organisation et structure pour la gestion de projet */
+}
+li[data-module="veille"] {
+    color: #D4D3DC !important; /* Neutralité et transversalité pour la veille */
+}
+
+/* Groupe 4 : Développement Web et Mobile */
+li[data-module="pff"] {
+    color: #AD956B !important; /* Professionnalisme pour le projet de fin de formation */
+}
+li[data-module="stage"] {
+    color: #D2B48C !important; /* Maturité et intégration pour le stage */
 }
