@@ -6,7 +6,7 @@ part_reference: eloquent-avancé
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 142
+order: 152
 directory: eloquent-avancé
 permalink: eloquent-avancé/apprentissage
 layout: chapters

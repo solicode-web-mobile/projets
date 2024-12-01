@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: héritage
 title: Héritage
 description: ''
-order: 18
+order: 25
 global_order: '18'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/héritage

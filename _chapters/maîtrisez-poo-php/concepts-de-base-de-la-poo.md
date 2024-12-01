@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: concepts-de-base-de-la-poo
 title: Concepts de base de la POO
 description: ''
-order: 16
+order: 23
 global_order: '16'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/concepts-de-base-de-la-poo

@@ -6,7 +6,7 @@ part_reference: analyse-conception
 concept_reference: ''
 title: Introduction
 description: ''
-order: 70
+order: 90
 directory: analyse-conception
 permalink: analyse-conception/introduction
 layout: chapters

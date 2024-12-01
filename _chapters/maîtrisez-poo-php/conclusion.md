@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 23
+order: 30
 global_order: '23'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/conclusion

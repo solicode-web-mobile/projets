@@ -6,7 +6,7 @@ part_reference: maîtrise-eloquent
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 61
+order: 81
 directory: maîtrise-eloquent
 permalink: maîtrise-eloquent/mini-projet
 layout: chapters

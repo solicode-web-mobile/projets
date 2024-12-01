@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: 'Mini-projet: Application console'
 description: ''
-order: 15
+order: 22
 global_order: '15'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/mini-projet-application-console

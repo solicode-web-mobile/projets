@@ -6,7 +6,7 @@ part_reference: m3-afficher-listes-utiliser-material-design
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 112
+order: 122
 directory: m3-afficher-listes-utiliser-material-design
 permalink: m3-afficher-listes-utiliser-material-design/apprentissage
 layout: chapters

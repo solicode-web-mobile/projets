@@ -6,7 +6,7 @@ part_reference: m3-afficher-listes-utiliser-material-design
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 119
+order: 129
 directory: m3-afficher-listes-utiliser-material-design
 permalink: m3-afficher-listes-utiliser-material-design/conclusion
 layout: chapters

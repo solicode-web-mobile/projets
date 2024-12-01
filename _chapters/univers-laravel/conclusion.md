@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 59
+order: 79
 global_order: '49'
 directory: univers-laravel
 permalink: univers-laravel/conclusion

@@ -1,8 +1,8 @@
 ---
-reference: mobile-concepts-avancés-kotlin
-slug: concepts-avancés-kotlin
+reference: mobile-m3-afficher-listes-utiliser-material-design
+slug: m3-afficher-listes-utiliser-material-design
 module_reference: mobile
-title: 'Maîtrise des concepts avancés de Kotlin '
+title: 'Module 3 : Afficher des listes et utiliser Material Design'
 description: Maîtrise des concepts avancés de Kotlin ! Nous avons approfondi nos connaissances
   en Kotlin en explorant les génériques, les objets, les extensions et les collections.
   Ces concepts nous permettent de créer du code plus flexible, réutilisable et expressif.
@@ -11,6 +11,6 @@ Contenu: ''
 CC: ''
 order: 10
 directory: mobile
-permalink: mobile/concepts-avancés-kotlin
+permalink: mobile/m3-afficher-listes-utiliser-material-design
 layout: units
 ---

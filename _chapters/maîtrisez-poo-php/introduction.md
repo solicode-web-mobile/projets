@@ -6,7 +6,7 @@ part_reference: maîtrisez-poo-php
 concept_reference: ''
 title: Introduction
 description: ''
-order: 13
+order: 20
 global_order: '13'
 directory: maîtrisez-poo-php
 permalink: maîtrisez-poo-php/introduction

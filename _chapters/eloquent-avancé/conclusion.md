@@ -6,7 +6,7 @@ part_reference: eloquent-avancé
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 149
+order: 159
 directory: eloquent-avancé
 permalink: eloquent-avancé/conclusion
 layout: chapters

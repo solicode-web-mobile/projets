@@ -1,8 +1,8 @@
 ---
-reference: mobile-bienvenue-kotlin-android
-slug: bienvenue-kotlin-android
+reference: mobile-m1-première-application-android
+slug: m1-première-application-android
 module_reference: mobile
-title: 'Bienvenue dans le monde de Kotlin et d''Android ! '
+title: Module 1 - Votre première application Android
 description: Bienvenue dans le monde de Kotlin et d'Android ! Cette semaine, nous
   allons fait nos premiers pas dans le développement Android. Nous allons découvert
   Kotlin, un langage moderne et expressif, et nous allons configuré notre environnement
@@ -21,6 +21,6 @@ Contenu:
 CC: ''
 order: 5
 directory: mobile
-permalink: mobile/bienvenue-kotlin-android
+permalink: mobile/m1-première-application-android
 layout: units
 ---

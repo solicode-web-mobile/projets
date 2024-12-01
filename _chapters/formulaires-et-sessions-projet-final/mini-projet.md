@@ -6,7 +6,7 @@ part_reference: formulaires-et-sessions-projet-final
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 131
+order: 141
 directory: formulaires-et-sessions-projet-final
 permalink: formulaires-et-sessions-projet-final/mini-projet
 layout: chapters

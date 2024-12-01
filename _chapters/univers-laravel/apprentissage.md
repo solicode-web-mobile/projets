@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 52
+order: 72
 directory: univers-laravel
 permalink: univers-laravel/apprentissage
 layout: chapters

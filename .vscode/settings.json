@@ -1,11 +1,5 @@
 {
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "workspace.code-workspace": true,
         "workspace-all.code-workspace": true,
         "style-rtl.css": true,
@@ -35,9 +29,6 @@
         "_resources": true,
         "images": true,
         "_units": true,
-
-
-
         "_concepts": true,
         "_modules": true,
         "_tutorials": true

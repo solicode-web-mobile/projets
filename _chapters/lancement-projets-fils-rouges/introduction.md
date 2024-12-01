@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Introduction
 description: ''
-order: 24
+order: 40
 global_order: '24'
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/introduction
