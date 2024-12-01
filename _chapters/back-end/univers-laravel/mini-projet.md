@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 71
+order: 101
 directory: back-end/univers-laravel
 permalink: back-end/univers-laravel/mini-projet
 layout: chapters

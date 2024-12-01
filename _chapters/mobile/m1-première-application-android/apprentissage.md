@@ -6,7 +6,7 @@ part_reference: m1-première-application-android
 concept_reference: ''
 title: Apprentissage
 description: ''
-order: 25
+order: 82
 directory: m1-première-application-android
 permalink: m1-première-application-android/apprentissage
 layout: chapters

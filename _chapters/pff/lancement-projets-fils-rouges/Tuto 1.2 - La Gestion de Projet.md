@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 1.2 - La Gestion de Projet
 description: ''
-order: 28
+order: 52
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/gestion-de-projet
 layout: chapters

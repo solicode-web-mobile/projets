@@ -6,7 +6,7 @@ part_reference: m1-première-application-android
 concept_reference: ''
 title: tuto3
 description: ''
-order: 28
+order: 85
 directory: m1-première-application-android
 permalink: m1-première-application-android/tuto3
 layout: chapters

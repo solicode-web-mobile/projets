@@ -6,7 +6,7 @@ part_reference: m1-première-application-android
 concept_reference: ''
 title: Mini projet
 description: ''
-order: 29
+order: 81
 directory: m1-première-application-android
 permalink: m1-première-application-android/mini-projet
 layout: chapters

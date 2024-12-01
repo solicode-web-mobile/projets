@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 3.1 - Modélisation UML
 description: ''
-order: 35
+order: 71
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/modélisation-uml
 layout: chapters

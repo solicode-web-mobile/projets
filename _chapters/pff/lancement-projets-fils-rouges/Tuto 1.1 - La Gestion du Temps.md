@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 1.1 - La Gestion du Temps
 description: ''
-order: 27
+order: 51
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/gestion-du-temps
 layout: chapters

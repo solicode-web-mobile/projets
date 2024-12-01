@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 3.3 -Les Diagrammes de Classes UML
 description: ''
-order: 37
+order: 73
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/diagrammes-classes-uml
 layout: chapters

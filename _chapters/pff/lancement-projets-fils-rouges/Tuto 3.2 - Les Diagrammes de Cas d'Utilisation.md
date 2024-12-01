@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 3.2 - Les Diagrammes de Cas d'Utilisation
 description: ''
-order: 36
+order: 72
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/diagrammes-cas-utilisation
 layout: chapters

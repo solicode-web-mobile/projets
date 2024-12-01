@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 2.5 -Les Valeurs Scrum
 description: ''
-order: 34
+order: 65
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/valeurs-scrum
 layout: chapters

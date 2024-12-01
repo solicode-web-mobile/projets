@@ -6,7 +6,7 @@ part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
 title: mini-projet
 description: ''
-order: 45
+order: 91
 directory: m2-créer-interface-utilisateur
 permalink: m2-créer-interface-utilisateur/mini-projet
 layout: chapters

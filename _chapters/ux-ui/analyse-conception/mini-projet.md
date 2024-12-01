@@ -6,7 +6,7 @@ part_reference: analyse-conception
 concept_reference: ''
 title: Mini-Projet
 description: ''
-order: 91
+order: 111
 directory: ux-ui/analyse-conception
 permalink: ux-ui/analyse-conception/mini-projet
 layout: chapters

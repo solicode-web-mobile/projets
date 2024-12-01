@@ -6,7 +6,7 @@ part_reference: maîtrise-eloquent
 concept_reference: ''
 title: Tuto5 - Migrations et Seeders
 description: ''
-order: 64
+order: 104
 global_order: '49'
 directory: maîtrise-eloquent
 permalink: maîtrise-eloquent/migrations-seeders

@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 2.1 - Scrum
 description: ''
-order: 30
+order: 61
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/scrum
 layout: chapters

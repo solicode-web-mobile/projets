@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 1.3 - Gestion du Temps vs. Projet
 description: ''
-order: 29
+order: 53
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/gestion-temps-vs-gestion-projet
 layout: chapters

@@ -6,7 +6,7 @@ part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
 title: tuto6
 description: ''
-order: 44
+order: 95
 directory: m2-créer-interface-utilisateur
 permalink: m2-créer-interface-utilisateur/tuto6
 layout: chapters

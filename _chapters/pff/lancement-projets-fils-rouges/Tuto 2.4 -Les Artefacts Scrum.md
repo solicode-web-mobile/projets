@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 2.4 -Les Artefacts Scrum
 description: ''
-order: 33
+order: 64
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/artefacts-scrum
 layout: chapters

@@ -6,7 +6,7 @@ part_reference: maîtrise-eloquent
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 89
+order: 109
 directory: back-end/maîtrise-eloquent
 permalink: back-end/maîtrise-eloquent/conclusion
 layout: chapters

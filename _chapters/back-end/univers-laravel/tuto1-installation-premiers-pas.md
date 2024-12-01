@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Tuto1 - Installation de Laravel et premiers pas
 description: ''
-order: 52
+order: 103
 global_order: '49'
 directory: univers-laravel
 permalink: univers-laravel/installation-premiers-pas

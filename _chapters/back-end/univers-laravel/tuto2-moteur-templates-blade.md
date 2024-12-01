@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Tuto2 - Le moteur de templates Blade
 description: ''
-order: 53
+order: 104
 global_order: '49'
 directory: univers-laravel
 permalink: univers-laravel/moteur-templates-blade

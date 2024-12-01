@@ -6,7 +6,7 @@ part_reference: maîtrise-eloquent
 concept_reference: ''
 title: Introduction
 description: ''
-order: 80
+order: 110
 directory: back-end/maîtrise-eloquent
 permalink: back-end/maîtrise-eloquent/introduction
 layout: chapters

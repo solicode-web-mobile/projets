@@ -6,7 +6,7 @@ part_reference: univers-laravel
 concept_reference: ''
 title: Tuto3 - Le routage et les contrôleurs
 description: ''
-order: 54
+order: 105
 global_order: '49'
 directory: univers-laravel
 permalink: univers-laravel/routage-contrôleurs

@@ -6,7 +6,7 @@ part_reference: lancement-projets-fils-rouges
 concept_reference: ''
 title: Tuto 2.2 - Les Rôles en Scrum
 description: ''
-order: 31
+order: 62
 directory: lancement-projets-fils-rouges
 permalink: lancement-projets-fils-rouges/rôles-scrum 
 layout: chapters

@@ -6,7 +6,7 @@ part_reference: formulaires-et-sessions-projet-final
 concept_reference: ''
 title: Tuto 3 - Organisation et Réutilisation du Code avec Blade
 description: ''
-order: 135
+order: 145
 directory: formulaires-et-sessions-projet-final
 permalink: formulaires-et-sessions-projet-final/tuto3
 layout: chapters

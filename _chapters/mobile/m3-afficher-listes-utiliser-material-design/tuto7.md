@@ -6,7 +6,7 @@ part_reference: m3-afficher-listes-utiliser-material-design
 concept_reference: ''
 title: Tuto7 - Concepts avancés de Kotlin
 description: ''
-order: 113
+order: 123
 directory: m3-afficher-listes-utiliser-material-design
 permalink: m3-afficher-listes-utiliser-material-design/tuto7
 layout: chapters

@@ -6,7 +6,7 @@ part_reference: analyse-conception
 concept_reference: ''
 title: Conclusion
 description: ''
-order: 99
+order: 149
 directory: ux-ui/analyse-conception
 permalink: ux-ui/analyse-conception/conclusion
 layout: chapters
