@@ -61,26 +61,27 @@ layout: default
                     <li class="breadcrumb-item active" aria-current="page">{{page.title}}</li>
                 </ol>
             </nav>
+            {% assign next = page["next_chapter"] %}
+            {% assign prev = page["previous_chapter"] %}
+            <nav class="nav-wrapper" aria-label="Page navigation">
+    
+                <!-- Mobile navigation buttons -->
+                {%- if prev -%}
+                    <a rel="prev" href="{{site.baseurl}}{{prev.url}}.html" class="mobile-nav-chapters previous" title="{{prev.title}}" aria-label="{{prev.title}}" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                {%- endif-%}
+                {%- if next -%}
+                    <a rel="next" href="{{site.baseurl}}{{next.url}}.html" class="mobile-nav-chapters next" title="{{next.title}}" aria-label="{{next.title}}" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                {%- endif-%}
+                <div style="clear: both"></div>
+            </nav>
             {{ content }}
         </main>
 
-        {% assign next = page["next_chapter"] %}
-        {% assign prev = page["previous_chapter"] %}
-        <nav class="nav-wrapper" aria-label="Page navigation">
-
-            <!-- Mobile navigation buttons -->
-            {%- if prev -%}
-                <a rel="prev" href="{{site.baseurl}}{{prev.url}}.html" class="mobile-nav-chapters previous" title="{{prev.title}}" aria-label="{{prev.title}}" aria-keyshortcuts="Left">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-            {%- endif-%}
-            {%- if next -%}
-                <a rel="next" href="{{site.baseurl}}{{next.url}}.html" class="mobile-nav-chapters next" title="{{next.title}}" aria-label="{{next.title}}" aria-keyshortcuts="Right">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            {%- endif-%}
-            <div style="clear: both"></div>
-        </nav>
+     
     </div>
 </div>
 
