@@ -13,7 +13,7 @@ layout: chapters
 ---
 
 
-# **Introduction - Module 4 : Navigation et Architecture dans Jetpack Compose**
+# Introduction - Module 4 : Navigation et Architecture dans Jetpack Compose
 
 ---
 

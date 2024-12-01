@@ -12,7 +12,7 @@ permalink: mobile/m4-navigation-architecture/tuto10
 layout: chapters
 ---
 
-# **Tutoriel 10 : Navigation dans Jetpack Compose**
+# Tutoriel 10 : Navigation dans Jetpack Compose
 
 ## **Objectif pédagogique**
 Apprendre à gérer la navigation multi-écrans dans une application Android avec Jetpack Compose, en transmettant des données entre différents écrans et en personnalisant les transitions.
@@ -36,6 +36,8 @@ Apprendre à gérer la navigation multi-écrans dans une application Android ave
 ### **Étape 1 : Configuration initiale**
 
 Ajoutez la dépendance de navigation dans votre fichier `build.gradle` :
+
+
 ```kotlin
 implementation "androidx.navigation:navigation-compose:2.7.0"
 ```
@@ -178,3 +180,9 @@ Button(onClick = {
 Ce tutoriel vous a permis de comprendre comment naviguer entre différents écrans dans une application Jetpack Compose. Vous pouvez désormais gérer des workflows complets, transmettre des données, et personnaliser vos interfaces utilisateur avec des transitions dynamiques.
 
 Souhaitez-vous explorer un aspect particulier ou approfondir ce tutoriel avec des fonctionnalités avancées ?
+
+
+## Remarques : 
+
+- Remarque : 
+Il existe deux fichier de configuration build.gradle

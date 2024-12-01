@@ -13,7 +13,7 @@ layout: chapters
 ---
 
 
-# **Plan du module**
+# Plan du module
 1. **Tutoriel 10 : Navigation dans Jetpack Compose**
    - Découvrir et configurer la bibliothèque de navigation.
    - Créer des graphiques de navigation.

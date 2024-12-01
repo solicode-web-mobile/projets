@@ -12,7 +12,7 @@ permalink: mobile/m4-navigation-architecture/tuto11
 layout: chapters
 ---
 
-### Tutoriel 11 : Introduction à l'architecture MVVM
+# Tutoriel 11 : Introduction à l'architecture MVVM
 
 ---
 
