@@ -11,45 +11,109 @@ directory: mobile/m4-navigation-architecture
 permalink: mobile/m4-navigation-architecture/tuto10
 layout: chapters
 ---
-
-
-# **Tutoriel : Navigation dans Jetpack Compose avec Android Studio**
-
-## **1. Création du projet Android**
-
-1. **Créez un nouveau projet Android** avec une activité vide en sélectionnant **Jetpack Compose** comme moteur d'interface utilisateur.
-2. Assurez-vous que Jetpack Compose est activé dans votre projet (`build.gradle`) avec les dépendances nécessaires.
-
-Ajoutez cette dépendance dans le fichier `build.gradle` du module `app` :
-```kotlin
-implementation("androidx.navigation:navigation-compose:2.7.0")
-```
-
-Synchronisez votre projet.
+# **Tutoriel 10 : Navigation dans Jetpack Compose (Version Révisée)**
 
 ---
 
-## **2. Configuration de la navigation**
+## **Objectif pédagogique**  
+Apprendre à mettre en place une navigation multi-écrans dans une application Android avec Jetpack Compose, tout en structurant le code suivant une architecture modulaire et maintenable.
 
-### **Étape 1 : Créez une classe principale pour la navigation**
-Ajoutez une fonction composable nommée `NavigationApp` dans un nouveau fichier nommé `Navigation.kt`. Ce fichier centralisera votre navigation.
+---
+
+## **1. Notions théoriques**
+
+Avant de plonger dans le code, voici les concepts à comprendre :  
+
+1. **Jetpack Navigation Compose :**  
+   - Une bibliothèque officielle d'Android pour gérer la navigation dans les applications Jetpack Compose.  
+   - Elle simplifie la navigation entre les écrans (ou *composables*).  
+
+2. **Routes et arguments :**  
+   - Les *routes* définissent les chemins entre les écrans.  
+   - Les arguments permettent de transmettre des données entre les écrans.  
+
+3. **NavHost et NavGraph :**  
+   - **NavHost** : Conteneur principal où sont définies les différentes routes.  
+   - **NavGraph** : Décrit la structure de navigation (écrans et transitions).  
+
+4. **Structure de l’application :**  
+   - Une organisation modulaire facilite l’évolution de l’application et améliore la lisibilité.  
+
+---
+
+## **2. Organisation du projet**
+
+Dans le dossier `src/main/java/com/votreprojet/`, créez la structure suivante :  
+
+```
+com.votreprojet  
+├── navigation  
+│   ├── NavGraph.kt  
+│   └── Routes.kt  
+├── ui  
+│   ├── home  
+│   │   └── HomeScreen.kt  
+│   ├── details  
+│   │   └── DetailsScreen.kt  
+└── MainActivity.kt  
+```
+
+**Explications :**  
+1. **`navigation/`** : Contient la logique de navigation.  
+2. **`ui/`** : Contient les écrans regroupés par fonctionnalité (par exemple, `home` pour l’écran principal).  
+3. **`MainActivity.kt`** : Point d’entrée de l’application.
+
+---
+
+## **3. Configuration initiale**
+
+### Dépendances à ajouter dans `build.gradle` :  
 
 ```kotlin
+implementation(libs.androidx.navigation.compose)
+```
+
+---
+
+## **4. Création des fichiers**
+
+### **4.1. `Routes.kt` : Définir les routes**
+
+Ce fichier centralise les noms des routes pour éviter les erreurs.  
+
+```kotlin
+package com.votreprojet.navigation
+
+object Routes {
+    const val Home = "home"
+    const val Details = "details/{itemId}"
+}
+```
+
+### **4.2. `NavGraph.kt` : Gestion des transitions**
+
+Ce fichier définit les écrans et la navigation entre eux.  
+
+```kotlin
+package com.votreprojet.navigation
+
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import com.votreprojet.ui.details.DetailsScreen
+import com.votreprojet.ui.home.HomeScreen
 
 @Composable
-fun NavigationApp() {
-    val navController = rememberNavController()
-    
-    NavHost(navController = navController, startDestination = "home") {
-        composable("home") { HomeScreen(navController) }
-        composable("details/{userId}") { backStackEntry ->
-            val userId = backStackEntry.arguments?.getString("userId")
-            DetailsScreen(userId)
+fun NavGraph(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.Home
+    ) {
+        composable(Routes.Home) { HomeScreen(navController) }
+        composable(Routes.Details) { backStackEntry ->
+            val itemId = backStackEntry.arguments?.getString("itemId")
+            DetailsScreen(navController, itemId)
         }
     }
 }
@@ -57,87 +121,35 @@ fun NavigationApp() {
 
 ---
 
-## **3. Création des écrans**
+## **5. Création des écrans**
 
-### **3.1. Écran d'accueil (`HomeScreen`)**
+### **5.1. `HomeScreen.kt` : Écran principal**  
 
-Ajoutez une fonction `HomeScreen` dans un fichier nommé `HomeScreen.kt`. Cet écran comprend un bouton pour naviguer vers l'écran des détails tout en passant un paramètre (`userId`).
+Cet écran contient un bouton permettant de naviguer vers l’écran des détails.  
 
 ```kotlin
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
+package com.votreprojet.ui.home
+
+import androidx.compose.foundation.layout.*  
+import androidx.compose.material.*  
+import androidx.compose.runtime.Composable  
+import androidx.navigation.NavController  
+import com.votreprojet.navigation.Routes
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+fun HomeScreen(navController: NavController) {
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Écran principal") }) }
     ) {
-        Text(text = "Écran d'accueil", style = MaterialTheme.typography.titleLarge)
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { navController.navigate("details/123") }) {
-            Text("Voir les détails de l'utilisateur 123")
-        }
-    }
-}
-```
-
----
-
-### **3.2. Écran des détails (`DetailsScreen`)**
-
-Ajoutez une fonction `DetailsScreen` dans un fichier nommé `DetailsScreen.kt`. Cet écran affiche les détails de l'utilisateur, récupérés via le paramètre passé depuis l'écran d'accueil.
-
-```kotlin
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-
-@Composable
-fun DetailsScreen(userId: String?) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "Détails de l'utilisateur : $userId",
-            style = MaterialTheme.typography.titleLarge
-        )
-    }
-}
-```
-
----
-
-## **4. Intégration dans `MainActivity`**
-
-Modifiez le fichier `MainActivity.kt` pour utiliser `NavigationApp` comme point d'entrée de l'application.
-
-```kotlin
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import com.example.navigationtutorial.ui.theme.NavigationTutorialTheme
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            NavigationTutorialTheme {
-                Surface(color = MaterialTheme.colorScheme.background) {
-                    NavigationApp()
-                }
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Text("Bienvenue sur l'écran principal !", style = MaterialTheme.typography.h5)
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = { navController.navigate("details/42") }) {
+                Text("Voir les détails de l'élément 42")
             }
         }
     }
@@ -146,46 +158,92 @@ class MainActivity : ComponentActivity() {
 
 ---
 
-## **5. Ajout de la navigation conditionnelle**
+### **5.2. `DetailsScreen.kt` : Écran de détails**
 
-Voici un exemple où la navigation est conditionnée par un état `isLoggedIn` (simulé ici). Si l'utilisateur est connecté, il est redirigé vers l'écran des détails, sinon vers un écran de connexion (`LoginScreen`).
-
-Ajoutez cette logique dans l'écran d'accueil :
+Cet écran affiche les informations transmises depuis `HomeScreen`.  
 
 ```kotlin
-val isLoggedIn = true // Changez selon la logique de votre application
+package com.votreprojet.ui.details
 
-Button(onClick = {
-    if (isLoggedIn) {
-        navController.navigate("details/123")
-    } else {
-        navController.navigate("login")
-    }
-}) {
-    Text("Naviguer")
-}
-```
+import androidx.compose.foundation.layout.*  
+import androidx.compose.material.*  
+import androidx.compose.runtime.Composable  
+import androidx.navigation.NavController  
 
-Créez une fonction `LoginScreen` dans un fichier `LoginScreen.kt` si nécessaire.
-
-```kotlin
 @Composable
-fun LoginScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+fun DetailsScreen(navController: NavController, itemId: String?) {
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Écran de détails") }) }
     ) {
-        Text("Écran de connexion", style = MaterialTheme.typography.titleLarge)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Text("Détails pour l'élément : $itemId", style = MaterialTheme.typography.h5)
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = { navController.popBackStack() }) {
+                Text("Retour à l'écran principal")
+            }
+        }
     }
 }
 ```
-
-Ajoutez une destination `composable("login")` dans votre `NavHost`.
 
 ---
 
-## **6. Conclusion**
+## **6. Intégration dans l’application**
 
-Vous avez créé une application Android avec navigation multi-écrans, passage de paramètres, et navigation conditionnelle. L'application est prête à être déployée ou enrichie avec des fonctionnalités avancées comme les animations de transitions.
+Modifiez `MainActivity.kt` pour intégrer la navigation.  
 
-N'hésitez pas à me demander si vous souhaitez ajouter des fonctionnalités supplémentaires ou simplifier des étapes ! 😊
+```kotlin
+package com.votreprojet
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material.MaterialTheme
+import androidx.navigation.compose.rememberNavController
+import com.votreprojet.navigation.NavGraph
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme {
+                val navController = rememberNavController()
+                NavGraph(navController = navController)
+            }
+        }
+    }
+}
+```
+
+---
+
+## **7. Exercices pratiques**  
+
+1. **Ajout d’un écran supplémentaire :**  
+   - Créez un écran `ProfileScreen` et ajoutez-le au système de navigation.  
+
+2. **Transmission de données complexes :**  
+   - Modifiez `DetailsScreen` pour accepter un objet JSON contenant plusieurs propriétés.  
+
+3. **Création d’un menu de navigation :**  
+   - Implémentez un menu permettant de passer d’un écran à l’autre.  
+
+---
+
+## **8. Résultats attendus**  
+
+- Navigation fonctionnelle entre plusieurs écrans.  
+- Structure modulaire du projet.  
+- Meilleure compréhension de l’organisation et de la navigation dans une application Jetpack Compose.  
+
+---
+
+## **9. Questions d’évaluation**  
+
+1. Pourquoi utiliser une architecture modulaire dans un projet Android ?  
+2. Quels sont les avantages d’utiliser des objets pour définir les routes ?  
+3. Comment gérer les erreurs liées aux arguments manquants lors de la navigation ?
