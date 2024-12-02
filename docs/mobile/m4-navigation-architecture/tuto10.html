@@ -16,11 +16,11 @@
 <meta property="og:url" content="/projets/mobile/m4-navigation-architecture/tuto10" />
 <meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-12-01T21:39:43+01:00" />
+<meta property="article:published_time" content="2024-12-02T11:42:22+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="tuto10" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-01T21:39:43+01:00","datePublished":"2024-12-01T21:39:43+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"tuto10","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/mobile/m4-navigation-architecture/tuto10"},"url":"/projets/mobile/m4-navigation-architecture/tuto10"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-02T11:42:22+01:00","datePublished":"2024-12-02T11:42:22+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"tuto10","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/mobile/m4-navigation-architecture/tuto10"},"url":"/projets/mobile/m4-navigation-architecture/tuto10"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -667,30 +667,52 @@
                         <i class="fa fa-angle-right"></i>
                     </a><div style="clear: both"></div>
             </nav>
-            <h1 id="tutoriel--navigation-dans-jetpack-compose-avec-android-studio"><strong>Tutoriel : Navigation dans Jetpack Compose avec Android Studio</strong></h1>
-
-<h2 id="1-création-du-projet-android"><strong>1. Création du projet Android</strong></h2>
-
-<ol>
-  <li><strong>Créez un nouveau projet Android</strong> avec une activité vide en sélectionnant <strong>Jetpack Compose</strong> comme moteur d’interface utilisateur.</li>
-  <li>Assurez-vous que Jetpack Compose est activé dans votre projet (<code class="language-plaintext highlighter-rouge">build.gradle</code>) avec les dépendances nécessaires.</li>
-</ol>
-
-<p>Ajoutez cette dépendance dans le fichier <code class="language-plaintext highlighter-rouge">build.gradle</code> du module <code class="language-plaintext highlighter-rouge">app</code> :</p>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nf">implementation</span><span class="p">(</span><span class="s">"androidx.navigation:navigation-compose:2.7.0"</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>Synchronisez votre projet.</p>
+            <h1 id="tutoriel-10--navigation-dans-jetpack-compose-version-révisée"><strong>Tutoriel 10 : Navigation dans Jetpack Compose (Version Révisée)</strong></h1>
 
 <hr />
 
-<h2 id="2-configuration-de-la-navigation"><strong>2. Configuration de la navigation</strong></h2>
+<h2 id="objectif-pédagogique"><strong>Objectif pédagogique</strong></h2>
+<p>Apprendre à mettre en place une navigation multi-écrans dans une application Android avec Jetpack Compose, tout en structurant le code suivant une architecture modulaire et maintenable.</p>
 
-<h3 id="étape-1--créez-une-classe-principale-pour-la-navigation"><strong>Étape 1 : Créez une classe principale pour la navigation</strong></h3>
-<p>Ajoutez une fonction composable nommée <code class="language-plaintext highlighter-rouge">NavigationApp</code> dans un nouveau fichier nommé <code class="language-plaintext highlighter-rouge">Navigation.kt</code>. Ce fichier centralisera votre navigation.</p>
+<hr />
 
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<h2 id="1-notions-théoriques"><strong>1. Notions théoriques</strong></h2>
+
+<p>Avant de plonger dans le code, voici les concepts à comprendre :</p>
+
+<ol>
+  <li><strong>Jetpack Navigation Compose :</strong>
+    <ul>
+      <li>Une bibliothèque officielle d’Android pour gérer la navigation dans les applications Jetpack Compose.</li>
+      <li>Elle simplifie la navigation entre les écrans (ou <em>composables</em>).</li>
+    </ul>
+  </li>
+  <li><strong>Routes et arguments :</strong>
+    <ul>
+      <li>Les <em>routes</em> définissent les chemins entre les écrans.</li>
+      <li>Les arguments permettent de transmettre des données entre les écrans.</li>
+    </ul>
+  </li>
+  <li><strong>NavHost et NavGraph :</strong>
+    <ul>
+      <li><strong>NavHost</strong> : Conteneur principal où sont définies les différentes routes.</li>
+      <li><strong>NavGraph</strong> : Décrit la structure de navigation (écrans et transitions).</li>
+    </ul>
+  </li>
+  <li><strong>Structure de l’application :</strong>
+    <ul>
+      <li>Une organisation modulaire facilite l’évolution de l’application et améliore la lisibilité.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="2-organisation-du-projet"><strong>2. Organisation du projet</strong></h2>
+
+<p>Dans le dossier <code class="language-plaintext highlighter-rouge">src/main/java/com/votreprojet/</code>, créez la structure suivante :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -700,41 +722,60 @@
 8
 9
 10
-11
-12
-13
-14
-15
-16
-17
-18
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">androidx.compose.runtime.Composable</span>
-<span class="k">import</span> <span class="nn">androidx.navigation.NavHostController</span>
-<span class="k">import</span> <span class="nn">androidx.navigation.compose.NavHost</span>
-<span class="k">import</span> <span class="nn">androidx.navigation.compose.composable</span>
-<span class="k">import</span> <span class="nn">androidx.navigation.compose.rememberNavController</span>
+</pre></td><td class="rouge-code"><pre>com.votreprojet  
+├── navigation  
+│   ├── NavGraph.kt  
+│   └── Routes.kt  
+├── ui  
+│   ├── home  
+│   │   └── HomeScreen.kt  
+│   ├── details  
+│   │   └── DetailsScreen.kt  
+└── MainActivity.kt  
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">NavigationApp</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">rememberNavController</span><span class="p">()</span>
-    
-    <span class="nc">NavHost</span><span class="p">(</span><span class="n">navController</span> <span class="p">=</span> <span class="n">navController</span><span class="p">,</span> <span class="n">startDestination</span> <span class="p">=</span> <span class="s">"home"</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">composable</span><span class="p">(</span><span class="s">"home"</span><span class="p">)</span> <span class="p">{</span> <span class="nc">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span> <span class="p">}</span>
-        <span class="nf">composable</span><span class="p">(</span><span class="s">"details/{userId}"</span><span class="p">)</span> <span class="p">{</span> <span class="n">backStackEntry</span> <span class="p">-&gt;</span>
-            <span class="kd">val</span> <span class="py">userId</span> <span class="p">=</span> <span class="n">backStackEntry</span><span class="p">.</span><span class="n">arguments</span><span class="o">?.</span><span class="nf">getString</span><span class="p">(</span><span class="s">"userId"</span><span class="p">)</span>
-            <span class="nc">DetailsScreen</span><span class="p">(</span><span class="n">userId</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<p><strong>Explications :</strong></p>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">navigation/</code></strong> : Contient la logique de navigation.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ui/</code></strong> : Contient les écrans regroupés par fonctionnalité (par exemple, <code class="language-plaintext highlighter-rouge">home</code> pour l’écran principal).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">MainActivity.kt</code></strong> : Point d’entrée de l’application.</li>
+</ol>
+
+<hr />
+
+<h2 id="3-configuration-initiale"><strong>3. Configuration initiale</strong></h2>
+
+<h3 id="dépendances-à-ajouter-dans-buildgradle-">Dépendances à ajouter dans <code class="language-plaintext highlighter-rouge">build.gradle</code> :</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">implementation</span><span class="p">(</span><span class="n">libs</span><span class="p">.</span><span class="n">androidx</span><span class="p">.</span><span class="n">navigation</span><span class="p">.</span><span class="n">compose</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <hr />
 
-<h2 id="3-création-des-écrans"><strong>3. Création des écrans</strong></h2>
+<h2 id="4-création-des-fichiers"><strong>4. Création des fichiers</strong></h2>
 
-<h3 id="31-écran-daccueil-homescreen"><strong>3.1. Écran d’accueil (<code class="language-plaintext highlighter-rouge">HomeScreen</code>)</strong></h3>
+<h3 id="41-routeskt--définir-les-routes"><strong>4.1. <code class="language-plaintext highlighter-rouge">Routes.kt</code> : Définir les routes</strong></h3>
 
-<p>Ajoutez une fonction <code class="language-plaintext highlighter-rouge">HomeScreen</code> dans un fichier nommé <code class="language-plaintext highlighter-rouge">HomeScreen.kt</code>. Cet écran comprend un bouton pour naviguer vers l’écran des détails tout en passant un paramètre (<code class="language-plaintext highlighter-rouge">userId</code>).</p>
+<p>Ce fichier centralise les noms des routes pour éviter les erreurs.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.votreprojet.navigation</span>
+
+<span class="kd">object</span> <span class="nc">Routes</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kd">val</span> <span class="py">Home</span> <span class="p">=</span> <span class="s">"home"</span>
+    <span class="k">const</span> <span class="kd">val</span> <span class="py">Details</span> <span class="p">=</span> <span class="s">"details/{itemId}"</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="42-navgraphkt--gestion-des-transitions"><strong>4.2. <code class="language-plaintext highlighter-rouge">NavGraph.kt</code> : Gestion des transitions</strong></h3>
+
+<p>Ce fichier définit les écrans et la navigation entre eux.</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -758,25 +799,25 @@
 20
 21
 22
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">androidx.compose.foundation.layout.*</span>
-<span class="k">import</span> <span class="nn">androidx.compose.material3.*</span>
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.votreprojet.navigation</span>
+
 <span class="k">import</span> <span class="nn">androidx.compose.runtime.Composable</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.Alignment</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.Modifier</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.unit.dp</span>
 <span class="k">import</span> <span class="nn">androidx.navigation.NavHostController</span>
+<span class="k">import</span> <span class="nn">androidx.navigation.compose.NavHost</span>
+<span class="k">import</span> <span class="nn">androidx.navigation.compose.composable</span>
+<span class="k">import</span> <span class="nn">com.votreprojet.ui.details.DetailsScreen</span>
+<span class="k">import</span> <span class="nn">com.votreprojet.ui.home.HomeScreen</span>
 
 <span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span> <span class="nc">NavHostController</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nc">Column</span><span class="p">(</span>
-        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">(),</span>
-        <span class="n">horizontalAlignment</span> <span class="p">=</span> <span class="nc">Alignment</span><span class="p">.</span><span class="nc">CenterHorizontally</span><span class="p">,</span>
-        <span class="n">verticalArrangement</span> <span class="p">=</span> <span class="nc">Arrangement</span><span class="p">.</span><span class="nc">Center</span>
+<span class="k">fun</span> <span class="nf">NavGraph</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span> <span class="nc">NavHostController</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">NavHost</span><span class="p">(</span>
+        <span class="n">navController</span> <span class="p">=</span> <span class="n">navController</span><span class="p">,</span>
+        <span class="n">startDestination</span> <span class="p">=</span> <span class="nc">Routes</span><span class="p">.</span><span class="nc">Home</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nc">Text</span><span class="p">(</span><span class="n">text</span> <span class="p">=</span> <span class="s">"Écran d'accueil"</span><span class="p">,</span> <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">titleLarge</span><span class="p">)</span>
-        <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
-        <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="n">navController</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="s">"details/123"</span><span class="p">)</span> <span class="p">})</span> <span class="p">{</span>
-            <span class="nc">Text</span><span class="p">(</span><span class="s">"Voir les détails de l'utilisateur 123"</span><span class="p">)</span>
+        <span class="nf">composable</span><span class="p">(</span><span class="nc">Routes</span><span class="p">.</span><span class="nc">Home</span><span class="p">)</span> <span class="p">{</span> <span class="nc">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">)</span> <span class="p">}</span>
+        <span class="nf">composable</span><span class="p">(</span><span class="nc">Routes</span><span class="p">.</span><span class="nc">Details</span><span class="p">)</span> <span class="p">{</span> <span class="n">backStackEntry</span> <span class="p">-&gt;</span>
+            <span class="kd">val</span> <span class="py">itemId</span> <span class="p">=</span> <span class="n">backStackEntry</span><span class="p">.</span><span class="n">arguments</span><span class="o">?.</span><span class="nf">getString</span><span class="p">(</span><span class="s">"itemId"</span><span class="p">)</span>
+            <span class="nc">DetailsScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">,</span> <span class="n">itemId</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -784,9 +825,11 @@
 
 <hr />
 
-<h3 id="32-écran-des-détails-detailsscreen"><strong>3.2. Écran des détails (<code class="language-plaintext highlighter-rouge">DetailsScreen</code>)</strong></h3>
+<h2 id="5-création-des-écrans"><strong>5. Création des écrans</strong></h2>
 
-<p>Ajoutez une fonction <code class="language-plaintext highlighter-rouge">DetailsScreen</code> dans un fichier nommé <code class="language-plaintext highlighter-rouge">DetailsScreen.kt</code>. Cet écran affiche les détails de l’utilisateur, récupérés via le paramètre passé depuis l’écran d’accueil.</p>
+<h3 id="51-homescreenkt--écran-principal"><strong>5.1. <code class="language-plaintext highlighter-rouge">HomeScreen.kt</code> : Écran principal</strong></h3>
+
+<p>Cet écran contient un bouton permettant de naviguer vers l’écran des détails.</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -807,67 +850,35 @@
 17
 18
 19
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">androidx.compose.foundation.layout.*</span>
-<span class="k">import</span> <span class="nn">androidx.compose.material3.*</span>
-<span class="k">import</span> <span class="nn">androidx.compose.runtime.Composable</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.Alignment</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.Modifier</span>
-<span class="k">import</span> <span class="nn">androidx.compose.ui.unit.dp</span>
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.votreprojet.ui.home</span>
+
+<span class="k">import</span> <span class="nn">androidx.compose.foundation.layout.*</span>  
+<span class="k">import</span> <span class="nn">androidx.compose.material.*</span>  
+<span class="k">import</span> <span class="nn">androidx.compose.runtime.Composable</span>  
+<span class="k">import</span> <span class="nn">androidx.navigation.NavController</span>  
+<span class="k">import</span> <span class="nn">com.votreprojet.navigation.Routes</span>
 
 <span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">DetailsScreen</span><span class="p">(</span><span class="n">userId</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="nc">Box</span><span class="p">(</span>
-        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">(),</span>
-        <span class="n">contentAlignment</span> <span class="p">=</span> <span class="nc">Alignment</span><span class="p">.</span><span class="nc">Center</span>
+<span class="k">fun</span> <span class="nf">HomeScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span> <span class="nc">NavController</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">Scaffold</span><span class="p">(</span>
+        <span class="n">topBar</span> <span class="p">=</span> <span class="p">{</span> <span class="nc">TopAppBar</span><span class="p">(</span><span class="n">title</span> <span class="p">=</span> <span class="p">{</span> <span class="nc">Text</span><span class="p">(</span><span class="s">"Écran principal"</span><span class="p">)</span> <span class="p">})</span> <span class="p">}</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nc">Text</span><span class="p">(</span>
-            <span class="n">text</span> <span class="p">=</span> <span class="s">"Détails de l'utilisateur : $userId"</span><span class="p">,</span>
-            <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">titleLarge</span>
-        <span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<hr />
-
-<h2 id="4-intégration-dans-mainactivity"><strong>4. Intégration dans <code class="language-plaintext highlighter-rouge">MainActivity</code></strong></h2>
-
-<p>Modifiez le fichier <code class="language-plaintext highlighter-rouge">MainActivity.kt</code> pour utiliser <code class="language-plaintext highlighter-rouge">NavigationApp</code> comme point d’entrée de l’application.</p>
-
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">android.os.Bundle</span>
-<span class="k">import</span> <span class="nn">androidx.activity.ComponentActivity</span>
-<span class="k">import</span> <span class="nn">androidx.activity.compose.setContent</span>
-<span class="k">import</span> <span class="nn">androidx.compose.material3.MaterialTheme</span>
-<span class="k">import</span> <span class="nn">androidx.compose.material3.Surface</span>
-<span class="k">import</span> <span class="nn">com.example.navigationtutorial.ui.theme.NavigationTutorialTheme</span>
-
-<span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="nc">ComponentActivity</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-        <span class="nf">setContent</span> <span class="p">{</span>
-            <span class="nc">NavigationTutorialTheme</span> <span class="p">{</span>
-                <span class="nc">Surface</span><span class="p">(</span><span class="n">color</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">colorScheme</span><span class="p">.</span><span class="n">background</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nc">NavigationApp</span><span class="p">()</span>
-                <span class="p">}</span>
+        <span class="nc">Column</span><span class="p">(</span>
+            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span>
+                <span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">()</span>
+                <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="nc">Text</span><span class="p">(</span><span class="s">"Bienvenue sur l'écran principal !"</span><span class="p">,</span> <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">h5</span><span class="p">)</span>
+            <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
+            <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="n">navController</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="s">"details/42"</span><span class="p">)</span> <span class="p">})</span> <span class="p">{</span>
+                <span class="nc">Text</span><span class="p">(</span><span class="s">"Voir les détails de l'élément 42"</span><span class="p">)</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -876,11 +887,9 @@
 
 <hr />
 
-<h2 id="5-ajout-de-la-navigation-conditionnelle"><strong>5. Ajout de la navigation conditionnelle</strong></h2>
+<h3 id="52-detailsscreenkt--écran-de-détails"><strong>5.2. <code class="language-plaintext highlighter-rouge">DetailsScreen.kt</code> : Écran de détails</strong></h3>
 
-<p>Voici un exemple où la navigation est conditionnée par un état <code class="language-plaintext highlighter-rouge">isLoggedIn</code> (simulé ici). Si l’utilisateur est connecté, il est redirigé vers l’écran des détails, sinon vers un écran de connexion (<code class="language-plaintext highlighter-rouge">LoginScreen</code>).</p>
-
-<p>Ajoutez cette logique dans l’écran d’accueil :</p>
+<p>Cet écran affiche les informations transmises depuis <code class="language-plaintext highlighter-rouge">HomeScreen</code>.</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -893,20 +902,52 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="kd">val</span> <span class="py">isLoggedIn</span> <span class="p">=</span> <span class="k">true</span> <span class="c1">// Changez selon la logique de votre application</span>
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.votreprojet.ui.details</span>
 
-<span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">navController</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="s">"details/123"</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">navController</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="s">"login"</span><span class="p">)</span>
+<span class="k">import</span> <span class="nn">androidx.compose.foundation.layout.*</span>  
+<span class="k">import</span> <span class="nn">androidx.compose.material.*</span>  
+<span class="k">import</span> <span class="nn">androidx.compose.runtime.Composable</span>  
+<span class="k">import</span> <span class="nn">androidx.navigation.NavController</span>  
+
+<span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">DetailsScreen</span><span class="p">(</span><span class="n">navController</span><span class="p">:</span> <span class="nc">NavController</span><span class="p">,</span> <span class="n">itemId</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="nc">Scaffold</span><span class="p">(</span>
+        <span class="n">topBar</span> <span class="p">=</span> <span class="p">{</span> <span class="nc">TopAppBar</span><span class="p">(</span><span class="n">title</span> <span class="p">=</span> <span class="p">{</span> <span class="nc">Text</span><span class="p">(</span><span class="s">"Écran de détails"</span><span class="p">)</span> <span class="p">})</span> <span class="p">}</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nc">Column</span><span class="p">(</span>
+            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span>
+                <span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">()</span>
+                <span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="nc">Text</span><span class="p">(</span><span class="s">"Détails pour l'élément : $itemId"</span><span class="p">,</span> <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">h5</span><span class="p">)</span>
+            <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
+            <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="n">navController</span><span class="p">.</span><span class="nf">popBackStack</span><span class="p">()</span> <span class="p">})</span> <span class="p">{</span>
+                <span class="nc">Text</span><span class="p">(</span><span class="s">"Retour à l'écran principal"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">})</span> <span class="p">{</span>
-    <span class="nc">Text</span><span class="p">(</span><span class="s">"Naviguer"</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>Créez une fonction <code class="language-plaintext highlighter-rouge">LoginScreen</code> dans un fichier <code class="language-plaintext highlighter-rouge">LoginScreen.kt</code> si nécessaire.</p>
+<hr />
+
+<h2 id="6-intégration-dans-lapplication"><strong>6. Intégration dans l’application</strong></h2>
+
+<p>Modifiez <code class="language-plaintext highlighter-rouge">MainActivity.kt</code> pour intégrer la navigation.</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -917,26 +958,80 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">LoginScreen</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nc">Box</span><span class="p">(</span>
-        <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxSize</span><span class="p">(),</span>
-        <span class="n">contentAlignment</span> <span class="p">=</span> <span class="nc">Alignment</span><span class="p">.</span><span class="nc">Center</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nc">Text</span><span class="p">(</span><span class="s">"Écran de connexion"</span><span class="p">,</span> <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">titleLarge</span><span class="p">)</span>
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.votreprojet</span>
+
+<span class="k">import</span> <span class="nn">android.os.Bundle</span>
+<span class="k">import</span> <span class="nn">androidx.activity.ComponentActivity</span>
+<span class="k">import</span> <span class="nn">androidx.activity.compose.setContent</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material.MaterialTheme</span>
+<span class="k">import</span> <span class="nn">androidx.navigation.compose.rememberNavController</span>
+<span class="k">import</span> <span class="nn">com.votreprojet.navigation.NavGraph</span>
+
+<span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="nc">ComponentActivity</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+        <span class="nf">setContent</span> <span class="p">{</span>
+            <span class="nc">MaterialTheme</span> <span class="p">{</span>
+                <span class="kd">val</span> <span class="py">navController</span> <span class="p">=</span> <span class="nf">rememberNavController</span><span class="p">()</span>
+                <span class="nc">NavGraph</span><span class="p">(</span><span class="n">navController</span> <span class="p">=</span> <span class="n">navController</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>Ajoutez une destination <code class="language-plaintext highlighter-rouge">composable("login")</code> dans votre <code class="language-plaintext highlighter-rouge">NavHost</code>.</p>
+<hr />
+
+<h2 id="7-exercices-pratiques"><strong>7. Exercices pratiques</strong></h2>
+
+<ol>
+  <li><strong>Ajout d’un écran supplémentaire :</strong>
+    <ul>
+      <li>Créez un écran <code class="language-plaintext highlighter-rouge">ProfileScreen</code> et ajoutez-le au système de navigation.</li>
+    </ul>
+  </li>
+  <li><strong>Transmission de données complexes :</strong>
+    <ul>
+      <li>Modifiez <code class="language-plaintext highlighter-rouge">DetailsScreen</code> pour accepter un objet JSON contenant plusieurs propriétés.</li>
+    </ul>
+  </li>
+  <li><strong>Création d’un menu de navigation :</strong>
+    <ul>
+      <li>Implémentez un menu permettant de passer d’un écran à l’autre.</li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
-<h2 id="6-conclusion"><strong>6. Conclusion</strong></h2>
+<h2 id="8-résultats-attendus"><strong>8. Résultats attendus</strong></h2>
 
-<p>Vous avez créé une application Android avec navigation multi-écrans, passage de paramètres, et navigation conditionnelle. L’application est prête à être déployée ou enrichie avec des fonctionnalités avancées comme les animations de transitions.</p>
+<ul>
+  <li>Navigation fonctionnelle entre plusieurs écrans.</li>
+  <li>Structure modulaire du projet.</li>
+  <li>Meilleure compréhension de l’organisation et de la navigation dans une application Jetpack Compose.</li>
+</ul>
 
-<p>N’hésitez pas à me demander si vous souhaitez ajouter des fonctionnalités supplémentaires ou simplifier des étapes ! 😊</p>
+<hr />
+
+<h2 id="9-questions-dévaluation"><strong>9. Questions d’évaluation</strong></h2>
+
+<ol>
+  <li>Pourquoi utiliser une architecture modulaire dans un projet Android ?</li>
+  <li>Quels sont les avantages d’utiliser des objets pour définir les routes ?</li>
+  <li>Comment gérer les erreurs liées aux arguments manquants lors de la navigation ?</li>
+</ol>
 
         </main>
 
