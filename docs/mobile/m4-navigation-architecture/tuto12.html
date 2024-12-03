@@ -5,22 +5,22 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>tuto15 |  - Développement Web et Mobile - Perfectionnement</title>
+        <title>tuto12 |  - Développement Web et Mobile - Perfectionnement</title>
         <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="tuto15" />
+<meta property="og:title" content="tuto12" />
 <meta property="og:locale" content="fr_FR" />
 <meta name="description" content="Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad" />
 <meta property="og:description" content="Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad" />
-<link rel="canonical" href="/projets/mobile/m4-navigation-architecture/tuto15" />
-<meta property="og:url" content="/projets/mobile/m4-navigation-architecture/tuto15" />
+<link rel="canonical" href="/projets/mobile/m4-navigation-architecture/tuto12" />
+<meta property="og:url" content="/projets/mobile/m4-navigation-architecture/tuto12" />
 <meta property="og:site_name" content="Développement Web et Mobile - Perfectionnement" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-12-02T20:47:40+01:00" />
+<meta property="article:published_time" content="2024-12-03T15:44:29+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="tuto15" />
+<meta property="twitter:title" content="tuto12" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-02T20:47:40+01:00","datePublished":"2024-12-02T20:47:40+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"tuto15","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/mobile/m4-navigation-architecture/tuto15"},"url":"/projets/mobile/m4-navigation-architecture/tuto15"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-03T15:44:29+01:00","datePublished":"2024-12-03T15:44:29+01:00","description":"Apprendre à développer des application Web professionnel avec le tuteur ESSARRAJ Fouad","headline":"tuto12","mainEntityOfPage":{"@type":"WebPage","@id":"/projets/mobile/m4-navigation-architecture/tuto12"},"url":"/projets/mobile/m4-navigation-architecture/tuto12"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -482,9 +482,9 @@
                 <a href="/projets/mobile/m4-navigation-architecture/tuto11.html" class="">
                     <strong aria-hidden="true"></strong>tuto11</a>
             </li>
-            <li  class="chapter-item expanded" id="m4-navigation-architecture-tuto15">
-                <a href="/projets/mobile/m4-navigation-architecture/tuto15.html" class="">
-                    <strong aria-hidden="true"></strong>tuto15</a>
+            <li  class="chapter-item expanded" id="m4-navigation-architecture-tuto12">
+                <a href="/projets/mobile/m4-navigation-architecture/tuto12.html" class="">
+                    <strong aria-hidden="true"></strong>tuto12</a>
             </li>
             <li  class="chapter-item expanded" id="m4-navigation-architecture-conclusion">
                 <a href="/projets/mobile/m4-navigation-architecture/conclusion.html" class="">
@@ -658,7 +658,7 @@
                     <li class="breadcrumb-item"> <a href="/"><i class="fa fa-home"></i></a></li>
                     <li class="breadcrumb-item"> <a href="/projets/">Web-Mobile</a></li>
                     <li class="breadcrumb-item"><a href="/projets/mobile/m4-navigation-architecture/introduction">Module 4 : Navigation et architecture</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">tuto15</li>
+                    <li class="breadcrumb-item active" aria-current="page">tuto12</li>
                 </ol>
             </nav>
             
@@ -671,67 +671,32 @@
                         <i class="fa fa-angle-right"></i>
                     </a><div style="clear: both"></div>
             </nav>
-            <h1 id="tutoriel-15--introduction-à-larchitecture-mvvm">Tutoriel 15 : Introduction à l’architecture MVVM</h1>
+            <h1 id="tutoriel-12--utilisation-de-viewmodel-et-gestion-détat-dans-jetpack-compose-mise-à-jour"><strong>Tutoriel 12 : Utilisation de ViewModel et gestion d’état dans Jetpack Compose (Mise à jour)</strong></h1>
 
 <hr />
 
-<h2 id="objectif-pédagogique"><strong>Objectif pédagogique</strong></h2>
-<p>Familiariser les apprenants avec l’architecture MVVM (<strong>Model-View-ViewModel</strong>) pour concevoir des applications Android modulaires, testables et maintenables en utilisant Jetpack Compose.</p>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>Dans ce tutoriel, nous allons approfondir l’utilisation de <strong>ViewModel</strong> et <strong>StateFlow</strong> pour gérer l’état dans une application Jetpack Compose. Nous introduirons également une architecture de fichiers adaptée au projet final de To-Do List, afin d’habituer les apprenants à une structure professionnelle et évolutive.</p>
 
 <hr />
 
-<h2 id="prérequis"><strong>Prérequis</strong></h2>
-<ul>
-  <li>Connaître les bases de Kotlin et Jetpack Compose.</li>
-  <li>Comprendre les principes de gestion d’état dans Compose.</li>
-  <li>Avoir suivi le Tutoriel 10 : Navigation dans Jetpack Compose.</li>
-</ul>
+<h2 id="objectifs"><strong>Objectifs</strong></h2>
 
-<hr />
-
-<h2 id="concepts-abordés"><strong>Concepts abordés</strong></h2>
 <ol>
-  <li>Présentation de l’architecture MVVM.</li>
-  <li>Utilisation de <code class="language-plaintext highlighter-rouge">ViewModel</code> pour la gestion d’état.</li>
-  <li>Introduction à <code class="language-plaintext highlighter-rouge">StateFlow</code> pour un flux réactif.</li>
-  <li>Implémentation de l’architecture dans une application simple.</li>
+  <li>Comprendre pourquoi utiliser ViewModel avec StateFlow pour une gestion efficace de l’état.</li>
+  <li>Mettre en œuvre une architecture modulaire basée sur une séparation claire des responsabilités.</li>
+  <li>Intégrer et expliquer le fonctionnement d’un modèle de flux de données unidirectionnel (<strong>UDF</strong>) avec immutabilité.</li>
+  <li>Développer une application réactive où l’état persiste lors des changements de configuration.</li>
 </ol>
 
 <hr />
 
-<h3 id="étape-1--comprendre-mvvm"><strong>Étape 1 : Comprendre MVVM</strong></h3>
-<p>L’architecture MVVM repose sur trois composants :</p>
-<ul>
-  <li><strong>Model</strong> : Gestion des données (API, base de données, etc.).</li>
-  <li><strong>View</strong> : Interface utilisateur (composables Jetpack Compose).</li>
-  <li><strong>ViewModel</strong> : Relie la View au Model. Gère la logique métier et fournit des données réactives.</li>
-</ul>
+<h2 id="architecture-des-fichiers-et-dossiers"><strong>Architecture des fichiers et dossiers</strong></h2>
 
-<hr />
+<p>Adoptons une structure modulaire dès maintenant :</p>
 
-<h3 id="étape-2--ajouter-les-dépendances-nécessaires"><strong>Étape 2 : Ajouter les dépendances nécessaires</strong></h3>
-<p>Ajoutez les dépendances pour <code class="language-plaintext highlighter-rouge">ViewModel</code> et <code class="language-plaintext highlighter-rouge">StateFlow</code> dans le fichier <code class="language-plaintext highlighter-rouge">build.gradle</code> :</p>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="n">implementation</span> <span class="s">"androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0"</span>
-<span class="n">implementation</span> <span class="s">"androidx.lifecycle:lifecycle-runtime-ktx:2.6.0"</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>Synchronisez votre projet.</p>
-
-<hr />
-
-<h3 id="étape-3--création-dun-viewmodel"><strong>Étape 3 : Création d’un ViewModel</strong></h3>
-
-<ol>
-  <li><strong>Définissez une classe <code class="language-plaintext highlighter-rouge">ViewModel</code> :</strong>
-    <ul>
-      <li>Créez une classe pour gérer les données et l’état.</li>
-    </ul>
-  </li>
-</ol>
-
-<p><strong>Code :</strong></p>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -743,66 +708,99 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">androidx.lifecycle.ViewModel</span>
-<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.MutableStateFlow</span>
-<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.StateFlow</span>
-
-<span class="kd">class</span> <span class="nc">TaskViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">private</span> <span class="kd">val</span> <span class="py">_tasks</span> <span class="p">=</span> <span class="nc">MutableStateFlow</span><span class="p">&lt;</span><span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;&gt;(</span><span class="nf">emptyList</span><span class="p">())</span>
-    <span class="kd">val</span> <span class="py">tasks</span><span class="p">:</span> <span class="nc">StateFlow</span><span class="p">&lt;</span><span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;&gt;</span> <span class="p">=</span> <span class="n">_tasks</span>
-
-    <span class="k">fun</span> <span class="nf">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">+</span> <span class="n">task</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+13
+14
+</pre></td><td class="rouge-code"><pre>app/
+│
+├── ui/                  # Interface utilisateur  
+│   ├── screens/         # Écrans composables  
+│   └── components/      # Composants réutilisables  
+│
+├── data/                # Données et logique métier  
+│   ├── models/          # Modèles de données  
+│   └── repositories/    # Gestion des données (API, DB)  
+│
+├── viewmodel/           # Gestion d’état  
+│   └── TaskViewModel.kt # ViewModel pour les tâches  
+│
+└── MainActivity.kt      # Activité principale  
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Explications :</strong></p>
+<p><strong>Pourquoi cette organisation ?</strong></p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">_tasks</code> : Utilisé pour modifier les données.</li>
-  <li><code class="language-plaintext highlighter-rouge">tasks</code> : Exposé à la View sous forme d’état immuable.</li>
-  <li><code class="language-plaintext highlighter-rouge">addTask</code> : Ajoute une tâche à la liste.</li>
+  <li><strong>Séparation des responsabilités :</strong> Chaque dossier gère un aspect spécifique (UI, données, logique).</li>
+  <li><strong>Évolutivité :</strong> Plus facile d’ajouter des fonctionnalités sans introduire de chaos.</li>
 </ul>
 
 <hr />
 
-<h3 id="étape-4--intégrer-le-viewmodel-dans-jetpack-compose"><strong>Étape 4 : Intégrer le ViewModel dans Jetpack Compose</strong></h3>
+<h2 id="concepts-clés"><strong>Concepts Clés</strong></h2>
 
+<h3 id="1-rôle-de-viewmodel"><strong>1. Rôle de ViewModel</strong></h3>
+<p>ViewModel est une classe spéciale qui conserve les données d’une application lors des changements de configuration (par exemple, une rotation d’écran). Elle permet :</p>
+
+<ul>
+  <li>De séparer la logique métier de l’interface utilisateur.</li>
+  <li>De préserver l’état des données pendant la durée de vie d’une activité ou d’un fragment.</li>
+</ul>
+
+<h3 id="2-stateflow-pour-létat-réactif"><strong>2. StateFlow pour l’état réactif</strong></h3>
+<p>StateFlow est une API de Kotlin Coroutines qui permet de suivre les changements d’état et de les notifier à l’interface utilisateur. Il est idéal pour une application Compose car :</p>
+
+<ul>
+  <li>Il gère automatiquement les abonnements.</li>
+  <li>Il est compatible avec les cycles de vie des composants Android.</li>
+</ul>
+
+<h3 id="3-pourquoi-viewmodel-et-stateflow-"><strong>3. Pourquoi ViewModel et StateFlow ?</strong></h3>
+<p><strong>Problèmes sans ViewModel :</strong></p>
+<ul>
+  <li>Les états ne sont pas persistés lors des changements de configuration (rotation d’écran).</li>
+  <li>Un simple <code class="language-plaintext highlighter-rouge">remember</code> ou <code class="language-plaintext highlighter-rouge">mutableStateOf</code> ne suffit pas pour gérer des données complexes ou persistantes.</li>
+</ul>
+
+<p><strong>Avantages de ViewModel et StateFlow :</strong></p>
+<ul>
+  <li><strong>Persistance des données :</strong> Les données survivent aux changements de configuration.</li>
+  <li><strong>Réactivité :</strong> StateFlow met automatiquement à jour l’interface en cas de modification de l’état.</li>
+  <li><strong>Sécurité :</strong> L’immuabilité garantit une source de vérité unique et réduit les bugs.</li>
+</ul>
+
+<h3 id="4-flux-de-données-unidirectionnel-udf"><strong>4. Flux de données unidirectionnel (UDF)</strong></h3>
+<p>Dans UDF :</p>
 <ol>
-  <li><strong>Instanciez le ViewModel dans un composable :</strong>
-Utilisez <code class="language-plaintext highlighter-rouge">viewModel()</code> pour obtenir une instance du ViewModel.</li>
+  <li><strong>Événements utilisateur :</strong> Transmis à la logique métier via des fonctions (ex. <code class="language-plaintext highlighter-rouge">addTask</code>).</li>
+  <li><strong>Mise à jour de l’état :</strong> Effectuée dans le ViewModel.</li>
+  <li><strong>Exposition de l’état :</strong> L’état final est transmis de manière immuable à l’interface.</li>
 </ol>
 
-<p><strong>Code :</strong></p>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span>
+<p>Dans UDF, l’état est généré par la logique métier et exposé à l’interface utilisateur via une source unique (ex. <code class="language-plaintext highlighter-rouge">StateFlow</code>). Ce modèle garantit :</p>
 
-<span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">TaskScreen</span><span class="p">(</span><span class="n">viewModel</span><span class="p">:</span> <span class="nc">TaskViewModel</span> <span class="p">=</span> <span class="nf">viewModel</span><span class="p">())</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="py">tasks</span> <span class="p">=</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="nf">collectAsState</span><span class="p">()</span>
+<ul>
+  <li>Une meilleure prévisibilité des états.</li>
+  <li>Une immuabilité pour minimiser les erreurs.</li>
+</ul>
 
-    <span class="nc">Column</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nc">TaskInput</span><span class="p">(</span><span class="n">onAddTask</span> <span class="p">=</span> <span class="p">{</span> <span class="n">task</span> <span class="p">-&gt;</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">addTask</span><span class="p">(</span><span class="n">task</span><span class="p">)</span> <span class="p">})</span>
-        <span class="nc">TaskList</span><span class="p">(</span><span class="n">tasks</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<hr />
+
+<h2 id="mise-en-œuvre"><strong>Mise en œuvre</strong></h2>
+
+<h3 id="0-dépendances"><strong>0. Dépendances</strong></h3>
+
+<p>Ajoutez les dépendances suivantes dans le fichier <code class="language-plaintext highlighter-rouge">build.gradle</code> :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>implementation(libs.androidx.lifecycle.viewmodel.compose)
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<ol>
-  <li><strong>Composables pour l’interface utilisateur :</strong></li>
-</ol>
+<p>Cette dépendance incluent l’intégration de ViewModel avec Jetpack Compose.</p>
 
-<p><strong>Ajout de tâche :</strong></p>
+<h3 id="1-création-de-viewmodel"><strong>1. Création de ViewModel</strong></h3>
+
+<p>Dans ce tutoriel, nous allons implémenter une liste simple d’éléments où les utilisateurs peuvent ajouter et supprimer des tâches.</p>
+
+<p>Ajoutez le fichier <code class="language-plaintext highlighter-rouge">TaskViewModel.kt</code> dans le dossier <code class="language-plaintext highlighter-rouge">viewmodel/</code>.</p>
+
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -825,31 +823,63 @@ Utilisez <code class="language-plaintext highlighter-rouge">viewModel()</code> p
 20
 21
 22
-</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">TaskInput</span><span class="p">(</span><span class="n">onAddTask</span><span class="p">:</span> <span class="p">(</span><span class="nc">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nc">Unit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="py">text</span> <span class="k">by</span> <span class="nf">remember</span> <span class="p">{</span> <span class="nf">mutableStateOf</span><span class="p">(</span><span class="s">""</span><span class="p">)</span> <span class="p">}</span>
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.example.todo.viewmodel</span>
 
-    <span class="nc">Row</span><span class="p">(</span><span class="n">verticalAlignment</span> <span class="p">=</span> <span class="nc">Alignment</span><span class="p">.</span><span class="nc">CenterVertically</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nc">TextField</span><span class="p">(</span>
-            <span class="n">value</span> <span class="p">=</span> <span class="n">text</span><span class="p">,</span>
-            <span class="n">onValueChange</span> <span class="p">=</span> <span class="p">{</span> <span class="n">text</span> <span class="p">=</span> <span class="n">it</span> <span class="p">},</span>
-            <span class="n">label</span> <span class="p">=</span> <span class="p">{</span> <span class="nc">Text</span><span class="p">(</span><span class="s">"Nouvelle tâche"</span><span class="p">)</span> <span class="p">},</span>
-            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">weight</span><span class="p">(</span><span class="mf">1f</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">width</span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
-        <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">isNotBlank</span><span class="p">())</span> <span class="p">{</span>
-                <span class="nf">onAddTask</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-                <span class="n">text</span> <span class="p">=</span> <span class="s">""</span>
-            <span class="p">}</span>
-        <span class="p">})</span> <span class="p">{</span>
-            <span class="nc">Text</span><span class="p">(</span><span class="s">"Ajouter"</span><span class="p">)</span>
+<span class="k">import</span> <span class="nn">androidx.lifecycle.ViewModel</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.MutableStateFlow</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.StateFlow</span>
+
+<span class="kd">class</span> <span class="nc">TaskViewModel</span> <span class="p">:</span> <span class="nc">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">_tasks</span> <span class="p">=</span> <span class="nc">MutableStateFlow</span><span class="p">&lt;</span><span class="nc">List</span><span class="p">&lt;</span><span class="nc">Task</span><span class="p">&gt;&gt;(</span><span class="nf">emptyList</span><span class="p">())</span>
+    <span class="kd">val</span> <span class="py">tasks</span><span class="p">:</span> <span class="nc">StateFlow</span><span class="p">&lt;</span><span class="nc">List</span><span class="p">&lt;</span><span class="nc">Task</span><span class="p">&gt;&gt;</span> <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">_tasks</span>
+
+    <span class="k">fun</span> <span class="nf">addTask</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">newTask</span> <span class="p">=</span> <span class="nc">Task</span><span class="p">(</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">isCompleted</span> <span class="p">=</span> <span class="k">false</span><span class="p">)</span>
+        <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">+</span> <span class="n">newTask</span>
+    <span class="p">}</span>
+
+    <span class="k">fun</span> <span class="nf">toggleTaskCompletion</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nc">Task</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="n">id</span> <span class="p">==</span> <span class="n">task</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="n">it</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">isCompleted</span> <span class="p">=</span> <span class="p">!</span><span class="n">it</span><span class="p">.</span><span class="n">isCompleted</span><span class="p">)</span> <span class="k">else</span> <span class="n">it</span>
         <span class="p">}</span>
     <span class="p">}</span>
+
+    <span class="k">fun</span> <span class="nf">removeTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nc">Task</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="n">_tasks</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="nf">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">id</span> <span class="p">!=</span> <span class="n">task</span><span class="p">.</span><span class="n">id</span> <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="kd">data class</span> <span class="nc">Task</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="nc">UUID</span><span class="p">.</span><span class="nf">randomUUID</span><span class="p">().</span><span class="nf">toString</span><span class="p">(),</span>
+    <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+    <span class="kd">val</span> <span class="py">isCompleted</span><span class="p">:</span> <span class="nc">Boolean</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Liste des tâches :</strong></p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">StateFlow</code></strong> : Expose l’état immuable.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">MutableStateFlow</code></strong> : Permet des mises à jour internes.</li>
+  <li><strong>Immutabilité :</strong> Les listes sont recréées pour éviter des bugs liés aux modifications directes.</li>
+  <li>
+    <h2 id="la-propriété-immuable-tasks-expose-cet-état-à-linterface-utilisateur">La propriété immuable <code class="language-plaintext highlighter-rouge">tasks</code> expose cet état à l’interface utilisateur.</h2>
+  </li>
+</ul>
+
+<h3 id="2-interface-utilisateur-avec-jetpack-compose"><strong>2. Interface utilisateur avec Jetpack Compose</strong></h3>
+
+<p>Créez un écran dans <code class="language-plaintext highlighter-rouge">ui/screens/TaskScreen.kt</code> :</p>
+
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -862,15 +892,111 @@ Utilisez <code class="language-plaintext highlighter-rouge">viewModel()</code> p
 10
 11
 12
-</pre></td><td class="rouge-code"><pre><span class="nd">@Composable</span>
-<span class="k">fun</span> <span class="nf">TaskList</span><span class="p">(</span><span class="n">tasks</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-    <span class="nc">LazyColumn</span> <span class="p">{</span>
-        <span class="nf">items</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span> <span class="p">{</span> <span class="n">task</span> <span class="p">-&gt;</span>
-            <span class="nc">Text</span><span class="p">(</span>
-                <span class="n">text</span> <span class="p">=</span> <span class="n">task</span><span class="p">,</span>
-                <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="p">=</span> <span class="mi">4</span><span class="p">.</span><span class="n">dp</span><span class="p">),</span>
-                <span class="n">fontSize</span> <span class="p">=</span> <span class="mi">18</span><span class="p">.</span><span class="n">sp</span>
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="nn">com.example.todo.ui.screens</span>
+
+<span class="k">import</span> <span class="nn">androidx.compose.foundation.layout.*</span>
+<span class="k">import</span> <span class="nn">androidx.compose.foundation.text.BasicTextField</span>
+<span class="k">import</span> <span class="nn">androidx.compose.foundation.verticalScroll</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material3.*</span>
+<span class="k">import</span> <span class="nn">androidx.compose.runtime.*</span>
+<span class="k">import</span> <span class="nn">androidx.compose.ui.Modifier</span>
+<span class="k">import</span> <span class="nn">androidx.compose.ui.unit.dp</span>
+<span class="k">import</span> <span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span>
+<span class="k">import</span> <span class="nn">com.example.todo.viewmodel.TaskViewModel</span>
+
+<span class="nd">@Composable</span>
+<span class="k">fun</span> <span class="nf">TaskScreen</span><span class="p">(</span><span class="n">viewModel</span><span class="p">:</span> <span class="nc">TaskViewModel</span> <span class="p">=</span> <span class="nf">viewModel</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">tasks</span> <span class="k">by</span> <span class="n">viewModel</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="nf">collectAsState</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="py">newTask</span> <span class="k">by</span> <span class="nf">remember</span> <span class="p">{</span> <span class="nf">mutableStateOf</span><span class="p">(</span><span class="s">""</span><span class="p">)</span> <span class="p">}</span>
+
+    <span class="nc">Column</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">).</span><span class="nf">verticalScroll</span><span class="p">(</span><span class="nf">rememberScrollState</span><span class="p">()))</span> <span class="p">{</span>
+        <span class="c1">// Input field for new tasks</span>
+        <span class="nc">Row</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxWidth</span><span class="p">(),</span> <span class="n">horizontalArrangement</span> <span class="p">=</span> <span class="nc">Arrangement</span><span class="p">.</span><span class="nc">SpaceBetween</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nc">BasicTextField</span><span class="p">(</span>
+                <span class="n">value</span> <span class="p">=</span> <span class="n">newTask</span><span class="p">,</span>
+                <span class="n">onValueChange</span> <span class="p">=</span> <span class="p">{</span> <span class="n">newTask</span> <span class="p">=</span> <span class="n">it</span> <span class="p">},</span>
+                <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">weight</span><span class="p">(</span><span class="mf">1f</span><span class="p">).</span><span class="nf">padding</span><span class="p">(</span><span class="n">end</span> <span class="p">=</span> <span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">)</span>
             <span class="p">)</span>
+            <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">newTask</span><span class="p">.</span><span class="nf">isNotBlank</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="n">viewModel</span><span class="p">.</span><span class="nf">addTask</span><span class="p">(</span><span class="n">newTask</span><span class="p">)</span>
+                    <span class="n">newTask</span> <span class="p">=</span> <span class="s">""</span>
+                <span class="p">}</span>
+            <span class="p">})</span> <span class="p">{</span>
+                <span class="nc">Text</span><span class="p">(</span><span class="s">"Add Task"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">16</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
+
+        <span class="c1">// Display tasks</span>
+        <span class="n">tasks</span><span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">task</span> <span class="p">-&gt;</span>
+            <span class="nc">Row</span><span class="p">(</span>
+                <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">fillMaxWidth</span><span class="p">().</span><span class="nf">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="p">=</span> <span class="mi">4</span><span class="p">.</span><span class="n">dp</span><span class="p">),</span>
+                <span class="n">horizontalArrangement</span> <span class="p">=</span> <span class="nc">Arrangement</span><span class="p">.</span><span class="nc">SpaceBetween</span>
+            <span class="p">)</span> <span class="p">{</span>
+                <span class="nc">Text</span><span class="p">(</span>
+                    <span class="n">text</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">isCompleted</span><span class="p">)</span> <span class="s">"✔ ${task.name}"</span> <span class="k">else</span> <span class="n">task</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">style</span> <span class="p">=</span> <span class="nc">MaterialTheme</span><span class="p">.</span><span class="n">typography</span><span class="p">.</span><span class="n">body1</span>
+                <span class="p">)</span>
+                <span class="nc">Row</span> <span class="p">{</span>
+                    <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">toggleTaskCompletion</span><span class="p">(</span><span class="n">task</span><span class="p">)</span> <span class="p">})</span> <span class="p">{</span>
+                        <span class="nc">Text</span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">isCompleted</span><span class="p">)</span> <span class="s">"Undo"</span> <span class="k">else</span> <span class="s">"Complete"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="nc">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="nf">width</span><span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="n">dp</span><span class="p">))</span>
+                    <span class="nc">Button</span><span class="p">(</span><span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="n">viewModel</span><span class="p">.</span><span class="nf">removeTask</span><span class="p">(</span><span class="n">task</span><span class="p">)</span> <span class="p">})</span> <span class="p">{</span>
+                        <span class="nc">Text</span><span class="p">(</span><span class="s">"Delete"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -878,34 +1004,79 @@ Utilisez <code class="language-plaintext highlighter-rouge">viewModel()</code> p
 
 <hr />
 
-<h3 id="étape-5--lier-navigation-et-mvvm"><strong>Étape 5 : Lier Navigation et MVVM</strong></h3>
-<p>Ajoutez le ViewModel à un écran dans le graphique de navigation.</p>
+<h3 id="3-analyse-du-code"><strong>3. Analyse du code</strong></h3>
 
-<p><strong>Code :</strong></p>
+<ul>
+  <li><strong>Collecte des états</strong> : La méthode <code class="language-plaintext highlighter-rouge">collectAsState()</code> surveille les changements de <code class="language-plaintext highlighter-rouge">StateFlow</code> dans ViewModel.</li>
+  <li><strong>Immuabilité :</strong> Les données ne sont jamais modifiées directement.</li>
+  <li><strong>Actions utilisateur :</strong> Ajout, modification, et suppression des tâches sont gérés par ViewModel.</li>
+</ul>
+
+<hr />
+
+<h3 id="code--mainactivity"><strong>Code : MainActivity</strong></h3>
+
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="nc">NavHost</span><span class="p">(</span><span class="n">navController</span> <span class="p">=</span> <span class="n">navController</span><span class="p">,</span> <span class="n">startDestination</span> <span class="p">=</span> <span class="s">"tasks"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">composable</span><span class="p">(</span><span class="s">"tasks"</span><span class="p">)</span> <span class="p">{</span> <span class="nc">TaskScreen</span><span class="p">()</span> <span class="p">}</span>
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nn">android.os.Bundle</span>
+<span class="k">import</span> <span class="nn">androidx.activity.ComponentActivity</span>
+<span class="k">import</span> <span class="nn">androidx.activity.compose.setContent</span>
+<span class="k">import</span> <span class="nn">androidx.activity.viewModels</span>
+<span class="k">import</span> <span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material3.MaterialTheme</span>
+<span class="k">import</span> <span class="nn">androidx.compose.material3.Surface</span>
+
+<span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="nc">ComponentActivity</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+
+        <span class="c1">// Create ViewModel instance</span>
+        <span class="kd">val</span> <span class="py">taskViewModel</span><span class="p">:</span> <span class="nc">TaskViewModel</span> <span class="k">by</span> <span class="nf">viewModels</span><span class="p">()</span>
+
+        <span class="c1">// Set the content to the TaskScreen Composable</span>
+        <span class="nf">setContent</span> <span class="p">{</span>
+            <span class="nc">MaterialTheme</span> <span class="p">{</span> <span class="c1">// Apply Material Design 3 styling</span>
+                <span class="nc">Surface</span> <span class="p">{</span> <span class="c1">// Use Surface to set background</span>
+                    <span class="nc">TaskScreen</span><span class="p">(</span><span class="n">viewModel</span> <span class="p">=</span> <span class="n">taskViewModel</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<hr />
+<h3 id="exercice-pratique"><strong>Exercice Pratique</strong></h3>
 
-<h3 id="étape-6--exercice-pratique"><strong>Étape 6 : Exercice pratique</strong></h3>
-
-<p><strong>Objectif :</strong> Implémenter une application avec deux écrans :</p>
-<ol>
-  <li><strong>Écran de création de tâches</strong> : Ajouter des tâches.</li>
-  <li><strong>Écran d’affichage des tâches</strong> : Afficher les tâches sous forme de liste.</li>
-</ol>
+<p>Ajoutez une fonctionnalité permettant de filtrer les tâches (par exemple, afficher uniquement les tâches terminées).</p>
 
 <hr />
 
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>Ce tutoriel a introduit l’architecture MVVM avec Jetpack Compose. Vous savez maintenant structurer votre application en séparant clairement l’interface utilisateur, la logique métier, et les données. Vous pouvez explorer des fonctionnalités avancées comme la gestion des erreurs ou l’intégration de sources de données externes.</p>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
 
-<p>Souhaitez-vous approfondir un aspect ou passer à l’étape suivante ?</p>
+<p>Avec une architecture modulaire, ViewModel et StateFlow, la gestion de l’état dans Jetpack Compose devient simple et professionnelle. Ces concepts offrent une base solide pour le projet final de To-Do List.</p>
 
         </main>
 
