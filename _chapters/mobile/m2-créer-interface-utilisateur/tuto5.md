@@ -4,7 +4,7 @@ slug: tuto5
 module_reference: mobile
 part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
-title: tuto5
+title: Tutoriel 5 - Interaction avec UI v1.1
 description: ''
 order: 94
 directory: m2-créer-interface-utilisateur
@@ -12,198 +12,153 @@ permalink: m2-créer-interface-utilisateur/tuto5
 layout: chapters
 ---
 
-### Tutoriel 5 : Interaction avec l'interface utilisateur dans Jetpack Compose  
+# Tutoriel 5 : Interaction avec l'interface utilisateur  
 
-#### Objectif pédagogique  
-Apprendre à gérer les interactions utilisateur dans une application Android avec Jetpack Compose, notamment en utilisant des clics, des champs de texte interactifs, et en manipulant l'état pour créer une application réactive.
-
-#### Concepts abordés  
-- Gestion des clics sur les boutons.  
-- Utilisation des champs de texte interactifs (`TextField`).  
-- Modification de l'état local dans Jetpack Compose (`remember`, `mutableStateOf`).  
+## Objectif pédagogique  
+**Apprendre à créer des interfaces interactives dans Jetpack Compose** en maîtrisant la gestion des événements utilisateur et l'utilisation de l'état pour des applications réactives et dynamiques.
 
 ---
 
-### Résumé du tutoriel  
-Dans ce tutoriel, vous apprendrez à :  
-1. Ajouter des boutons et gérer leurs actions.  
-2. Créer des champs de saisie utilisateur avec `TextField`.  
-3. Utiliser l'état pour mettre à jour l'interface de manière réactive.  
-4. Construire une mini-application "Salut Utilisateur" qui affiche un message personnalisé en fonction du nom saisi.  
+## Concepts abordés  
+1. **État dans Jetpack Compose** :  
+   - Définitions et concepts clés (immutabilité, recomposition).  
+   - Utilisation de `remember` et `mutableStateOf`.  
+
+2. **Gestion des interactions utilisateur** :  
+   - Capturer des événements tels que les clics, la saisie de texte, et les changements de valeur d’un composant interactif.  
+
+3. **Composants interactifs courants** :  
+   - Boutons, TextFields, Checkboxes.  
 
 ---
 
-### Étape 1 : Configuration initiale  
-#### Fichiers à modifier  
-1. **MainActivity.kt** : Nous travaillerons dans ce fichier pour tout le tutoriel.  
+## Explication théorique  
 
-#### Préparation du projet  
-Assurez-vous que votre projet Android Studio utilise **Jetpack Compose**. Si ce n’est pas déjà fait, vérifiez les dépendances dans le fichier `build.gradle` de l’application :  
+### **1. L’état dans Jetpack Compose**  
+Jetpack Compose repose sur un **modèle déclaratif** où l'interface utilisateur est générée en fonction de l'état. Lorsque l'état change, l'interface est automatiquement **recomposée** pour refléter ces modifications.
 
-```kotlin
-dependencies {
-    implementation "androidx.compose.ui:ui:1.5.0"  
-    implementation "androidx.compose.material:material:1.5.0"  
-    implementation "androidx.compose.ui:ui-tooling-preview:1.5.0"  
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0"  
-    implementation "androidx.activity:activity-compose:1.8.0"
-}
-```
+#### **Définir un état mutable**  
+- Utilisez `mutableStateOf` pour créer un état observable.  
+- Associez-le à `remember` pour conserver cet état lors des recompositions.  
 
-Synchronisez votre projet pour inclure ces dépendances.
+Exemple :  
+```kotlin  
+@Composable  
+fun Counter() {  
+    var count by remember { mutableStateOf(0) }  
+    Button(onClick = { count++ }) {  
+        Text("Cliquez : $count")  
+    }  
+}  
+```  
 
----
+#### **Pourquoi `remember` est essentiel ?**  
+- Sans `remember`, les valeurs d'état seraient réinitialisées à chaque recomposition, entraînant une perte de données.  
+- Exemples de problèmes :  
+  - Un compteur qui se réinitialise après chaque clic.  
+  - Une saisie utilisateur qui disparaît.  
 
-### Étape 2 : Création de l'interface utilisateur de base  
+### **2. Gestion des événements utilisateur**  
+Compose utilise des lambdas pour capturer les interactions :  
+- `onClick` pour les boutons.  
+- `onValueChange` pour les champs de texte.  
+- `onCheckedChange` pour les cases à cocher.  
 
-#### Ajouter un champ de texte et un bouton  
-Nous allons maintenant construire une interface avec un champ de texte où l'utilisateur peut saisir son nom, et un bouton qui, lorsqu'il est cliqué, affiche un message personnalisé.  
-
-Code complet :  
-
-```kotlin
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.dp
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MyApp()
-        }
-    }
-}
-
-@Composable
-fun MyApp() {
-    // Conteneur principal
-    MaterialTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
-            UserInputApp()
-        }
-    }
-}
-
-@Composable
-fun UserInputApp() {
-    // Déclaration de l'état local
-    var name by remember { mutableStateOf("") }
-    var greetingMessage by remember { mutableStateOf("") }
-
-    // Mise en page
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center
-    ) {
-        // Champ de texte pour la saisie
-        TextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Entrez votre nom") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Bouton
-        Button(
-            onClick = {
-                greetingMessage = "Salut, $name !"
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Valider")
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Affichage du message
-        if (greetingMessage.isNotEmpty()) {
-            Text(
-                text = greetingMessage,
-                style = MaterialTheme.typography.h6
-            )
-        }
-    }
-}
-```
+### **3. Composants interactifs courants**  
+1. **Button** : Déclenche une action au clic.  
+2. **TextField** : Capture du texte.  
+3. **Checkbox** : Gestion d’options activables.
 
 ---
 
-### Étape 3 : Explications  
+## Étapes pratiques  
 
-1. **TextField** :  
-   Le composant `TextField` est utilisé pour permettre la saisie de texte par l'utilisateur.  
-   - `value` : La valeur actuelle du champ de texte.  
-   - `onValueChange` : Une fonction appelée lorsque l'utilisateur modifie le texte.  
+### **Étape 1 : Ajouter un bouton interactif**  
+1. Créez un fichier `InteractiveButton.kt`.  
+2. Implémentez un bouton avec un compteur de clics.  
 
-   ```kotlin
-   TextField(
-       value = name,
-       onValueChange = { name = it },
-       label = { Text("Entrez votre nom") },
-       modifier = Modifier.fillMaxWidth()
-   )
-   ```
-
-2. **Button** :  
-   Le composant `Button` permet de capturer les clics de l'utilisateur.  
-   - `onClick` : Définit l'action à effectuer lorsque le bouton est cliqué.  
-   ```kotlin
-   Button(
-       onClick = {
-           greetingMessage = "Salut, $name !"
-       },
-       modifier = Modifier.fillMaxWidth()
-   ) {
-       Text("Valider")
-   }
-   ```
-
-3. **État local avec `remember`** :  
-   - `mutableStateOf("")` initialise une variable réactive.  
-   - `remember` s'assure que l'état persiste lors des recompositions du composable.  
-   ```kotlin
-   var name by remember { mutableStateOf("") }
-   ```
-
-4. **Affichage conditionnel** :  
-   Le message de salutation n'est affiché que si la variable `greetingMessage` n'est pas vide.  
-   ```kotlin
-   if (greetingMessage.isNotEmpty()) {
-       Text(
-           text = greetingMessage,
-           style = MaterialTheme.typography.h6
-       )
-   }
-   ```
+Code :  
+```kotlin  
+@Composable  
+fun InteractiveButton() {  
+    var count by remember { mutableStateOf(0) }  
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {  
+        Text("Clics : $count")  
+        Button(onClick = { count++ }) {  
+            Text("Cliquez-moi")  
+        }  
+    }  
+}  
+```  
 
 ---
 
-### Étape 4 : Personnalisation  
+### **Étape 2 : Capturer du texte avec TextField**  
+Ajoutez une fonctionnalité permettant de capturer et d'afficher du texte saisi.  
 
-Proposez aux apprenants de :  
-1. Ajouter une icône au bouton pour le rendre plus attrayant.  
-2. Limiter la saisie à un certain nombre de caractères.  
-3. Modifier le style du message avec des couleurs et des typographies personnalisées.  
+Code :  
+```kotlin  
+@Composable  
+fun TextInputExample() {  
+    var text by remember { mutableStateOf("") }  
+    Column {  
+        TextField(value = text, onValueChange = { text = it }, label = { Text("Entrez un texte") })  
+        Text("Vous avez écrit : $text")  
+    }  
+}  
+```  
 
 ---
 
-### Étape 5 : Exercice
+### **Étape 3 : Combiner des composants interactifs**  
+Créez un formulaire combinant plusieurs composants (TextField, Checkbox, Button).  
 
-**Application : Devinez l’âge**  
-- **Description** : Créez une application où l'utilisateur entre son année de naissance. Lorsqu'il clique sur un bouton, l'application calcule et affiche son âge.  
-- **Lien avec le projet final** : Utilisation des champs de texte et des boutons pour interagir avec l'utilisateur.  
+Code :  
+```kotlin  
+@Composable  
+fun InteractiveForm() {  
+    var name by remember { mutableStateOf("") }  
+    var isSubscribed by remember { mutableStateOf(false) }  
+    var message by remember { mutableStateOf("") }  
+  
+    Column {  
+        TextField(value = name, onValueChange = { name = it }, label = { Text("Votre nom") })  
+        Row(verticalAlignment = Alignment.CenterVertically) {  
+            Checkbox(checked = isSubscribed, onCheckedChange = { isSubscribed = it })  
+            Text("Recevoir des notifications")  
+        }  
+        Button(onClick = {  
+            message = if (isSubscribed) "Bienvenue, $name !" else "Merci $name, cochez pour des notifications."  
+        }) {  
+            Text("Valider")  
+        }  
+        if (message.isNotEmpty()) {  
+            Text(message)  
+        }  
+    }  
+}  
+```  
 
 ---
 
-Avec ce tutoriel, les apprenants seront prêts à gérer les interactions de base dans une interface utilisateur Android avec Jetpack Compose.  
+## Exercice pratique  
+
+### **Création d’un formulaire d’inscription**  
+**Objectif :** Développer une interface qui capture un nom et gère une validation conditionnelle.  
+
+#### **Étapes requises :**  
+1. Utilisez un `TextField` pour capturer un nom.  
+2. Ajoutez une `Checkbox` pour confirmer une action.  
+3. Implémentez un `Button` qui affiche un message conditionnel basé sur les entrées.
+
+---
+
+## Conclusion  
+Ce tutoriel vous a permis de :  
+1. Comprendre le rôle de l’état (`State`) dans Jetpack Compose.  
+2. Créer des composants interactifs en réponse aux événements utilisateur.  
+3. Construire des interfaces dynamiques en combinant plusieurs composants.  
+
+Vous êtes maintenant prêt pour des applications plus complexes intégrant des états multiples et une navigation avancée.  
+
+---

@@ -4,7 +4,7 @@ slug: tuto6
 module_reference: mobile
 part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
-title: tuto6
+title: Tutoriel 6 v1.1 - Gestion d'états réactifs
 description: ''
 order: 95
 directory: m2-créer-interface-utilisateur
@@ -12,212 +12,216 @@ permalink: m2-créer-interface-utilisateur/tuto6
 layout: chapters
 ---
 
+# Tutoriel 6 : Gestion d'états réactifs et des flux de données
 
-# **Tutoriel 6 : Gestion de l’état dans Jetpack Compose**  
+## Objectif pédagogique
+Apprendre à gérer des états réactifs et des flux de données pour construire des applications modernes et interactives en utilisant Jetpack Compose.
 
-**Objectif pédagogique :**  
-Apprendre à gérer l’état dans une application Android avec Jetpack Compose, en comprenant les concepts d’immuabilité et en créant des interfaces réactives.
+## Concepts abordés
+- Introduction à la notion d'état réactif.
+- Utilisation de `State` et des outils de gestion d'état de base en Jetpack Compose.
+- Introduction aux coroutines et à leur utilisation pour gérer des flux de données asynchrones.
+- Scope et gestion des coroutines en Kotlin.
 
----
+## Explication théorique
 
-## **1. Introduction à la gestion de l’état**
+### Notion d'état réactif
+Un état réactif est une donnée qui, lorsqu'elle change, provoque automatiquement une mise à jour de l'interface utilisateur correspondante. Jetpack Compose utilise un modèle de programmation déclaratif qui facilite ce comportement.
 
-Dans Jetpack Compose, l’état représente une donnée mutable utilisée pour rendre une interface utilisateur interactive. Lorsqu’un état change, l’interface utilisateur associée se met à jour automatiquement.
+#### Exemple :
+```kotlin
+var counter by remember { mutableStateOf(0) }
+```
+Le mot-clé `remember` permet de conserver l'état entre les recompositions, et `mutableStateOf` rend cet état réactif.
 
-- **État immuable :** La valeur de l’état ne change pas directement, mais un nouvel état est créé en fonction du précédent.  
-- **Règle principale :** L’état dans Compose doit toujours être maintenu dans une source unique de vérité.
+### Les coroutines
+Les coroutines en Kotlin permettent d'exécuter des tâches de manière asynchrone, sans bloquer le thread principal. Elles utilisent des scopes pour définir leur cycle de vie.
 
----
+#### Scope des coroutines
+Un CoroutineScope détermine la durée de vie d'une coroutine. Voici les principaux scopes :
+- `GlobalScope` : Coroutine qui dure aussi longtemps que l'application.
+- `CoroutineScope` : Scope personnalisé créé par le développeur.
+- `lifecycleScope` : Attaché à une activité ou un fragment (sera introduit dans un module ultérieur).
 
-## **2. Concepts clés**
+#### Exemple de coroutine simple :
+```kotlin
+CoroutineScope(Dispatchers.Main).launch {
+    val data = fetchData()
+    // Mettre à jour l'interface utilisateur avec les données
+}
+```
 
-### **a. `remember` et `mutableStateOf`**
+## Étape 1 : Créer un composant interactif
+### Objectif
+Ajouter un compteur simple qui réagit à l'interaction utilisateur.
 
-Jetpack Compose utilise `remember` et `mutableStateOf` pour stocker et observer les changements d'état.
-
-- **`remember` :** Conserve un état pendant la durée de vie d’un composable.  
-- **`mutableStateOf` :** Crée un état mutable qui permet de déclencher la recomposition lorsqu’il change.  
-
-**Exemple simple :**  
+#### Code
 ```kotlin
 @Composable
-fun CounterApp() {
-    var count by remember { mutableStateOf(0) }
+fun Counter() {
+    var counter by remember { mutableStateOf(0) }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Count: $count", fontSize = 24.sp)
-        Button(onClick = { count++ }) {
-            Text(text = "Increment")
+        Text(text = "Counter: $counter", style = MaterialTheme.typography.h4)
+        Button(onClick = { counter++ }) {
+            Text("Increment")
         }
     }
 }
 ```
 
----
+## Étape 2 : Introduire les coroutines pour une action asynchrone
+### Objectif
+Simuler la récupération de données depuis une source externe.
 
-### **b. Gestion des états dans des fonctions d'ordre supérieur**
-
-L’état peut être géré dans des composables parents et passé comme paramètre aux enfants.
-
-**Exemple :**  
+#### Code
 ```kotlin
 @Composable
-fun CounterScreen() {
-    var count by remember { mutableStateOf(0) }
-    CounterDisplay(count)
-    CounterButtons(onIncrement = { count++ }, onDecrement = { count-- })
-}
+fun AsyncDataLoader() {
+    var data by remember { mutableStateOf("Loading...") }
 
-@Composable
-fun CounterDisplay(count: Int) {
-    Text(text = "Count: $count", fontSize = 24.sp)
-}
-
-@Composable
-fun CounterButtons(onIncrement: () -> Unit, onDecrement: () -> Unit) {
-    Row {
-        Button(onClick = onDecrement) { Text("Decrement") }
-        Button(onClick = onIncrement) { Text("Increment") }
+    LaunchedEffect(Unit) {
+        data = fetchData()
     }
+
+    Text(text = data, style = MaterialTheme.typography.h5)
+}
+
+suspend fun fetchData(): String {
+    delay(2000) // Simule un temps d'attente
+    return "Données chargées"
 }
 ```
 
----
+## Étape 3 : Gérer des flux de données avec `Flow`
+### Objectif
+Utiliser un `Flow` pour émettre plusieurs valeurs successives et les afficher.
 
-## **3. Pratique guidée : Création d’une TODO liste simple**
-
-### **Étape 1 : Définir l’état de la liste des tâches**
-
-On commence par définir une liste mutable d’éléments pour la gestion des tâches.  
+#### Code
 ```kotlin
 @Composable
-fun TodoApp() {
-    var tasks by remember { mutableStateOf(listOf<String>()) }
-
-    Column(modifier = Modifier.padding(16.dp)) {
-        TodoInput(onAddTask = { newTask ->
-            tasks = tasks + newTask
-        })
-        TodoList(tasks)
-    }
-}
-```
-
----
-
-### **Étape 2 : Ajouter des tâches**
-
-On crée un champ de saisie pour ajouter une nouvelle tâche.  
-```kotlin
-@Composable
-fun TodoInput(onAddTask: (String) -> Unit) {
-    var text by remember { mutableStateOf("") }
-
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        TextField(
-            value = text,
-            onValueChange = { text = it },
-            label = { Text("Nouvelle tâche") },
-            modifier = Modifier.weight(1f)
-        )
-        Spacer(modifier = Modifier.width(8.dp))
-        Button(onClick = {
-            if (text.isNotBlank()) {
-                onAddTask(text)
-                text = "" // Réinitialiser le champ de saisie
-            }
-        }) {
-            Text("Ajouter")
+fun DataStream() {
+    val dataFlow = flow {
+        for (i in 1..5) {
+            emit("Item $i")
+            delay(1000)
         }
     }
+
+    val data by dataFlow.collectAsState(initial = "Starting...")
+
+    Text(text = data, style = MaterialTheme.typography.h5)
 }
 ```
 
+## Exercice
+Créez un composant qui :
+1. Utilise une coroutine pour récupérer une liste de noms (simulés).
+2. Affiche les noms dans une liste dynamiquement mise à jour.
+
+### Indications :
+- Utilisez `LaunchedEffect` pour initier la récupération des données.
+- Affichez les noms dans une `LazyColumn`.
+
+## Conclusion
+Ce tutoriel a introduit la gestion d'états réactifs et l'utilisation de coroutines et `Flow` pour gérer des flux de données. Ces concepts sont essentiels pour construire des interfaces réactives et modernes dans Android avec Jetpack Compose.
+
+
+## Rappel 
+
+### **LaunchedEffect dans Jetpack Compose**
+
+`LaunchedEffect` est une API fournie par Jetpack Compose qui permet d'exécuter du code au sein d'un **scope coroutine** directement lié au cycle de vie de votre composable. C'est une manière simple et efficace de gérer des opérations qui doivent se produire lors de l'entrée ou la recomposition d'un composant.
+
 ---
 
-### **Étape 3 : Afficher les tâches**
+### **Fonctionnement**
 
-On affiche les tâches sous forme de liste déroulante.  
+- `LaunchedEffect` crée un **scope coroutine** lié au composable.  
+- Ce scope est annulé automatiquement lorsque le composable est recomposé avec un nouvel état clé ou lorsqu'il sort de l'arborescence.  
+- Cela permet d’éviter les **fuites de mémoire** ou des opérations inutiles.
+
+---
+
+### **Syntaxe**
+
+```kotlin
+LaunchedEffect(key1, key2, ...) {
+    // Code à exécuter
+}
+```
+
+- Les clés (`key1`, `key2`, ...) déterminent quand la coroutine est relancée.  
+- Si la valeur des clés change, l'effet est annulé, puis relancé avec les nouvelles valeurs.  
+- Si aucune clé n'est spécifiée ou si elle reste la même, l'effet ne sera pas relancé.  
+
+---
+
+### **Exemple simple**
+
+#### **But :** Exécuter une action une seule fois au moment de la première composition.
+
 ```kotlin
 @Composable
-fun TodoList(tasks: List<String>) {
-    LazyColumn {
-        items(tasks) { task ->
-            Text(
-                text = task,
-                modifier = Modifier.padding(vertical = 4.dp),
-                fontSize = 18.sp
-            )
-        }
+fun MyComposable() {
+    LaunchedEffect(Unit) {
+        // Cette action est exécutée une seule fois
+        println("Hello, World!")
     }
 }
 ```
 
 ---
 
-## **4. Étape finale : Application complète**
+### **Exemple avec une clé dynamique**
 
-Voici le code complet de l’application TODO liste :  
+#### **But :** Mettre à jour les données lorsque la clé change.
+
 ```kotlin
 @Composable
-fun TodoApp() {
-    var tasks by remember { mutableStateOf(listOf<String>()) }
+fun UserProfile(userId: String) {
+    var userDetails by remember { mutableStateOf("Loading...") }
 
-    Column(modifier = Modifier.padding(16.dp)) {
-        TodoInput(onAddTask = { newTask ->
-            tasks = tasks + newTask
-        })
-        Spacer(modifier = Modifier.height(16.dp))
-        TodoList(tasks)
+    LaunchedEffect(userId) {
+        userDetails = fetchUserDetails(userId) // Simule une récupération de données
     }
+
+    Text(text = userDetails)
 }
 
-@Composable
-fun TodoInput(onAddTask: (String) -> Unit) {
-    var text by remember { mutableStateOf("") }
-
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        TextField(
-            value = text,
-            onValueChange = { text = it },
-            label = { Text("Nouvelle tâche") },
-            modifier = Modifier.weight(1f)
-        )
-        Spacer(modifier = Modifier.width(8.dp))
-        Button(onClick = {
-            if (text.isNotBlank()) {
-                onAddTask(text)
-                text = ""
-            }
-        }) {
-            Text("Ajouter")
-        }
-    }
-}
-
-@Composable
-fun TodoList(tasks: List<String>) {
-    LazyColumn {
-        items(tasks) { task ->
-            Text(
-                text = task,
-                modifier = Modifier.padding(vertical = 4.dp),
-                fontSize = 18.sp
-            )
-        }
-    }
+suspend fun fetchUserDetails(userId: String): String {
+    delay(2000) // Simule un délai de récupération
+    return "Details for user: $userId"
 }
 ```
 
 ---
 
-## **5. Résumé des concepts abordés**
+### **Utilisations courantes**
 
-1. **Gestion de l’état avec `remember` et `mutableStateOf`.**  
-2. **Passage d’état entre composables parents et enfants.**  
-3. **Création d’une interface réactive avec Jetpack Compose.**
+1. **Récupération de données asynchrones** : Charger des données depuis une API ou une base de données.  
+2. **Écoute d'événements** : Réagir à des actions utilisateur ou des changements d'état.  
+3. **Animations** : Démarrer une animation ou une transition.  
 
+---
+
+### **Bonnes pratiques**
+
+1. **Évitez les effets secondaires dans `LaunchedEffect` qui ne dépendent pas de la clé.**  
+   Cela peut entraîner des résultats imprévisibles lors des recompositions.  
+
+2. **Utilisez des clés stables.**  
+   Si une clé change fréquemment ou est instable, cela peut entraîner des relancements inutiles.  
+
+3. **Préférez `remember` pour les états réactifs simples.**  
+   Si vous n'avez pas besoin de coroutines, `remember` suffit pour gérer un état simple.  
+
+---
+
+### **Conclusion**
+
+`LaunchedEffect` est un outil puissant pour gérer des opérations asynchrones et contextuelles dans Jetpack Compose. Il s'intègre parfaitement avec le cycle de vie des composables, ce qui en fait un choix idéal pour des opérations temporaires ou déclenchées par un changement d'état.
