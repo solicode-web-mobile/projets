@@ -205,20 +205,34 @@ Modifier le code pour qu'il affiche le l'heure en temps réel
 Utiliser un `Flow` pour émettre plusieurs valeurs successives et les afficher.
 
 #### Code
+
+Dans le fichier `/screen/DataStreamScreen.kt`
+
 ```kotlin
+
 @Composable
 fun DataStream() {
     val dataFlow = flow {
         for (i in 1..5) {
             emit("Item $i")
-            delay(1000)
+            delay(3000)
         }
     }
 
     val data by dataFlow.collectAsState(initial = "Starting...")
 
-    Text(text = data, style = MaterialTheme.typography.h5)
+    Text(text = data, style = MaterialTheme.typography.headlineSmall)
 }
+
+
+@Preview(showBackground = true)
+@Composable
+fun DataStreamPreview() {
+    Tuto6Theme {
+        DataStream()
+    }
+}
+
 ```
 
 ## Exercice
