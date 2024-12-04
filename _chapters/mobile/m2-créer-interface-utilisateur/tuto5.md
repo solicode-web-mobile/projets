@@ -14,7 +14,8 @@ layout: chapters
 
 # Tutoriel 5 : Interaction avec l'interface utilisateur  
 
-## Objectif pédagogique  
+## Objectif pédagogique 
+ 
 **Apprendre à créer des interfaces interactives dans Jetpack Compose** en maîtrisant la gestion des événements utilisateur et l'utilisation de l'état pour des applications réactives et dynamiques.
 
 ---

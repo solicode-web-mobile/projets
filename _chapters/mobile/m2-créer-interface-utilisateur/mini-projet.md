@@ -4,7 +4,7 @@ slug: mini-projet
 module_reference: mobile
 part_reference: m2-créer-interface-utilisateur
 concept_reference: ''
-title: mini-projet
+title: Mini-Projet 2 - Gestion d'une liste de tâches
 description: ''
 order: 91
 directory: m2-créer-interface-utilisateur
@@ -12,165 +12,228 @@ permalink: m2-créer-interface-utilisateur/mini-projet
 layout: chapters
 ---
 
-### Mini-projet : Application de calcul de pourboire  
 
-#### **Objectif pédagogique**  
-Ce mini-projet permettra aux apprenants d’appliquer les notions abordées dans le **Module 2**, notamment :  
-- La gestion de l’état dans Jetpack Compose,  
-- La création d’interfaces interactives,  
-- La manipulation d'éléments comme les boutons, les champs de texte, et les sliders.  
+# **Mini-Projet : Gestion d'une liste de tâches en mémoire**  
 
-#### **Description du projet**  
-Les apprenants développeront une application simple permettant de :  
-1. Saisir le montant de l’addition.  
-2. Choisir un pourcentage de pourboire à l’aide d’un slider.  
-3. Calculer et afficher le montant du pourboire et le total à payer.  
+## **Description du Mini-Projet**  
+Développer une application permettant de gérer une liste de tâches **simple** sans persistance locale, en appliquant les notions de **gestion d'état**, **gestion des interactions utilisateur**, et **réactivité** abordées dans les tutoriels précédents.  
 
-L'application comprendra :  
-- Un champ de saisie pour l’addition,  
-- Un slider pour sélectionner le pourcentage,  
-- Une zone affichant les résultats (montant du pourboire et total).
+L’application proposera les fonctionnalités suivantes :  
+1. **Ajouter une tâche** : Les utilisateurs peuvent saisir une tâche et l’ajouter à une liste.  
+2. **Marquer une tâche comme terminée** : Les tâches peuvent être cochées pour indiquer leur achèvement.  
+3. **Supprimer une tâche terminée** : Les utilisateurs peuvent supprimer les tâches marquées comme terminées.  
 
 ---
 
-### Étapes de réalisation  
+## **Architecture des dossiers et fichiers**
 
-#### 1. **Configuration initiale**
-1. **Créer un nouveau projet Android dans Android Studio :**  
-   - **Nom du projet :** `TipCalculator`.  
-   - **Langage :** Kotlin.  
-   - **API minimale :** 21 (Android 5.0).  
-   - **Template :** `Empty Compose Activity`.
-
-2. **Structure du projet :**  
-   - Ouvrir le fichier `MainActivity.kt`.  
-   - Vérifier que le fichier contient une fonction de départ comme suit :  
-     ```kotlin
-     @Composable
-     fun TipCalculatorApp() {
-         // Contenu de l'application
-     }
-
-     override fun onCreate(savedInstanceState: Bundle?) {
-         super.onCreate(savedInstanceState)
-         setContent {
-             TipCalculatorApp()
-         }
-     }
-     ```
+```plaintext
+src/main/java/com/example/todolist
+├── MainActivity.kt            # Activité principale
+├── ui/
+│   ├── components/            # Composants UI réutilisables
+│   │   ├── TaskItem.kt        # Composant pour afficher une tâche individuelle
+│   │   └── TaskInputField.kt  # Composant pour le champ d'entrée de tâche
+│   └── screens/
+│       └── TaskScreen.kt      # Écran principal contenant la logique UI
+├── model/
+│   └── Task.kt                # Modèle de données représentant une tâche
+```
 
 ---
 
-#### 2. **Interface utilisateur (UI)**  
-Créer une interface de base avec les éléments suivants :  
+## **Fichier : `MainActivity.kt`**  
 
-1. **Champ de saisie pour le montant de l’addition**  
-   Utiliser le composant `TextField` :  
-   ```kotlin
-   var amountInput by remember { mutableStateOf("") }
-   TextField(
-       value = amountInput,
-       onValueChange = { amountInput = it },
-       label = { Text("Montant de l'addition") },
-       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-       modifier = Modifier.fillMaxWidth()
-   )
-   ```
+```kotlin
+package com.example.todolist
 
-2. **Slider pour sélectionner le pourcentage de pourboire**  
-   Ajouter un `Slider` et afficher le pourcentage sélectionné :  
-   ```kotlin
-   var tipPercentage by remember { mutableStateOf(15f) }
-   Column(horizontalAlignment = Alignment.CenterHorizontally) {
-       Text("Pourcentage : ${tipPercentage.toInt()}%")
-       Slider(
-           value = tipPercentage,
-           onValueChange = { tipPercentage = it },
-           valueRange = 0f..30f,
-           modifier = Modifier.fillMaxWidth()
-       )
-   }
-   ```
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import com.example.todolist.ui.screens.TaskScreen
+import com.example.todolist.ui.theme.TodoListTheme
 
-3. **Affichage des résultats calculés**  
-   Calculer et afficher le pourboire et le total :  
-   ```kotlin
-   val amount = amountInput.toFloatOrNull() ?: 0f
-   val tipAmount = (amount * tipPercentage / 100)
-   val totalAmount = amount + tipAmount
-
-   Text("Pourboire : %.2f MAD".format(tipAmount))
-   Text("Total : %.2f MAD".format(totalAmount))
-   ```
-
-4. **Assembler l'interface complète**  
-   Structurer l'application avec une disposition en colonne :  
-   ```kotlin
-   @Composable
-   fun TipCalculatorApp() {
-       Column(
-           modifier = Modifier
-               .fillMaxSize()
-               .padding(16.dp),
-           verticalArrangement = Arrangement.spacedBy(16.dp)
-       ) {
-           // Champ de saisie
-           var amountInput by remember { mutableStateOf("") }
-           TextField(
-               value = amountInput,
-               onValueChange = { amountInput = it },
-               label = { Text("Montant de l'addition") },
-               keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-               modifier = Modifier.fillMaxWidth()
-           )
-
-           // Slider
-           var tipPercentage by remember { mutableStateOf(15f) }
-           Column(horizontalAlignment = Alignment.CenterHorizontally) {
-               Text("Pourcentage : ${tipPercentage.toInt()}%")
-               Slider(
-                   value = tipPercentage,
-                   onValueChange = { tipPercentage = it },
-                   valueRange = 0f..30f,
-                   modifier = Modifier.fillMaxWidth()
-               )
-           }
-
-           // Résultats
-           val amount = amountInput.toFloatOrNull() ?: 0f
-           val tipAmount = (amount * tipPercentage / 100)
-           val totalAmount = amount + tipAmount
-
-           Text("Pourboire : %.2f MAD".format(tipAmount))
-           Text("Total : %.2f MAD".format(totalAmount))
-       }
-   }
-   ```
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            TodoListTheme {
+                // Écran principal de l'application
+                TaskScreen()
+            }
+        }
+    }
+}
+```
 
 ---
 
-#### 3. **Amélioration esthétique avec Material Design**  
-- Ajouter des couleurs pour le texte (`TextStyle`) et ajuster les marges.  
-- Intégrer des icônes ou des séparateurs (`Divider`) pour améliorer la lisibilité.  
+## **Fichier : `Task.kt` (Modèle de données)**  
+
+```kotlin
+package com.example.todolist.model
+
+data class Task(
+    val id: Int,
+    val description: String,
+    var isCompleted: Boolean = false
+)
+```
 
 ---
 
-#### 4. **Tests et finalisation**  
-1. Exécuter l’application sur un émulateur ou un appareil réel.  
-2. Tester les cas suivants :  
-   - Saisie correcte (nombres uniquement).  
-   - Gestion des erreurs pour les champs vides ou invalides.  
-3. Ajouter des commentaires dans le code pour clarifier le fonctionnement.  
+## **Fichier : `TaskInputField.kt`**  
+
+```kotlin
+package com.example.todolist.ui.components
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun TaskInputField(onAddTask: (String) -> Unit) {
+    var text by remember { mutableStateOf(TextFieldValue("")) }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { text = it },
+            label = { Text("Nouvelle tâche") },
+            modifier = Modifier.weight(1f)
+        )
+        Spacer(modifier = Modifier.width(8.dp))
+        Button(
+            onClick = {
+                if (text.text.isNotBlank()) {
+                    onAddTask(text.text)
+                    text = TextFieldValue("") // Réinitialiser le champ
+                }
+            }
+        ) {
+            Text("Ajouter")
+        }
+    }
+}
+```
 
 ---
 
-### Résultat attendu  
-Une application fonctionnelle permettant de :  
-- Saisir un montant.  
-- Sélectionner un pourcentage de pourboire.  
-- Voir les résultats calculés instantanément.  
+## **Fichier : `TaskItem.kt`**  
+
+```kotlin
+package com.example.todolist.ui.components
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.todolist.model.Task
+
+@Composable
+fun TaskItem(task: Task, onToggleComplete: (Task) -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Column {
+            Text(task.description)
+        }
+        Checkbox(
+            checked = task.isCompleted,
+            onCheckedChange = { onToggleComplete(task) }
+        )
+    }
+}
+```
 
 ---
 
-#### **Lien avec le projet final**  
-Ce mini-projet introduit les bases de la gestion de l’état et des interactions utilisateur, qui seront essentielles pour développer la **To-Do List** complète.
+## **Fichier : `TaskScreen.kt`**  
+
+```kotlin
+package com.example.todolist.ui.screens
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.todolist.model.Task
+import com.example.todolist.ui.components.TaskInputField
+import com.example.todolist.ui.components.TaskItem
+
+@Composable
+fun TaskScreen() {
+    // Liste des tâches gérée dans un rememberSaveable
+    var tasks by rememberSaveable { mutableStateOf(listOf<Task>()) }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("Liste de tâches") })
+        }
+    ) { padding ->
+        Column(
+            modifier = Modifier
+                .padding(padding)
+                .fillMaxSize()
+        ) {
+            TaskInputField(onAddTask = { description ->
+                tasks = tasks + Task(id = tasks.size + 1, description = description)
+            })
+
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+                items(tasks.size) { index ->
+                    TaskItem(
+                        task = tasks[index],
+                        onToggleComplete = { task ->
+                            tasks = tasks.map {
+                                if (it.id == task.id) it.copy(isCompleted = !it.isCompleted) else it
+                            }
+                        }
+                    )
+                }
+            }
+
+            Button(
+                onClick = {
+                    tasks = tasks.filter { !it.isCompleted }
+                },
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text("Supprimer les tâches terminées")
+            }
+        }
+    }
+}
+```
+
+---
+
+## **Indications de Solution**  
+
+1. **Champ d'entrée (`TaskInputField`)** : Gère l'ajout de nouvelles tâches.  
+2. **Tâche individuelle (`TaskItem`)** : Utilise `Checkbox` pour indiquer l'état terminé/non terminé.  
+3. **Écran principal (`TaskScreen`)** :  
+   - Gère l'état global des tâches avec `rememberSaveable`.  
+   - Implémente une liste réactive affichant les tâches.  
+   - Fournit une action pour supprimer les tâches terminées.  
+
+**Note pédagogique :** Ce mini-projet introduit une étape essentielle du projet final, permettant de gérer des données en mémoire et d’explorer la gestion réactive de l’état sans complexité additionnelle.

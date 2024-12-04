@@ -16,6 +16,7 @@ layout: chapters
 
 
 ## Objectif pédagogique
+
 Ce tutoriel vise à approfondir les concepts avancés de Kotlin pour permettre aux apprenants d'écrire un code plus robuste, réutilisable et élégant. Les notions abordées incluent les instructions conditionnelles, la gestion de la nullabilité, les classes et objets, ainsi que les expressions lambdas.
 
 ---
