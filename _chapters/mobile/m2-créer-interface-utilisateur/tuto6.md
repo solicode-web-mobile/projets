@@ -212,10 +212,12 @@ Dans le fichier `/screen/DataStreamScreen.kt`
 
 @Composable
 fun DataStream() {
-    val dataFlow = flow {
-        for (i in 1..5) {
-            emit("Item $i")
-            delay(3000)
+    val dataFlow = remember {
+        flow {
+            for (i in 1..1000) {
+                emit("Item $i")
+                delay(3000)
+            }
         }
     }
 
@@ -225,24 +227,8 @@ fun DataStream() {
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun DataStreamPreview() {
-    Tuto6Theme {
-        DataStream()
-    }
-}
 
 ```
-
-## Exercice
-Créez un composant qui :
-1. Utilise une coroutine pour récupérer une liste de noms (simulés).
-2. Affiche les noms dans une liste dynamiquement mise à jour.
-
-### Indications :
-- Utilisez `LaunchedEffect` pour initier la récupération des données.
-- Affichez les noms dans une `LazyColumn`.
 
 ## Conclusion
 Ce tutoriel a introduit la gestion d'états réactifs et l'utilisation de coroutines et `Flow` pour gérer des flux de données. Ces concepts sont essentiels pour construire des interfaces réactives et modernes dans Android avec Jetpack Compose.
