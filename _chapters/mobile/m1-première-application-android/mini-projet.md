@@ -12,15 +12,15 @@ permalink: m1-première-application-android/mini-projet
 layout: chapters
 ---
 
-### Mini-projet : Carte de visite interactive
+# Mini-projet : Carte de visite interactive
 
-#### **Description du mini-projet**
+## **Description du mini-projet**
 
 Dans ce mini-projet, les apprenants créeront une application interactive de carte de visite. L'application affichera des informations personnelles stylisées (nom, profession, coordonnées), avec des boutons interactifs permettant d'effectuer des actions simples, comme ouvrir un site web ou composer un numéro de téléphone.
 
 ---
 
-### **Objectifs pédagogiques**
+## **Objectifs pédagogiques**
 1. Mettre en pratique les notions de base de Jetpack Compose vues dans le tutoriel précédent.
 2. Découvrir comment structurer une interface utilisateur simple.
 3. Manipuler des composants interactifs comme les **Button** et les **ClickableText**.
@@ -28,7 +28,7 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-### **Fonctionnalités principales**
+## **Fonctionnalités principales**
 1. Affichage du nom, du métier, et des informations de contact (téléphone et email).
 2. Boutons interactifs pour effectuer des actions :
    - Appeler un numéro.
@@ -37,9 +37,9 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-### **Étapes de réalisation**
+## **Étapes de réalisation**
 
-#### **Étape 1 : Configuration du projet**
+### **Étape 1 : Configuration du projet**
 1. **Créer un nouveau projet Android avec Jetpack Compose** :
    - Ouvrir Android Studio.
    - Sélectionner "New Project" > "Empty Compose Activity".
@@ -50,7 +50,7 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-#### **Étape 2 : Conception de l'interface utilisateur**
+### **Étape 2 : Conception de l'interface utilisateur**
 
 1. **Structure de base de la carte de visite**  
    Ajouter les éléments principaux dans une fonction composable `CarteDeVisite` :
@@ -116,7 +116,7 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-#### **Étape 3 : Ajouter les actions interactives**
+### **Étape 3 : Ajouter les actions interactives**
 
 1. **Appeler un numéro de téléphone**  
    Implémenter l'action pour ouvrir l'application d'appel :
@@ -158,7 +158,7 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-#### **Étape 4 : Prévisualiser l'application**
+### **Étape 4 : Prévisualiser l'application**
 1. Ajouter une fonction pour prévisualiser le composable :
    ```kotlin
    @Preview(showBackground = true)
@@ -172,12 +172,12 @@ Dans ce mini-projet, les apprenants créeront une application interactive de car
 
 ---
 
-### **Livrable attendu**
+## **Livrable attendu**
 Une application Android simple et fonctionnelle qui affiche une carte de visite interactive. Les apprenants doivent être capables de personnaliser les informations affichées et d'exécuter les actions interactives (appel, email, navigation web).
 
 ---
 
-#### **Prolongement possible**
+### **Prolongement possible**
 1. Ajouter un thème personnalisé pour styliser l'application.
 2. Introduire une image de profil en haut de la carte avec le composant **Image**.
 3. Réorganiser l'interface pour utiliser des colonnes et des rangées de manière plus avancée.
