@@ -15,6 +15,7 @@ layout: chapters
 ### Mini-projet : Carte de visite interactive
 
 #### **Description du mini-projet**
+
 Dans ce mini-projet, les apprenants créeront une application interactive de carte de visite. L'application affichera des informations personnelles stylisées (nom, profession, coordonnées), avec des boutons interactifs permettant d'effectuer des actions simples, comme ouvrir un site web ou composer un numéro de téléphone.
 
 ---
