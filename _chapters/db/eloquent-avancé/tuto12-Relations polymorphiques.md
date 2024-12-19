@@ -4,15 +4,15 @@ slug: tuto12
 module_reference: db
 part_reference: eloquent-avancé
 concept_reference: ''
-title: tuto12
+title: Tuto12 - Relations polymorphiques
 description: ''
-order: 159
+order: 155
 directory: db/eloquent-avancé
 permalink: db/eloquent-avancé/tuto12
 layout: chapters
 ---
 
-### **Tutoriel 3 : Relations polymorphiques**
+# **Tutoriel 12 : Relations polymorphiques**
 
 ---
 

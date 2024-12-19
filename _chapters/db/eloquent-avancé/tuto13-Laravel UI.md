@@ -4,14 +4,14 @@ slug: tuto13
 module_reference: db
 part_reference: eloquent-avancé
 concept_reference: ''
-title: tuto13
+title: Tuto13 - Authentification avec Laravel UI
 description: ''
-order: 159
+order: 156
 directory: db/eloquent-avancé
 permalink: db/eloquent-avancé/tuto13
 layout: chapters
 ---
-### **Tutoriel 4 : Authentification avec Laravel UI**
+# **Tutoriel 13 : Authentification avec Laravel UI**
 
 ---
 

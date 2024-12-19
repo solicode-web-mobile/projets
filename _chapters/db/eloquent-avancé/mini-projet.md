@@ -12,18 +12,18 @@ permalink: db/eloquent-avancé/mini-projet
 layout: chapters
 ---
 
-### **Mini-Projet : Réalisation d'un blog complet**
+# **Mini-Projet : Réalisation d'un blog complet**
 
 Le mini-projet est l’étape culminante de cette session **"Eloquent ORM Avancé"**, où vous consoliderez toutes les compétences acquises à travers les tutoriels précédents. Ce projet consiste à développer un blog complet, en intégrant des fonctionnalités avancées de gestion des données, de sécurité, et d'optimisation des performances.
 
-#### **Objectifs du mini-projet**
+## **Objectifs du mini-projet**
 1. Intégrer et appliquer les relations avancées entre les modèles (many-to-many, polymorphiques).
 2. Mettre en place un système sécurisé avec rôles et permissions pour contrôler l'accès.
 3. Construire un backend d'administration pour gérer les utilisateurs, articles, catégories, tags, et commentaires.
 4. Concevoir un frontend interactif avec pagination et recherche dynamique.
 5. Garantir l’intégrité des données et optimiser les performances grâce à des requêtes efficaces.
 
-#### **Structure du projet**
+## **Structure du projet**
 1. **Base de données** :
    - Tables principales : `users`, `articles`, `categories`, `tags`, `comments`.
    - Relations : 
@@ -50,12 +50,12 @@ Le mini-projet est l’étape culminante de cette session **"Eloquent ORM Avanc�
    - Eager Loading pour réduire le nombre de requêtes SQL.
    - Pagination pour gérer les grandes listes d’articles et commentaires.
 
-#### **Livrables attendus**
+## **Livrables attendus**
 1. Un blog fonctionnel avec les fonctionnalités complètes du frontend et backend.
 2. Une documentation technique décrivant la structure des tables, les relations, et les principales routes utilisées.
 3. Des captures d’écran ou une démonstration des principales pages et fonctionnalités.
 
-#### **Évaluation du projet**
+## **Évaluation du projet**
 - **Fonctionnalité** : Toutes les relations et fonctionnalités doivent fonctionner correctement.
 - **Sécurité** : Les accès non autorisés doivent être bloqués.
 - **Qualité du code** : Utilisation des bonnes pratiques Laravel (Middleware, Policies, Scopes, Transactions).

@@ -12,7 +12,7 @@ permalink: db/eloquent-avancé/conclusion
 layout: chapters
 ---
 
-### **Conclusion**
+# **Conclusion**
 
 La session **"Eloquent ORM Avancé"** a permis d'explorer en profondeur les fonctionnalités avancées de Laravel, en se concentrant sur l'un de ses éléments essentiels : Eloquent ORM. Grâce à une approche progressive et pratique, vous avez acquis les compétences nécessaires pour concevoir des bases de données complexes, manipuler efficacement des données, et sécuriser vos applications.
 

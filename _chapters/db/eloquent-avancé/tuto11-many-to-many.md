@@ -4,15 +4,15 @@ slug: tuto11
 module_reference: db
 part_reference: eloquent-avancé
 concept_reference: ''
-title: tuto11
+title: Tuto11 - Relations avancées - many-to-many
 description: ''
-order: 159
+order: 154
 directory: db/eloquent-avancé
 permalink: db/eloquent-avancé/tuto11
 layout: chapters
 ---
 
-### **Tutoriel 2 : Relations avancées - many-to-many**
+# **Tutoriel 11 : Relations avancées - many-to-many**
 
 ---
 

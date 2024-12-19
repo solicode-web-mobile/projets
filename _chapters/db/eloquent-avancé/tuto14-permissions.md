@@ -1,18 +1,18 @@
 ---
-reference: eloquent-avancé-tuto15
-slug: tuto15
+reference: eloquent-avancé-tuto14
+slug: tuto14
 module_reference: db
 part_reference: eloquent-avancé
 concept_reference: ''
-title: tuto15
+title: Tuto14 - Un système de rôles et permissions
 description: ''
-order: 159
+order: 157
 directory: db/eloquent-avancé
-permalink: db/eloquent-avancé/tuto15
+permalink: db/eloquent-avancé/tuto14
 layout: chapters
 ---
 
-### **Tutoriel 6 : Implémentation d'un système de rôles et permissions**
+# **Tutoriel 14 : Implémentation d'un système de rôles et permissions**
 
 ---
 

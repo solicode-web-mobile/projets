@@ -4,7 +4,7 @@ slug: tuto16
 module_reference: db
 part_reference: eloquent-avancé
 concept_reference: ''
-title: tuto16
+title: Tuto16 -  Requêtes avec Eloquent
 description: ''
 order: 159
 directory: db/eloquent-avancé
@@ -12,7 +12,7 @@ permalink: db/eloquent-avancé/tuto16
 layout: chapters
 ---
 
-### **Tutoriel 7 : Requêtes avancées avec Eloquent**
+# **Tutoriel 16 : Requêtes avancées avec Eloquent**
 
 ---
 
